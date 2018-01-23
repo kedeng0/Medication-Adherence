@@ -232,21 +232,6 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\Ben\\Documents\\GitHub\\Medication-Adherence\\AMC-N-ME\\MedAdhereSolutionsApp\\app\\build\\intermediates\\res\\merged\\debug\\values-h720dp-v13_values-h720dp-v13.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\Ben\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.0.0.aar\\f9cf478164bbfa8177ca3415edc5099e\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "66",
-                        "endOffsets": "117"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "C:\\Users\\Ben\\Documents\\GitHub\\Medication-Adherence\\AMC-N-ME\\MedAdhereSolutionsApp\\app\\build\\intermediates\\res\\merged\\debug\\values-ro_values-ro.arsc.flat",
             "map": [
                 {
@@ -298,6 +283,21 @@
                         "startOffsets": "3373",
                         "endColumns": "251",
                         "endOffsets": "3620"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\Ben\\Documents\\GitHub\\Medication-Adherence\\AMC-N-ME\\MedAdhereSolutionsApp\\app\\build\\intermediates\\res\\merged\\debug\\values-h720dp-v13_values-h720dp-v13.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Ben\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.0.0.aar\\f9cf478164bbfa8177ca3415edc5099e\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "66",
+                        "endOffsets": "117"
                     }
                 }
             ]
