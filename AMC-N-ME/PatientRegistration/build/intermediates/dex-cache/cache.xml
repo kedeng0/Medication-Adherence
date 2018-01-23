@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="84bf369090a8f7e293817efbd6ccf31ada1be32b">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-database-9.4.0_5775fafd2fd1c3f96d3b896f49dcde30a4051722.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a440fb3fec30ff925e9f601cc458fb6671834cb2">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-impl-9.4.0_24b6f0b349976bbfae929dcf8897b981c3e25748.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="894922f67adeaaef51f077a29e315da21a3382d3">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-24.0.0_e067c7b3ef0f2e00ab58ee229847f1fd2b3c12b6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8a36d229011e75f0caef408e1adf0d3fd4d94e02">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-9.4.0_44e3f7f724d34b013726e537acdb2ed7eed3aec5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0e4d53465cc141bec58f18a894e4c4e80633fa32">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-database-connection-9.4.0_6b395c3012f42dce394a3951d832337431117285.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0_74a55664235c3e1c2b0d77867ab170d662f07e57.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="18b5697c65c4fe5b7381613b8b8ae9ac52e26fa7">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-common-9.4.0_ded5d2b474159a174c59b4a42c5262c4bc46f9a8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="88848548ab56d4fbf3d2d1b0c85bf1ff9b4c1f4b">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-9.4.0_770b4e26ef0b71e6e17992a6a8fde83255c6fd31.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lindsayherron/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/pre-dexed/debug/support-annotations-24.0.0_808e90bda0e285306f4a7c8617738fb5b47ebbf5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3b7173b3df4c7029699919414400041f64519e34">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-iid-9.4.0_49ac980da3bd53622ffa1e3a493e1d78ef804b95.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/pre-dexed/debug/internal_impl-24.0.0_ab4195d9c7b98083f017a7f87c6eb030ad853ab4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="618485fef3ebe12127f7622abbc9b5b39057b5c2">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-9.4.0_926343367ee0f5cc793f4795ee429653eddb3f65.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.0.0_0aa1ac9211b4e45cc6d51a16b3dddb0b762281c2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.0.0_3f338c1edd485cc85ff96585e1c6a477957f3a2b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fc29308a7a8f6d4407b34634eb48fb8b817f9b23">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/pre-dexed/debug/com.android.support-design-24.0.0_2ae27fed8d78b8e4ad13ad68a91b1b7248c5c39a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3dee4ce5844d39d843d503fb8fe04e51e5bfffac">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-9.4.0_07f7d371670595d0710c98b1ed75c09dd9aa18f6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6bc41d9d6fd12d2ef23c785a259011001f4a1a5b">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-auth-module-9.4.0_1e73abf07a4f299ec378eaf1fe384ec50635726e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.0.0_ee95eef545a5edfe3427f2227b7731b1bcc06e6c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="4b630471536351be7c3c3100735c75b7ad2cbd84">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-auth-9.4.0_4147a8b925fe567127b2b4516365304dc542830d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="34762013d39dbe6c656050589c44e8b61b9a2c5d">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-auth-common-9.4.0_2532b7164447dda1b77cdfe684afbf195ee806fa.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="x86"
+    api-level="24"
+    density="560dpi"
+    format="8"
+    plugin-version="2.2.3"
+    timestamp="23291604224539"
+    token="-7499820995187560519"
+    verifier="COMPATIBLE" >
+
+    <task
+        name="javac"
+        duration="649" />
+    <task
+        name="instant-run-dex"
+        duration="26" />
+    <task
+        name="instant-run-transform"
+        duration="47" />
+    <task
+        name="verifier"
+        duration="2" />
+
+    <artifact
+        location="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/reload-dex/debug/classes.dex"
+        type="RELOAD_DEX" />
+
+    <build
+        timestamp="22500804658179"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/outputs/apk/app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build
+        timestamp="22591883749245"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/builds/debug/22591883749245/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="22963896448776"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/builds/debug/22963896448776/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="23062153287445"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/builds/debug/23062153287445/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="23155504526636"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/builds/debug/23155504526636/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="23182639756370"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/builds/debug/23182639756370/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="23291604224539"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientRegistration/app/build/intermediates/reload-dex/debug/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+
+</instant-run>

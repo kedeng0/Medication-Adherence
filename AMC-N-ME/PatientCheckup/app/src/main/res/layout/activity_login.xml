@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:layout_marginTop="70dp"
+    android:layout_marginBottom="40dp"
+    tools:context=".LoginActivity"
+    android:weightSum="1">
+
+    <!-- Login progress -->
+
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_weight=".6">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/health_logo_icon" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_weight=".4"
+        android:weightSum="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight=".2">
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_gravity="center_horizontal" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout android:id="@+id/patientList" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:orientation="vertical"
+                android:layout_marginLeft="50dp">
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/checkBoxGroup"/>
+            </LinearLayout>
+        </ScrollView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight=".8">
+        <Button
+            android:id="@+id/email_sign_in_button" style="?android:textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="16dp"
+            android:text="Done"
+            android:textStyle="bold"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

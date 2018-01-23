@@ -1,0 +1,92 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/DrawerLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".BloodPressureLogActivity"
+    android:background="@color/white_pressed"
+    android:weightSum="1">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Blood Pressure Systolic: "
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:imeOptions="actionDone"
+        android:ems="10"
+        android:id="@+id/bp_systolic"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Blood Pressure Diastolic: "
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:id="@+id/bp_diastolic"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_vertical" />
+
+    <TimePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timePicker"
+        android:timePickerMode="spinner"
+        android:layout_gravity="center_horizontal"
+        android:imeOptions="actionDone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="bottom|center"
+        android:layout_gravity="center_horizontal">
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="submit"
+            android:text="Submit"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/checkLogs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkLogs"
+            android:text="Check Logs"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/returnToCal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="returnToCal"
+        android:text="Return to Calendar"
+        android:layout_gravity="center_horizontal" />
+
+
+
+</LinearLayout>

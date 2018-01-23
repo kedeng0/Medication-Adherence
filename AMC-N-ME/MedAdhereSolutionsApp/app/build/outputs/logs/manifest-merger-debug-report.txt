@@ -1,0 +1,459 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:2:1-164:12
+	package
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:3:5-60
+		INJECTED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml
+uses-permission#com.android.alarm.permission.SET_ALARM
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:5:5-77
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:5:22-75
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:6:5-81
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:6:22-78
+uses-permission#android.permission.INTERNET
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:7:5-67
+MERGED from [com.google.firebase:firebase-analytics:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.4.0/AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.4.0/AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:21:5-67
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:7:22-64
+uses-permission#android.permission.NFC
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:9:5-61
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:9:22-59
+application
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:11:5-162:19
+MERGED from [com.google.firebase:firebase-auth:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.4.0/AndroidManifest.xml:20:5-21:19
+MERGED from [com.google.firebase:firebase-auth-common:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.4.0/AndroidManifest.xml:20:5-21:19
+MERGED from [com.android.support:design:24.0.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.github.SpongeBobSun:mCalendarView:6c384cdc8b] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.github.SpongeBobSun/mCalendarView/6c384cdc8b/AndroidManifest.xml:11:5-14:19
+MERGED from [com.android.support:appcompat-v7:24.0.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.0.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:24.0.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.0.0/AndroidManifest.xml:23:5-20
+MERGED from [com.google.android.gms:play-services-appindexing:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/9.4.0/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-base:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.firebase:firebase-core:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-core/9.4.0/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.4.0/AndroidManifest.xml:26:5-41:19
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.4.0/AndroidManifest.xml:26:5-41:19
+MERGED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:30:5-59:19
+MERGED from [com.google.firebase:firebase-common:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.4.0/AndroidManifest.xml:5:5-12:19
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.4.0/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.4.0/AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.0.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/AndroidManifest.xml:25:5-20
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:15:9-41
+	android:supportsRtl
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:16:9-35
+	android:allowBackup
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:14:9-35
+	android:icon
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:13:9-40
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:17:9-40
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:12:9-38
+service#com.solutions.medadhere.medadheresolutionsapp.ReminderService
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:18:9-52
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:18:18-49
+receiver#com.solutions.medadhere.medadheresolutionsapp.MyAlarmReceiver
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:20:9-62
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:20:19-50
+receiver#com.solutions.medadhere.medadheresolutionsapp.StartMyServiceAtBootReceiver
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:21:9-31:20
+	android:enabled
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:23:13-35
+	android:process
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:24:13-38
+	android:permission
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:25:13-75
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:22:13-57
+intent-filter#android.intent.action.BOOT_COMPLETED+android.intent.action.QUICKBOOT_POWERON+android.intent.category.DEFAULT
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:26:13-30:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:27:17-79
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:27:25-76
+action#android.intent.action.QUICKBOOT_POWERON
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:28:17-82
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:28:25-79
+category#android.intent.category.DEFAULT
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:29:17-76
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:29:27-73
+activity#com.solutions.medadhere.medadheresolutionsapp.LoginActivity
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:34:9-43:20
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:36:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:37:13-56
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:35:13-42
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:38:13-42:29
+action#android.intent.action.MAIN
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:39:17-69
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:39:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:41:17-77
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:41:27-74
+activity#com.solutions.medadhere.medadheresolutionsapp.StudyContactsActivity
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:45:9-48:59
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:47:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:48:13-56
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:46:13-50
+activity#com.solutions.medadhere.medadheresolutionsapp.LifestyleSurvey
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:50:9-52:59
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:51:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:52:13-56
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:50:19-50
+activity#com.solutions.medadhere.medadheresolutionsapp.MedicationAdherenceSurvey
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:54:9-56:59
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:55:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:56:13-56
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:54:19-60
+activity#com.solutions.medadhere.medadheresolutionsapp.AppSatisfactionSurveyActivity
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:59:9-61:59
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:60:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:61:13-56
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:59:19-64
+activity#com.solutions.medadhere.medadheresolutionsapp.MainActivity
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:64:9-66:58
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:65:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:66:13-56
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:64:19-47
+activity#com.solutions.medadhere.medadheresolutionsapp.LifestyleFeedbackActivity
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:68:9-70:58
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:69:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:70:13-56
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:68:19-60
+activity#com.solutions.medadhere.medadheresolutionsapp.BPCalendarActivity
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:73:9-76:59
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:75:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:76:13-56
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:74:13-47
+activity#com.solutions.medadhere.medadheresolutionsapp.BloodPressureActivity
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:78:9-81:59
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:80:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:81:13-56
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:79:13-50
+activity#com.solutions.medadhere.medadheresolutionsapp.BloodPressureLogActivity
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:82:9-85:42
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:84:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:85:13-39
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:83:13-53
+activity#com.solutions.medadhere.medadheresolutionsapp.BloodPressureLogReadActivity
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:86:9-89:42
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:88:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:89:13-39
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:87:13-57
+activity#com.solutions.medadhere.medadheresolutionsapp.MedicationActivity
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:90:9-93:59
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:92:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:93:13-56
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:91:13-47
+activity#com.solutions.medadhere.medadheresolutionsapp.MedicationLogActivity
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:94:9-98:20
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:96:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:97:13-39
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:95:13-50
+activity#com.solutions.medadhere.medadheresolutionsapp.MedicationLogReadActivity
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:99:9-102:42
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:101:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:102:13-39
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:100:13-54
+activity#com.solutions.medadhere.medadheresolutionsapp.MedicationInformationActivity
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:103:9-106:59
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:105:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:106:13-56
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:104:13-58
+activity#com.solutions.medadhere.medadheresolutionsapp.SurveySelectionActivity
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:107:9-110:59
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:109:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:110:13-56
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:108:13-52
+activity#com.solutions.medadhere.medadheresolutionsapp.healthLiteracyExampleActivity
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:111:9-114:59
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:113:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:114:13-56
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:112:13-58
+activity#com.solutions.medadhere.medadheresolutionsapp.HealthLitParagraphActivity
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:115:9-118:59
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:117:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:118:13-56
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:116:13-55
+activity#com.solutions.medadhere.medadheresolutionsapp.HealthSurvey
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:119:9-122:59
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:121:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:122:13-56
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:120:13-41
+activity#com.solutions.medadhere.medadheresolutionsapp.WeightCalendarActivity
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:125:9-128:59
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:127:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:128:13-56
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:126:13-51
+activity#com.solutions.medadhere.medadheresolutionsapp.WeightLogActivity
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:129:9-132:42
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:131:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:132:13-39
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:130:13-46
+activity#com.solutions.medadhere.medadheresolutionsapp.WeightLogReadActivity
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:133:9-136:42
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:135:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:136:13-39
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:134:13-50
+activity#com.solutions.medadhere.medadheresolutionsapp.firstTimeLogin
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:138:9-140:58
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:139:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:140:13-56
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:138:19-49
+activity#com.solutions.medadhere.medadheresolutionsapp.nfcTag
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:142:9-153:20
+	android:label
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:144:13-45
+	android:theme
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:145:13-39
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:143:13-35
+intent-filter#android.intent.category.DEFAULT+android.nfc.action.NDEF_DISCOVERED+android.nfc.action.TAG_DISCOVERED+android.nfc.action.TECH_DISCOVERED
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:146:13-151:29
+action#android.nfc.action.TECH_DISCOVERED
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:147:17-76
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:147:25-74
+action#android.nfc.action.NDEF_DISCOVERED
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:148:17-76
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:148:25-74
+action#android.nfc.action.TAG_DISCOVERED
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:149:17-75
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:149:25-73
+meta-data#com.google.android.gms.version
+ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:157:9-159:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.4.0/AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:159:13-66
+	android:name
+		ADDED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml:158:13-58
+uses-sdk
+INJECTED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.google.firebase:firebase-auth:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.4.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.firebase:firebase-auth-common:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.4.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.firebase:firebase-auth-module:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.4.0/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-database:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.4.0/AndroidManifest.xml:5:5-43
+MERGED from [com.google.firebase:firebase-database-connection:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.4.0/AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:design:24.0.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:24.0.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.0.0/AndroidManifest.xml:20:5-43
+MERGED from [com.github.SpongeBobSun:mCalendarView:6c384cdc8b] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.github.SpongeBobSun/mCalendarView/6c384cdc8b/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:24.0.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:24.0.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:24.0.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.0.0/AndroidManifest.xml:21:5-43
+MERGED from [com.google.android.gms:play-services-appindexing:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/9.4.0/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-core:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-core/9.4.0/AndroidManifest.xml:4:5-42
+MERGED from [com.google.firebase:firebase-analytics:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.4.0/AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.4.0/AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-common:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.4.0/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.4.0/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.4.0/AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.0.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/AndroidManifest.xml:21:5-23:54
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:24.0.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/src/main/AndroidManifest.xml
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/AndroidManifest.xml:20:19-85
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.firebase:firebase-analytics:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.4.0/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.4.0/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:20:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.4.0/AndroidManifest.xml:22:22-76
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.firebase:firebase-analytics:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.4.0/AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.4.0/AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:22:5-68
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.4.0/AndroidManifest.xml:24:22-65
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.firebase:firebase-analytics:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.4.0/AndroidManifest.xml:28:7-34:18
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.4.0/AndroidManifest.xml:28:7-34:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.4.0/AndroidManifest.xml:30:11-33
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.4.0/AndroidManifest.xml:29:11-83
+intent-filter#com.google.android.gms.measurement.UPLOAD
+ADDED from [com.google.firebase:firebase-analytics:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.4.0/AndroidManifest.xml:31:9-33:25
+action#com.google.android.gms.measurement.UPLOAD
+ADDED from [com.google.firebase:firebase-analytics:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.4.0/AndroidManifest.xml:32:11-77
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.4.0/AndroidManifest.xml:32:19-75
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.firebase:firebase-analytics:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.4.0/AndroidManifest.xml:36:7-39:37
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.4.0/AndroidManifest.xml:36:7-39:37
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.4.0/AndroidManifest.xml:38:11-33
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.4.0/AndroidManifest.xml:39:11-35
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.4.0/AndroidManifest.xml:37:11-82
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:23:5-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:23:22-79
+permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:25:5-26:47
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:26:9-44
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:25:17-71
+uses-permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:28:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:28:22-76
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:32:9-41:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:34:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:35:13-73
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:33:13-78
+intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE+com.google.android.c2dm.intent.REGISTRATION
+ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:36:13-40:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:37:17-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:37:25-78
+action#com.google.android.c2dm.intent.REGISTRATION
+ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:38:17-86
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:38:25-83
+category#${applicationId}
+ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:39:17-61
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:39:27-58
+receiver#com.google.firebase.iid.FirebaseInstanceIdInternalReceiver
+ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:45:9-47:40
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:47:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:46:13-86
+service#com.google.firebase.iid.FirebaseInstanceIdService
+ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:51:9-57:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:53:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:52:13-77
+intent-filter#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:54:13-56:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:54:28-51
+action#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:55:17-80
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.4.0/AndroidManifest.xml:55:25-77
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.4.0/AndroidManifest.xml:7:9-11:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.4.0/AndroidManifest.xml:8:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.4.0/AndroidManifest.xml:10:13-37
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.4.0/AndroidManifest.xml:11:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:9.4.0] /Users/lindsayherron/Desktop/MedAdhereSolutions/MedAdhereSolutionsApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.4.0/AndroidManifest.xml:9:13-58

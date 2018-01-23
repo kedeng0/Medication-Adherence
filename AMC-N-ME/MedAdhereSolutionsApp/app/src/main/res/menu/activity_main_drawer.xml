@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Options">
+        <menu>
+            <item
+                android:id="@+id/nav_home"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Home" />
+            <item
+                android:id="@+id/nav_bloodpressure"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Blood Pressure Log" />
+            <item
+                android:id="@+id/nav_weight"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Body Weight Log" />
+            <item
+                android:id="@+id/nav_medication"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Medication Utilization Log" />
+            <item
+                android:id="@+id/nav_surveys"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Surveys" />
+            <item
+                android:id="@+id/nav_study_contact"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Clinical Contact" />
+
+        </menu>
+    </item>
+
+
+    <item
+        android:id="@+id/nav_callmypharmacist"
+        android:icon="@drawable/ic_menu_send"
+        android:title="Call My Pharmacist" />
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/ic_menu_send"
+        android:title="Log Out" />
+
+
+
+</menu>

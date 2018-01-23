@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "408614658429",
+    "firebase_url": "https://medadheresolutions-72284.firebaseio.com",
+    "project_id": "medadheresolutions-72284",
+    "storage_bucket": "medadheresolutions-72284.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408614658429:android:e575b4b424b9ac07",
+        "android_client_info": {
+          "package_name": "com.solutions.medadhere.medadheresolutionsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "408614658429-kavfclml2ma1mi22qtfsegqnrste8c56.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRRrHXHVe6HyVOBOGLqR6H1iBuDbsyS38"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408614658429:android:11cbbc8d503480a9",
+        "android_client_info": {
+          "package_name": "com.solutions.medadhere.patientregistration"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "408614658429-kavfclml2ma1mi22qtfsegqnrste8c56.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRRrHXHVe6HyVOBOGLqR6H1iBuDbsyS38"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="medicationArray">
+        <item>Tylenol</item>
+        <item>Advil</item>
+        <item>Drug 3</item>
+        <item>Drug 4</item>
+        <item>Drug 5</item>
+    </string-array>
+
+
+    <string-array name="LiteracySurveyExample">
+    <item index="0">Option, (?), has been checked in Question 1, then () was checked in Quesiton 2._Option 1_Option 2_Option 3_Option 4</item>
+    <item index="1">Option, (), has been checked in Question 1, then (?) was checked in Quesiton 2._Option 1_Option 2_Option 3_Option 4</item>
+    </string-array>
+
+
+    <string-array name="LitExampleSurveyAnswers">
+        <item index="0">0</item>
+        <item index="1">0</item>
+    </string-array>
+
+    <string-array name="LitExampleSurveyAnswersNA">
+    <item index="0">0</item>
+    <item index="1">0</item>
+    </string-array>
+
+
+    <string-array name="LifestylePositiveMessagesArray">
+        <item index="0">Exercising and being physically active is a great way to maintain a healthy lifestyle. Keep up the great work!</item>
+        <item index="1">Not using cigarettes or other forms of tobacco is an important component of a healthy lifestyle.  You are making good decisions for your health!</item>
+        <item index="2">Speaking to a healthcare provider, group or individual counseling, and nicotine replacement therapy have been shown to help patients quit smoking. Please contact your healthcare practitioner, pharmacist, or call the Georgia Tobacco Quit Line at 18772707867 if you need additional support. </item>
+        <item index="3">Speaking to a healthcare provider, group or individual counseling, and nicotine replacement therapies have been shown to help patients quit smoking. Please contact your healthcare practitioner, pharmacist, or call the Georgia Tobacco Quit Line at 18772707867 if you need additional support. </item>
+        <item index="4">Limiting alcohol is an important component of a healthy lifestyle.  You are making good decisions for your health!</item>
+        <item index="5">Medications are available to help you quit drinking alcohol. Please contact your healthcare practitioner or pharmacist if you would like to discuss your options.</item>
+        <item index="6">Medications are available to help you reduce the number of alcoholic beverages you drink. Please contact your healthcare practitioner or pharmacist if you would like to discuss your options.</item>
+        <item index="7">Nice job avoiding salt in your diet.  This will help you lower your blood pressure and positively impact your health in other ways as well.</item>
+    </string-array>
+
+    <string-array name="LifestyleNegativeMessagesArray">
+        <item index="0">The American Heart Association recommends adults exercise 30 minutes per day, five days a week to lower the risk of heart disease and stroke. Recommended activity includes walking, jogging, swimming, and biking among other activities. If you are unable to exercise for 30 minutes, try to exercise for 5 or 10 minutes at a time a couple times a day. </item>
+        <item index="1">Quitting smoking lowers the risk of lung cancer, high blood pressure, heart disease, stroke, peripheral heart disease, and many other health issues. Your health may improve if you quit smoking no matter how long you have smoked. Please contact the Georgia Tobacco Quit Line at 18772707867 for free private counseling and free nicotine replacement therapy. </item>
+        <item index="2">If you decide you are ready to quit smoking, please contact your healthcare practitioner, pharmacist, or the Georgia Tobacco Quit Line at 18772707867.</item>
+        <item index="3">If you decide you are ready to reduce the number of cigarettes you smoke please contact your healthcare practitioner, pharmacist, or the Georgia Tobacco Quit Line at 18772707867. </item>
+        <item index="4">Drinking too much alcohol increases alcohol dependence, risk of liver damage, high blood pressure, obesity, stroke and accidents. The American Heart Association recommends women drink no more than one drink per day and men drink no more than two drinks per day. Please contact your healthcare practitioner or pharmacist if you need help reducing then amount of alcohol you drink. </item>
+        <item index="5">If you quit drinking, you may avoid short and long term health risks associated with drinking such as alcohol poisoning, risky sexual behaviors, high blood pressure, and stroke. If you decide to quit smoking contact your healthcare practitioner or pharmacist for help. </item>
+        <item index="6">If you reduce the number of alcoholic beverages you drink, you may avoid short and long term health risks associated with drinking such as alcohol poisoning, risky sexual behaviors, high blood pressure, and stroke. The American Heart Association recommends women drink no more than one drink per day and men drink no more than two drinks per day.  If you need help reducing then number of alcoholic beverages you drink contact your healthcare practitioner or pharmacist for help. </item>
+        <item index="7">A low salt diet can lower your blood pressure and reduce the risk of your body holding on to too much fluid which can cause swelling of the legs or feet and other health problems. Salt, also known as sodium, is in many of the frozen, boxed, bagged, and canned foods available in the grocery store as well as table salt. A common goal for a low sodium diet is eating less than 2,000 milligrams (mgs) per day which is about one teaspoon of table salt.  Low sodium foods should have 140 mgs or less of sodium per serving. Review the food labels on your food to make your choice of which foods you should eat. Please contact your healthcare practitioner or pharmacist if you would like to learn more about low salt diets. </item>
+    </string-array>
+
+
+    <string-array name="LifestyleSurvey">
+        <item index="0">Do you exercise (ex. walking, jogging, running, chair exercises, swimming, or lifting weights)?_Never_1-2 times per month or less_3-4 times per month_2-4 times per week_5 times per week or more</item>
+        <item index="1">Do you smoke cigarettes or use smokeless tobacco products?_Never_1-2 packs/cans per month or less_3-4 packs/cans per month_2-4 packs/cans per week_5 packs/cans per week or more</item>
+        <item index="2">Do you plan on quitting smoking cigarettes or using smokeless tobacco products in the next 2 weeks?_NA_No_Yes</item>
+        <item index="3">Do you plan on reducing the number of cigarettes smoked or frequency of smokeless tobacco product use in the next 2 weeks?_NA_No_Yes</item>
+        <item index="4">Do you drink alcohol?_Never_7 times per month or less_2-4 times a week_5-7 times per week_More than once per day</item>
+        <item index="5">Do you plan on quitting drinking alcohol in the next 2 weeks?_NA_No_Yes</item>
+        <item index="6">Do you plan on reducing the number of alcoholic beverages in the next 2 weeks?_NA_No_Yes</item>
+        <item index="7">Do you follow a low salt diet?_Never_1 meal per week or less_2-6 meals per week_1-2 meals per day_Every meal</item>
+    </string-array>
+
+    <string-array name="LifestyleSurveyAnswers">
+        <item index="0">3_4</item>
+        <item index="1">0</item>
+        <item index="2">2</item>
+        <item index="3">2</item>
+        <item index="4">0</item>
+        <item index="5">2</item>
+        <item index="6">2</item>
+        <item index="7">4</item>
+    </string-array>
+
+    <string-array name="LifestyleSurveyAnswersNA">
+        <item index="0">0</item>
+        <item index="1">0</item>
+        <item index="2">1</item>
+        <item index="3">1</item>
+        <item index="4">0</item>
+        <item index="5">1</item>
+        <item index="6">1</item>
+        <item index="7">0</item>
+    </string-array>
+
+
+    <string-array name="LiteracySurvey">
+        <item index="0">Your doctor has sent you to have a (?) X-ray._stomach_diabetes_stitches_germs</item>
+        <item index="1">You must have an (?) stomach when you come for ()._asthma_empty_incest_anemia</item>
+        <item index="2">You must have an () stomach when you come for (?)._is_am_if_it</item>
+        <item index="3">The X-ray will (?) from 1 to 3 () to do._take_view_talk_look</item>
+        <item index="4">The X-ray will () from 1 to 3 (?) to do._beds_brains_hours_diets</item>
+        <item index="5">For supper have only a (?) snack of fruit, () and jelly, with coffee or tea._little_broth_attack_nausea</item>
+        <item index="6">For supper have only a () snack of fruit, (?) and jelly, with coffee or tea._toes_throat_toast_thigh</item>
+        <item index="7">After (?), you must not () or drink anything at () until after you have () the X-ray._minute_midnight_during_before</item>
+        <item index="8">After (), you must not (?) or drink anything at () until after you have () the X-ray._easy_ate_drank_eat</item>
+        <item index="9">After (), you must not () or drink anything at (?) until after you have () the X-ray._ill_all_each_any</item>
+        <item index="10">After (), you must not () or drink anything at () until after you have (?) the X-ray._are_has_had_was</item>
+        <item index="11">Do not eat (?)._appointment_walk-in_breakfast_clinic</item>
+        <item index="12">Do not (?), even ()._drive_drink_dress_dose</item>
+        <item index="13">Do not (), even (?)._heart_breath_water_cancer</item>
+        <item index="14">If you have any (?), call the X-ray () at 6164500._answers_exercises_tracts_questions</item>
+        <item index="15">If you have any (), call the X-ray (?) at 6164500._Department_Sprain_Pharmacy_Toothache</item>
+        <item index="16">I agree to give correct information to (?) if I can receive Medicaid._hair_salt_see_ache</item>
+        <item index="17">I (?) to provide the county information to () any statements given in this () and hereby give permission to the () to get such proof._agree_probe_send_gain</item>
+        <item index="18">I () to provide the county information to (?) any statements given in this () and hereby give permission to the () to get such proof._hide_risk_discharge_prove</item>
+        <item index="19">I () to provide the county information to () any statements given in this (?) and hereby give permission to the () to get such proof._emphysema_application_gallbladder_relationship</item>
+        <item index="20">I () to provide the county information to () any statements given in this () and hereby give permission to the (?) to get such proof._inflammation_religion_iron_county</item>
+        <item index="21">I (?) that for Medicaid I must report any () in my circumstances within () days of becoming () of the change._investigate_entertain_understand_establish</item>
+        <item index="22">I () that for Medicaid I must report any (?) in my circumstances within () days of becoming () of the change._changes_hormones_antacids_charges</item>
+        <item index="23">I () that for Medicaid I must report any () in my circumstances within (?) days of becoming () of the change._three_one_five_ten</item>
+        <item index="24">I () that for Medicaid I must report any () in my circumstances within () days of becoming (?) of the change._award_aware_away_await</item>
+        <item index="25">I understand (?) if I DO NOT like the () made on my case, I have the () to a fair hearing._thus_this_that_than</item>
+        <item index="26">I understand () if I DO NOT like the (?) made on my case, I have the () to a fair hearing._marital_occupation_adult_decision</item>
+        <item index="27">I understand () if I DO NOT like the () made on my case, I have the (?) to a fair hearing._bright_left_wrong_right</item>
+        <item index="28">I can (?) a hearing by writing or () the county where I applied._request_refuse_fail_mend</item>
+        <item index="29">I can () a hearing by writing or (?) the county where I applied._counting_reading_calling_smelling</item>
+        <item index="30">If you (?) TANF for any family (), you will have to () a different application form._wash_want_cover_tape</item>
+        <item index="31">If you () TANF for any family (?), you will have to () a different application form._member_history_weight_seatbelt</item>
+        <item index="32">If you () TANF for any family (), you will have to (?) a different application form._relax_break_inhale_sign</item>
+        <item index="33">(?), we will use the () on this form to determine your ()._Since_Whether_However_Because</item>
+        <item index="34">(), we will use the (?) on this form to determine your ()._lung_date_meal_pelvic</item>
+        <item index="35">(), we will use the () on this form to determine your (?)._hypoglycemia_eligibility_osteoporosis_schizophrenia</item>
+    </string-array>
+
+    <string-array name="LiteracySurveyAnswers">
+        <item index="0">0</item>
+        <item index="1">1</item>
+        <item index="2">3</item>
+        <item index="3">0</item>
+        <item index="4">2</item>
+        <item index="5">0</item>
+        <item index="6">2</item>
+        <item index="7">1</item>
+        <item index="8">3</item>
+        <item index="9">1</item>
+        <item index="10">2</item>
+        <item index="11">2</item>
+        <item index="12">1</item>
+        <item index="13">2</item>
+        <item index="14">3</item>
+        <item index="15">0</item>
+        <item index="16">2</item>
+        <item index="17">0</item>
+        <item index="18">3</item>
+        <item index="19">1</item>
+        <item index="20">3</item>
+        <item index="21">2</item>
+        <item index="22">0</item>
+        <item index="23">3</item>
+        <item index="24">1</item>
+        <item index="25">2</item>
+        <item index="26">3</item>
+        <item index="27">3</item>
+        <item index="28">0</item>
+        <item index="29">2</item>
+        <item index="30">1</item>
+        <item index="31">0</item>
+        <item index="32">3</item>
+        <item index="33">2</item>
+        <item index="34">1</item>
+        <item index="35">1</item>
+    </string-array>
+
+    <string-array name="LiteracySurveyAnswersNA">
+        <item index="0">0</item>
+        <item index="1">0</item>
+        <item index="2">0</item>
+        <item index="3">0</item>
+        <item index="4">0</item>
+        <item index="5">0</item>
+        <item index="6">0</item>
+        <item index="7">0</item>
+        <item index="8">0</item>
+        <item index="9">0</item>
+        <item index="10">0</item>
+        <item index="11">0</item>
+        <item index="12">0</item>
+        <item index="13">0</item>
+        <item index="14">0</item>
+        <item index="15">0</item>
+        <item index="16">0</item>
+        <item index="17">0</item>
+        <item index="18">0</item>
+        <item index="19">0</item>
+        <item index="20">0</item>
+        <item index="21">0</item>
+        <item index="22">0</item>
+        <item index="23">0</item>
+        <item index="24">0</item>
+        <item index="25">0</item>
+        <item index="26">0</item>
+        <item index="27">0</item>
+        <item index="28">0</item>
+        <item index="29">0</item>
+        <item index="30">0</item>
+        <item index="31">0</item>
+        <item index="32">0</item>
+        <item index="33">0</item>
+        <item index="34">0</item>
+        <item index="35">0</item>
+    </string-array>
+
+</resources>

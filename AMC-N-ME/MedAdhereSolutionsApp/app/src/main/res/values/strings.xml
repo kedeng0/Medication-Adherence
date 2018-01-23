@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">AMC-n-Me</string>
+    <string name="id1">question11</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="medication_prompt">Choose a Medication</string>
+
+
+    <string name="action_settings">Settings</string>
+
+
+    <string name="health_lit_paragraph">
+        Here are some other medical instructions that you or anybody might see around the hospital. These instructions are in sentences that have some of the words missing.
+        Where a word is missing, a black line is drawn, and 4 possible words that can go in the black appear just below it.
+        I want you to figure out which of those 4 words should go in the blank, which word makes the sentence make sense. When you think you know which one it is,
+        circle the letter in front of that word, and go on to the next one. When you finish the page, turn the page and keep going until you finish all the pages.
+
+    </string>
+</resources>

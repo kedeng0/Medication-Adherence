@@ -1,0 +1,1067 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7a64bf6dc775198eed9db9468a133adf7dfe6562">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-fitness-10.0.1_e204f5263fe59465ddec32077ee8c96aec008268/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="92c871a22463a247e8a77a9f3fd231c278788c4a">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-panorama-10.0.1_78ea952fbe892af51a42082460860004fc011adb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a48dc0b148059764d32500be558702d5ff932058">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-identity-10.0.1_540823e4a50706ac0c60d920db658f520c9841cf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-crash/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="de29a39f9260f88151b1ef453140e71c76b6c415">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-crash-10.0.1_2f00d7414a387044f20531f5d0b4cd99929e3b58/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics-impl/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e871881b36b32e6bfd271a830c6eeb54ff0fc185">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-impl-10.0.1_2adf4620fb242e3985abce3172e0febc704a799c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="44a694d4095be84c2888764b1f7256b385c030ad">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-10.0.1_cffbe3ea38d24adbc9c8ec6da2a1159d6345e3e8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.0.0_a12f103445be15bd0140907a7fb03f91dc61ac15/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="4c829ff0ccfecb28a999ee46d9e75948dfc777a4">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-10.0.1_13156a0835deb54f899dcdf3172ec9cae4184efe/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.0.0_e6e54132ca00da0974c1a94a8e3c9976dc6c1fc1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage-common/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09cf6aa1390f95157e8295d02be7868f568825fc">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-common-10.0.1_8f14144468a0df5e851a83d6fd5efbb475888af9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-10.0.1_bb5c63593d9677b15dafd639fa019f12e9b4a63a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.android.support/palette-v7/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-palette-v7-24.0.0_cb5d7418bebf7889fe427b7b289103754f5ca967/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b955cb3a1ad6f1b6ff728ce1e0cd592c1717b440">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-lite-10.0.1_a4d14031fc10f925c58096cc3b31e9c4abfb07fa/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-mediarouter-v7-24.0.0_c0677563c7261ab0136234a2711c586dedc4ea0a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c14f0c89f28cf782e42581ab0aba5f63af39b3d2">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-plus-10.0.1_b65c21f6eb61f009f5532669ebf812e0e6994275/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_606308adcff7d67b34818464b5ed845969d7d030/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-10.0.1_3712db5d9b68a6f682e5113a427305f63c27f681/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d0460bf07cc3657e0be518ca01c174493951c6b8">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-10.0.1_1d129542d54ae2ed842f0b3aa692c276ccf46390/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.android.support/palette-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-palette-v7-24.0.0_cb5d7418bebf7889fe427b7b289103754f5ca967/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-10.0.1_82dfadd1e9408af65b8848a0d9652dbf4b3fe6ce/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage-common/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09cf6aa1390f95157e8295d02be7868f568825fc">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-common-10.0.1_8f14144468a0df5e851a83d6fd5efbb475888af9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f6cf557be4dbd0282ea2388633e5378634423226">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-safetynet-10.0.1_6973422f295f44f59289984e90f762df637ffacc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="2d5d113b0352ab60946fc44c518cf68fd26cbb79">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wallet-10.0.1_010cbb49e0a2d1492c109d90d30ce2059773b63a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-10.0.1_a65b265d9873913700268082f85141085df2248e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.0.0_a12f103445be15bd0140907a7fb03f91dc61ac15/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-v4-impl/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f23ad0f8e58713ff4b55f61c0bbde3830378347c">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-v4-impl-10.0.1_ce0a2f61654459a81af454cb31bf067d0d6983bc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-10.0.1_bf64a1f03f6a750344068f9a092e8ed4c2fe0d02/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-api/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b1df8fa3d372a27e4e969ce00b00689ee1eed031">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-api-10.0.1_634003cd4e72afd612b4a613d873a90fa440147a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="894922f67adeaaef51f077a29e315da21a3382d3">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.0.0_11cbdff1db65583ba99d5aebf46eaef5cb6045bb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-places/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f3e51e9c5233b8897f61e08a6a27bc36283c2724">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-places-10.0.1_6c07b10f1022b2ecde1937d29dbdc7e6cc16a66d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fc29308a7a8f6d4407b34634eb48fb8b817f9b23">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.0.0_ef70a026b6f09ed7d1aba94b9f1ac8e74d87e551/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-instantapps/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="45305e6af414dab5aba6c3225081c2f15c3bdd1e">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-instantapps-10.0.1_30948ebf6ea3d52f60bfe4f1fa9820c82187b8a6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="971509bbe30bb7b971fc1c49d7b23d0d818830ac">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-10.0.1_bba63b45f98b0636445e4583dc84266e5442f592/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-appindexing/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ae80d328a8548b4610ead6c624bab8c6a6984f5b">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-appindexing-10.0.1_1bd592b096b705ddbdaf2f47b68342cc09c24bd7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6bb5d347ebc0c6ef3c83a905222a688da5d2f7b4">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-iid-10.0.1_73cc30652ad042601ba07b4a569b450644c43d0d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-10.0.1_bf64a1f03f6a750344068f9a092e8ed4c2fe0d02/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8308ed003522a2ee8958311afcc4cfd0470377cd">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gcm-10.0.1_11d9c918f50e5ba2a309389987c578d3021a3c43/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e2185aff89caeb337b1ffc36d5e525d8318e7cfe">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-10.0.1_1fdee05bce1025170d0cec4673f6378f64ff5453/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c14f0c89f28cf782e42581ab0aba5f63af39b3d2">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-plus-10.0.1_b65c21f6eb61f009f5532669ebf812e0e6994275/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_606308adcff7d67b34818464b5ed845969d7d030/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="44a694d4095be84c2888764b1f7256b385c030ad">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-10.0.1_cffbe3ea38d24adbc9c8ec6da2a1159d6345e3e8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="dd39827d2067497e60e21da48a7926000b6d4b0c">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-10.0.1_f9a560a49b8c2ab857549a31ab180d91a70fde2b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="df1cb17511aabbb63264a0024949d1e42502a512">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-framework-10.0.1_94cda25e9e287cbed66db541e5f8821bc03d9514/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-10.0.1_80658d60f56915c04b183a39a1dee3b7e79b3417/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7a64bf6dc775198eed9db9468a133adf7dfe6562">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-fitness-10.0.1_e204f5263fe59465ddec32077ee8c96aec008268/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-10.0.1_a16bb54c78420d87b71004f6a02d2e2ddc6715a0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-config/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ffc15e965a9e8c28f24455eedd4cac215c45d1fc">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-config-10.0.1_4bfcff83174dd22334f4bc56621879178470bf8f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="4c829ff0ccfecb28a999ee46d9e75948dfc777a4">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-10.0.1_13156a0835deb54f899dcdf3172ec9cae4184efe/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.0.0_731fa0548f349e18f39964218aacadcc0c80a631/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-10.0.1_9f6fa6b2d3ba3b48782735c6a07719a90ae68241/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_efdf91e21b2ac734810a92c6a30d6649cb2b1c94/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="4b17463c814bdc562fb0392fa3494063623a0904">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-messaging-10.0.1_82dad4c14fc07c1cdea4283ede30bf31bf7b23b1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-10.0.1_a65b265d9873913700268082f85141085df2248e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e96c6974cf924e7ee3b230e6847d5731423388c9">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-base-10.0.1_9e4e6176ee2e3e67ef32b045067e199195353191/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ba6aa5e69ef31dee57208125323cee958fc67565">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-vision-10.0.1_00a6cf3771438e446d3363454e09c3519ee5d503/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="2d5d113b0352ab60946fc44c518cf68fd26cbb79">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wallet-10.0.1_010cbb49e0a2d1492c109d90d30ce2059773b63a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-10.0.1_bb5c63593d9677b15dafd639fa019f12e9b4a63a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a48dc0b148059764d32500be558702d5ff932058">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-identity-10.0.1_540823e4a50706ac0c60d920db658f520c9841cf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fc29308a7a8f6d4407b34634eb48fb8b817f9b23">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.0.0_ef70a026b6f09ed7d1aba94b9f1ac8e74d87e551/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-v4-impl/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f23ad0f8e58713ff4b55f61c0bbde3830378347c">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-v4-impl-10.0.1_ce0a2f61654459a81af454cb31bf067d0d6983bc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-appindexing/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ae80d328a8548b4610ead6c624bab8c6a6984f5b">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-appindexing-10.0.1_1bd592b096b705ddbdaf2f47b68342cc09c24bd7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-10.0.1_82dfadd1e9408af65b8848a0d9652dbf4b3fe6ce/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="971509bbe30bb7b971fc1c49d7b23d0d818830ac">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-10.0.1_bba63b45f98b0636445e4583dc84266e5442f592/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-10.0.1_a16bb54c78420d87b71004f6a02d2e2ddc6715a0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="771267c5b0c7a5b348d3205dcfa1f871af7e0177">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-10.0.1_cc2e19a5f18305d8e05d93c21d3405c738a3af36/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8f128aeeb7e31271b28a7adb9dac1f3a6ed9f5e7">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-10.0.1_48ea323bff296b1afee53d2d0cd668bfa26ef622/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e2185aff89caeb337b1ffc36d5e525d8318e7cfe">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-10.0.1_1fdee05bce1025170d0cec4673f6378f64ff5453/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6bb5d347ebc0c6ef3c83a905222a688da5d2f7b4">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-iid-10.0.1_73cc30652ad042601ba07b4a569b450644c43d0d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-10.0.1_9e1f373008c38a591f8cc09246b58c52e4eb050c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="27777b3cad3c20b1acab19f6e37fe3e03371bf6e">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-10.0.1_3fdd857163a490e428c8e02d43567df3b9d45c48/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.0.0_731fa0548f349e18f39964218aacadcc0c80a631/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gass/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="57c2eceb8548de84509d1ebc293fedec53231f6c">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gass-10.0.1_5702e843a16d7c127b4c062694ed0481b1aa0c55/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="df1cb17511aabbb63264a0024949d1e42502a512">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-framework-10.0.1_94cda25e9e287cbed66db541e5f8821bc03d9514/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-10.0.1_80658d60f56915c04b183a39a1dee3b7e79b3417/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-config/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ffc15e965a9e8c28f24455eedd4cac215c45d1fc">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-config-10.0.1_4bfcff83174dd22334f4bc56621879178470bf8f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c6e1f361e9d61aece9dac39b77fcc98a337a144d">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-nearby-10.0.1_33e76a2ee3e1c652fff06eb3bc037a2e9fbe19fb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_efdf91e21b2ac734810a92c6a30d6649cb2b1c94/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.0.0_808e90bda0e285306f4a7c8617738fb5b47ebbf5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="dd39827d2067497e60e21da48a7926000b6d4b0c">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-10.0.1_f9a560a49b8c2ab857549a31ab180d91a70fde2b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-10.0.1_9f6fa6b2d3ba3b48782735c6a07719a90ae68241/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ba6aa5e69ef31dee57208125323cee958fc67565">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-vision-10.0.1_00a6cf3771438e446d3363454e09c3519ee5d503/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="4b17463c814bdc562fb0392fa3494063623a0904">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-messaging-10.0.1_82dad4c14fc07c1cdea4283ede30bf31bf7b23b1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-awareness/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="4385ccc0a88b33d182a836eadb47be55c8eb1107">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-awareness-10.0.1_e2a8b9d8cd6379c7cca965c5bd73ec824a3b81c3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="39907d5c8f5902fffef30160ca7447c93b82405c">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appinvite-10.0.1_d521cea0463423608290c8d3123089f264b5a894/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="408a599ac77cd17fe8e8919326bec617b3d005bd">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wearable-10.0.1_f23133f08035206bce93c720ed1b19dfc6b99508/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8308ed003522a2ee8958311afcc4cfd0470377cd">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gcm-10.0.1_11d9c918f50e5ba2a309389987c578d3021a3c43/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e96c6974cf924e7ee3b230e6847d5731423388c9">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-base-10.0.1_9e4e6176ee2e3e67ef32b045067e199195353191/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-clearcut/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="1d193729baf37df3d902a423291423a0df7e3779">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-clearcut-10.0.1_afc41d6fde37a982b12ff962b1cd1f4a18cd85a8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="028f8255cb977b29cdffbfcf05caa0459686120c">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-drive-10.0.1_7ebae619732b08720a9320c25925bf87cf2b2de6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8f128aeeb7e31271b28a7adb9dac1f3a6ed9f5e7">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-10.0.1_48ea323bff296b1afee53d2d0cd668bfa26ef622/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.0.0_6e9c682a0c95e5c9c06ce8ee3c817adcf5ccb9de/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="1e11c68fec92a17c84dd8d1dd80e74c4e67b12e2">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-games-10.0.1_bd84a68588eec4041828d3139407d6eff2992f4c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-mediarouter-v7-24.0.0_c0677563c7261ab0136234a2711c586dedc4ea0a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-10.0.1_3712db5d9b68a6f682e5113a427305f63c27f681/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="771267c5b0c7a5b348d3205dcfa1f871af7e0177">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-10.0.1_cc2e19a5f18305d8e05d93c21d3405c738a3af36/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="27777b3cad3c20b1acab19f6e37fe3e03371bf6e">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-10.0.1_3fdd857163a490e428c8e02d43567df3b9d45c48/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics-impl/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e871881b36b32e6bfd271a830c6eeb54ff0fc185">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-impl-10.0.1_2adf4620fb242e3985abce3172e0febc704a799c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b955cb3a1ad6f1b6ff728ce1e0cd592c1717b440">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-lite-10.0.1_a4d14031fc10f925c58096cc3b31e9c4abfb07fa/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="92c871a22463a247e8a77a9f3fd231c278788c4a">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-panorama-10.0.1_78ea952fbe892af51a42082460860004fc011adb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d0460bf07cc3657e0be518ca01c174493951c6b8">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-10.0.1_1d129542d54ae2ed842f0b3aa692c276ccf46390/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.0.0_e6e54132ca00da0974c1a94a8e3c9976dc6c1fc1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.0.0_808e90bda0e285306f4a7c8617738fb5b47ebbf5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gass/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="57c2eceb8548de84509d1ebc293fedec53231f6c">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gass-10.0.1_5702e843a16d7c127b4c062694ed0481b1aa0c55/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c6e1f361e9d61aece9dac39b77fcc98a337a144d">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-nearby-10.0.1_33e76a2ee3e1c652fff06eb3bc037a2e9fbe19fb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="39907d5c8f5902fffef30160ca7447c93b82405c">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appinvite-10.0.1_d521cea0463423608290c8d3123089f264b5a894/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-clearcut/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="1d193729baf37df3d902a423291423a0df7e3779">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-clearcut-10.0.1_afc41d6fde37a982b12ff962b1cd1f4a18cd85a8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-api/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b1df8fa3d372a27e4e969ce00b00689ee1eed031">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-api-10.0.1_634003cd4e72afd612b4a613d873a90fa440147a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="408a599ac77cd17fe8e8919326bec617b3d005bd">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wearable-10.0.1_f23133f08035206bce93c720ed1b19dfc6b99508/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-crash/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="de29a39f9260f88151b1ef453140e71c76b6c415">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-crash-10.0.1_2f00d7414a387044f20531f5d0b4cd99929e3b58/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="028f8255cb977b29cdffbfcf05caa0459686120c">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-drive-10.0.1_7ebae619732b08720a9320c25925bf87cf2b2de6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-10.0.1_9e1f373008c38a591f8cc09246b58c52e4eb050c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-awareness/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="4385ccc0a88b33d182a836eadb47be55c8eb1107">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-awareness-10.0.1_e2a8b9d8cd6379c7cca965c5bd73ec824a3b81c3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-instantapps/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="45305e6af414dab5aba6c3225081c2f15c3bdd1e">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-instantapps-10.0.1_30948ebf6ea3d52f60bfe4f1fa9820c82187b8a6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-places/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f3e51e9c5233b8897f61e08a6a27bc36283c2724">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-places-10.0.1_6c07b10f1022b2ecde1937d29dbdc7e6cc16a66d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="894922f67adeaaef51f077a29e315da21a3382d3">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.0.0_11cbdff1db65583ba99d5aebf46eaef5cb6045bb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f6cf557be4dbd0282ea2388633e5378634423226">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-safetynet-10.0.1_6973422f295f44f59289984e90f762df637ffacc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="1e11c68fec92a17c84dd8d1dd80e74c4e67b12e2">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-games-10.0.1_bd84a68588eec4041828d3139407d6eff2992f4c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
+        <dex dex="/Users/lindsayherron/Desktop/MedAdhereSolutions/PatientCheckup/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.0.0_6e9c682a0c95e5c9c06ce8ee3c817adcf5ccb9de/classes.dex" />
+    </item>
+
+</items>
