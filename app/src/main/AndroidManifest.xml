@@ -16,6 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RePage" />
+        <activity android:name=".Reload" />
+        <activity android:name=".Refill"></activity>
     </application>
 
 </manifest>
