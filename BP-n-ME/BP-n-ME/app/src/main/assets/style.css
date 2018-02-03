@@ -1,0 +1,27 @@
+*{ margin:0px; padding:0px;}
+img{ max-width:100%; height:auto;}
+ .LeftMrgn li {
+    
+    padding: 10px;
+    text-align: justify;
+   margin-left: 25px;
+}
+}
+.HeadingSecT {
+   font-size: 20px;
+    text-align: justify;
+    margin-left: 10px;
+}
+
+.PrtStyle {
+    padding: 10px;
+	text-align: justify;
+
+    text-transform: capitalize;
+}
+.HeadingSecT {
+    margin-left: 10px;
+}
+.wraper {
+    padding: 20px;
+  }

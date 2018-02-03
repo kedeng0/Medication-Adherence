@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_settings"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.joelclarke.snakeforandroid.Settings"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+
+
+    <TextView
+        android:layout_weight="0.8"
+        android:textSize="40dp"
+        android:textColor="@color/writing"
+        android:gravity="center"
+        android:text="Settings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="0.1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_weight="0.85"
+            android:paddingBottom="20dp"
+            android:paddingTop="30dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/speed"
+                android:textSize="25dp"
+                android:textColor="@color/writing"
+                android:gravity="center"
+                android:text="Difficulty"
+                android:layout_weight="0.7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:shadowRadius="20"
+                android:shadowColor="@color/writing"
+                android:textColor="#ffffff"
+                android:id="@+id/easy"
+                android:text="easy"
+                android:background="@null"
+                android:layout_weight="0.8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <Button
+                android:shadowRadius="20"
+                android:shadowColor="@color/writing"
+                android:textColor="#ffffff"
+                android:id="@+id/medium"
+                android:text="medium"
+                android:background="@null"
+                android:layout_weight="0.8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <Button
+                android:shadowRadius="20"
+                android:shadowColor="@color/writing"
+                android:textColor="#ffffff"
+                android:id="@+id/hard"
+                android:text="hard"
+                android:background="@null"
+                android:layout_weight="0.8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <TextView
+            android:padding="5dp"
+            android:gravity="center"
+            android:textSize="25dp"
+            android:textColor="@color/writing"
+            android:text="Background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_weight="0.9"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/green_back"
+                    android:background="@drawable/green_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="5dp"
+                android:layout_height="match_parent"></LinearLayout>
+            <LinearLayout
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/red_back"
+                    android:background="@drawable/red_button"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="5dp"
+                android:layout_height="match_parent"></LinearLayout>
+            <LinearLayout
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:background="@drawable/blue_button"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/blue_back" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="5dp"
+                android:layout_height="match_parent"></LinearLayout>
+            <LinearLayout
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/yellow_back"
+                    android:background="@drawable/yellow_button"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center|top"
+            android:orientation="vertical"
+            android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:padding="10dp"
+                android:layout_weight="0"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                android:textColor="@color/writing"
+                android:text="Clear Highscore Table?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:layout_weight="0.2"
+                android:text="Clear!"
+                android:textColor="@color/writing"
+                android:background="@drawable/edittext_shape"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/clear_scores" />
+            <TextView
+                android:paddingTop="20dp"
+                android:paddingBottom="10dp"
+                android:layout_weight="0"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/writing"
+                android:text="Clear Achievements?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:layout_weight="0.2"
+                android:text="Clear!"
+                android:textColor="@color/writing"
+                android:background="@drawable/edittext_shape"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/clear_achievements" />
+            <TextView
+                android:textSize="18sp"
+                android:paddingTop="15dp"
+                android:paddingBottom="5dp"
+                android:textColor="@color/writing"
+                android:text="voice commands?"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ToggleButton
+                android:layout_weight="0.2"
+                android:textColor="@color/writing"
+                android:background="@drawable/edittext_shape"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/voice_toggle" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"></LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

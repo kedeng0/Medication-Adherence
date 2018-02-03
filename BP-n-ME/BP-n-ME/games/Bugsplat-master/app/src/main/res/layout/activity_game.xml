@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/flowerback">
+
+    <TextView
+    android:id="@+id/gameText"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+     />
+    <TextView
+        android:id="@+id/timeText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dip"
+        android:layout_marginLeft= "260dp"
+        android:text = "2:00"
+        android:textSize="50dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+       />
+    <TextView
+        android:id="@+id/timeelapsedText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        />
+
+
+        <ImageButton
+            android:id="@+id/viewimage"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:layout_marginTop="0dip"
+            android:layout_marginLeft="200dp"
+            android:src="@drawable/beeplay"
+            android:background="@null"
+            />
+        <ImageButton
+            android:id="@+id/viewimage2"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:layout_marginTop="-20dip"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/beeplay"
+            android:background="@null"
+
+            />
+        <ImageButton
+            android:id="@+id/viewimage3"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:layout_marginTop="30dip"
+            android:layout_marginLeft="200dp"
+            android:src="@drawable/beeplay"
+            android:background="@null"
+            />
+        <ImageButton
+            android:id="@+id/viewimage4"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:layout_marginTop="-10dip"
+            android:layout_marginLeft="100dp"
+            android:src="@drawable/beeplay"
+            android:background="@null"
+            />
+    <ImageButton
+        android:id="@+id/viewimage5"
+        android:layout_height="100dp"
+        android:layout_width="100dp"
+        android:layout_marginTop="-250dip"
+        android:layout_marginLeft="100dp"
+        android:src="@drawable/beeplay"
+        android:background="@null"
+        />
+    </LinearLayout>

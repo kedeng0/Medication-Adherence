@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_achievements"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.joelclarke.snakeforandroid.Achievements"
+    android:background="@color/colorPrimary">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:paddingBottom="40dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:padding="10dp"
+                android:gravity="center"
+                android:textColor="@color/writing"
+                android:textSize="35sp"
+                android:text="Achievements"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <TableLayout
+                android:stretchColumns="*"
+                android:layout_weight="0.2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableRow
+                    android:layout_width="0dp"
+                    android:paddingBottom="10dp">
+                    <TextView
+                        android:textSize="25sp"
+                        android:layout_column="0"
+                        android:padding="10dp"
+                        android:textColor="@color/writing"
+                        android:text="Title"
+                        android:textStyle="normal|bold" />
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_column="2"
+                        android:padding="10dp"
+                        android:text=""
+                        android:textStyle="normal|bold" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="0dp">
+
+                    <TextView
+                        android:textSize="18sp"
+                        android:layout_column="0"
+                        android:padding="10dp"
+                        android:textColor="@color/not_achieved"
+                        android:text="New Gamer"
+                        android:id="@+id/new_gamer_title" />
+                    <TextView
+                        android:id="@+id/new_gamer_exp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:textSize="16sp"
+                        android:layout_column="2"
+                        android:padding="10dp"
+                        android:textColor="@color/not_achieved"
+                        android:text="start and play a new game for the first time" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="0dp">
+
+                    <TextView
+                        android:textSize="18sp"
+                        android:layout_column="0"
+                        android:padding="10dp"
+                        android:textColor="@color/not_achieved"
+                        android:text="On the Scoreboard"
+                        android:id="@+id/on_the_scoreboard_title" />
+
+                    <TextView
+                        android:id="@+id/on_the_scoreboard_exp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:textSize="16sp"
+                        android:layout_column="2"
+                        android:padding="10dp"
+                        android:textColor="@color/not_achieved"
+                        android:text="get 10 scores for the scoreboard" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="0dp">
+
+                    <TextView
+                        android:textSize="18sp"
+                        android:layout_column="0"
+                        android:padding="10dp"
+                        android:textColor="@color/not_achieved"
+                        android:text="Mile High Club"
+                        android:id="@+id/mile_high_club_title" />
+
+                    <TextView
+                        android:id="@+id/mile_high_club_exp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:textSize="16sp"
+                        android:layout_column="2"
+                        android:padding="10dp"
+                        android:textColor="@color/not_achieved"
+                        android:text="get over 1600 points in one game" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="0dp">
+                    <TextView
+                        android:id="@+id/challenger_title"
+                        android:textSize="18sp"
+                        android:layout_column="0"
+                        android:padding="10dp"
+                        android:textColor="@color/not_achieved"
+                        android:text="Challenger" />
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_column="2"
+                        android:padding="10dp"
+                        android:textColor="@color/not_achieved"
+                        android:text="have 3 or more different names in the Highscores list"
+                        android:id="@+id/challenger_exp" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="0dp">
+                    <TextView
+                        android:id="@+id/oooops_title"
+                        android:textSize="18sp"
+                        android:layout_column="0"
+                        android:padding="10dp"
+                        android:textColor="@color/not_achieved"
+                        android:text="Oooops!" />
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:textSize="16sp"
+                        android:layout_column="2"
+                        android:padding="10dp"
+                        android:textColor="@color/not_achieved"
+                        android:text="die on 0 points"
+                        android:id="@+id/oooops_exp" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="0dp">
+                    <TextView
+                        android:id="@+id/how_grand_title"
+                        android:textSize="18sp"
+                        android:layout_column="0"
+                        android:padding="10dp"
+                        android:textColor="@color/not_achieved"
+                        android:text="How Grand" />
+
+                    <TextView
+                        android:id="@+id/how_grand_exp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:textSize="16sp"
+                        android:layout_column="2"
+                        android:padding="10dp"
+                        android:textColor="@color/not_achieved"
+                        android:text="score over 1000" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="0dp">
+
+                    <TextView
+                        android:textSize="18sp"
+                        android:layout_column="0"
+                        android:padding="10dp"
+                        android:textColor="@color/not_achieved"
+                        android:text="Apple of Eden"
+                        android:id="@+id/apple_of_eden_title" />
+
+                    <TextView
+                        android:id="@+id/apple_of_eden_exp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:textSize="16sp"
+                        android:layout_column="2"
+                        android:padding="10dp"
+                        android:textColor="@color/not_achieved"
+                        android:text="Convince Adam and Eve to eat the apple" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="0dp">
+                    <TextView
+                        android:id="@+id/hungry_snake_title"
+                        android:textSize="18sp"
+                        android:layout_column="0"
+                        android:padding="10dp"
+                        android:textColor="@color/not_achieved"
+                        android:text="Hungry Hungry \nSnakes" />
+
+                    <TextView
+                        android:id="@+id/hungry_snake_exp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:textSize="16sp"
+                        android:layout_column="2"
+                        android:padding="10dp"
+                        android:textColor="@color/not_achieved"
+                        android:text="get over 2000 points in one game" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="0dp">
+                    <TextView
+                        android:id="@+id/snack_attack_title"
+                        android:textSize="18sp"
+                        android:layout_column="0"
+                        android:padding="10dp"
+                        android:textColor="@color/not_achieved"
+                        android:text="The Hunger Games" />
+
+                    <TextView
+                        android:id="@+id/snack_attack_exp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:textSize="16sp"
+                        android:layout_column="2"
+                        android:padding="10dp"
+                        android:textColor="@color/not_achieved"
+                        android:text="get over 5000 points in one game" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="0dp">
+                    <TextView
+                        android:id="@+id/three_course_meal_title"
+                        android:textSize="18sp"
+                        android:layout_column="0"
+                        android:padding="10dp"
+                        android:textColor="@color/not_achieved"
+                        android:text="3 Course Meal" />
+
+                    <TextView
+                        android:id="@+id/three_course_meal_exp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:textSize="16sp"
+                        android:layout_column="2"
+                        android:padding="10dp"
+                        android:textColor="@color/not_achieved"
+                        android:text="get over 3000 points in one game" />
+                </TableRow>
+
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

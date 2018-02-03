@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#89bd08</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="writing">#000000</color>
+    <color name="no_achieve">#545454</color>
+    <color name="red_background">#ff0000</color>
+    <color name="blue_background">#33e7ff</color>
+    <color name="yellow_background">#ffd900</color>
+    <color name="snaketail">#006b18</color>
+    <color name="snakeHead">#00400e</color>
+    <color name="not_achieved">#7c7c7c</color>
+</resources>

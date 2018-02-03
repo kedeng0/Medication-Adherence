@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rL1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorAccent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="STOFHLA Survey"
+            android:textColor="#FFF"
+            android:textSize="19sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rL1"
+        android:orientation="vertical"
+        android:paddingBottom="8dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Questions"
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+        <!--<ScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="98dp"
+            android:scrollbarThumbVertical="@android:color/transparent" >-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_question_border"
+            android:orientation="vertical"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/q1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="1"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="2"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q3"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="3"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q4"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="4"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q5"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="5"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q6"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="6"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q7"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="7"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q8"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="8"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q9"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="9"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/q10"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="10"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q11"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="11"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q12"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="12"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q13"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="13"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q14"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="14"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q15"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="15"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q16"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="16"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q17"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="17"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q18"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="18"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+            </LinearLayout>
+            <!--<LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:weightSum="6" >
+
+
+            </LinearLayout>-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/q19"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="19"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q20"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="20"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q21"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="21"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q22"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="22"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q23"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="23"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q24"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="24"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q25"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="25"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q26"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="26"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q27"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="27"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/q28"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="28"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q29"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="29"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q30"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="30"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q31"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="31"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q32"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="32"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q33"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="33"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q34"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="34"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q35"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="35"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/q36"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/question_button_border"
+                    android:clickable="true"
+                    android:text="36"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+            </LinearLayout>
+            <!--<LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:weightSum="6" >
+
+
+            </LinearLayout>-->
+        </LinearLayout>
+        <!-- </ScrollView>-->
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ll2"
+        android:layout_below="@+id/ll1"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp">
+
+            <TextView
+                android:id="@+id/questionView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/click_question"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:id="@+id/radiogroup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="16dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp">
+
+        <!--<ImageView
+            android:id="@+id/iv_prev"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1.1"
+            android:src="@drawable/left_arrow" />-->
+
+        <TextView
+            android:id="@+id/tv_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt_round_blue"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="SUBMIT"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt_round_blue"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="NEXT"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!--<ImageView
+            android:id="@+id/iv_next"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1.1"
+            android:src="@drawable/right_arrow" />-->
+    </LinearLayout>
+</RelativeLayout>

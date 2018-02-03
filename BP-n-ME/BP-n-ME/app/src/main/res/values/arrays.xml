@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string-array name="bloodPressureGoal">
+        <item>Less than 120/80</item>
+        <item>Less than 130/80</item>
+        <item>Less than 140/90</item>
+        <item>Less than 150/90</item>
+    </string-array>
+
+    <string-array name="frequency">
+        <item>Daily</item>
+        <item>Twice daily</item>
+        <item>Three times daily</item>
+        <item>Four times per day</item>
+    </string-array>
+
+
+    <string-array name="clinicNames">
+        <item>AMC Sheffield Clinic</item>
+        <item>AMC VA Highlands Clinic</item>
+        <item>Emory Clinic</item>
+        <item>Grady Clinic</item>
+    </string-array>
+    
+    <string-array name="DailySymptomSurvey">
+        <item index="0">Coughing?_Yes_No</item>
+        <item index="1">Wheezing?_Yes_No</item>
+        <item index="2">Chest tightness?_Yes_No</item>
+        <item index="3">Increased swelling?_Yes_No</item>
+        <item index="4">Weight gain?_Yes_No</item>
+        <item index="5">Shortness of breath?_Yes_No</item>
+        <item index="6">A decrease in your ability to maintain your normal activity level?_Yes_No</item>
+    </string-array>
+
+    <string-array name="DemographicsSurvey">
+        <item index="0">Age?_18&#8211;30_31&#8211;50_51&#8211;75_Greater than 75</item>
+        <item index="1">Gender?_Male_Female</item>
+        <item index="2">Race?_African American_Caucasian_Asian_Latino_Other</item>
+        <item index="3">Medical Conditions? (Select all that apply)_Heart Failure_Chronic Kidney Disease_Dyslipidemia_History of Heart Attack_History of Stroke_Aneurysm_Type 2 Diabetes</item>
+        <item index="4">Marital Status?_Single_Married_Divorced/Separated_Widowed</item>
+        <item index="5">Insurance Status?_Uninsured_Government (Medicare)_Government (Medicaid)_Health Insurance Marketplace_Private</item>
+        <item index="6">Annual Income_Less than $10,000_$10,000 - $29,999_$30,000 - $49,000_$50,000 - $74,999_More than $75,000</item>
+    </string-array>
+
+    <string-array name="DemographicsSurveyAnswers">
+        <item index="0">0</item>
+        <item index="1">0</item>
+        <item index="2">0</item>
+        <item index="3">0</item>
+        <item index="4">0</item>
+        <item index="5">0</item>
+        <item index="6">0</item>
+    </string-array>
+
+    <string-array name="DemographicsSurveyAnswersNA">
+        <item index="0">0</item>
+        <item index="1">0</item>
+        <item index="2">0</item>
+        <item index="3">0</item>
+        <item index="4">0</item>
+        <item index="5">0</item>
+        <item index="6">0</item>
+    </string-array>
+
+    <string-array name="LifestylePositiveMessagesArray">
+        <item index="0">Exercising and being physically active is a great way to maintain a healthy lifestyle. Keep up the great work!</item>
+        <item index="1">Not using cigarettes or other forms of tobacco is an important component of a healthy lifestyle.  You are making good decisions for your health!</item>
+        <item index="2">Speaking to a healthcare provider, group or individual counseling, and nicotine replacement therapy have been shown to help patients quit smoking. Please contact your healthcare practitioner, pharmacist, or call the Georgia Tobacco Quit Line at 18772707867 if you need additional support. </item>
+        <item index="3">Speaking to a healthcare provider, group or individual counseling, and nicotine replacement therapies have been shown to help patients quit smoking. Please contact your healthcare practitioner, pharmacist, or call the Georgia Tobacco Quit Line at 18772707867 if you need additional support. </item>
+        <item index="4">Limiting alcohol is an important component of a healthy lifestyle.  You are making good decisions for your health!</item>
+        <item index="5">Medications are available to help you quit drinking alcohol. Please contact your healthcare practitioner or pharmacist if you would like to discuss your options.</item>
+        <item index="6">Medications are available to help you reduce the number of alcoholic beverages you drink. Please contact your healthcare practitioner or pharmacist if you would like to discuss your options.</item>
+        <item index="7">Nice job avoiding salt in your diet.  This will help you lower your blood pressure and positively impact your health in other ways as well.</item>
+    </string-array>
+
+    <string-array name="LifestyleNegativeMessagesArray">
+        <item index="0">The American Heart Association recommends adults exercise 30 minutes per day, five days a week to lower the risk of heart disease and stroke. Recommended activity includes walking, jogging, swimming, and biking among other activities. If you are unable to exercise for 30 minutes, try to exercise for 5 or 10 minutes at a time a couple times a day. </item>
+        <item index="1">Quitting smoking lowers the risk of lung cancer, high blood pressure, heart disease, stroke, peripheral heart disease, and many other health issues. Your health may improve if you quit smoking no matter how long you have smoked. Please contact the Georgia Tobacco Quit Line at 18772707867 for free private counseling and free nicotine replacement therapy. </item>
+        <item index="2">If you decide you are ready to quit smoking, please contact your healthcare practitioner, pharmacist, or the Georgia Tobacco Quit Line at 18772707867.</item>
+        <item index="3">If you decide you are ready to reduce the number of cigarettes you smoke please contact your healthcare practitioner, pharmacist, or the Georgia Tobacco Quit Line at 18772707867. </item>
+        <item index="4">Drinking too much alcohol increases alcohol dependence, risk of liver damage, high blood pressure, obesity, stroke and accidents. The American Heart Association recommends women drink no more than one drink per day and men drink no more than two drinks per day. Please contact your healthcare practitioner or pharmacist if you need help reducing then amount of alcohol you drink. </item>
+        <item index="5">If you quit drinking, you may avoid short and long term health risks associated with drinking such as alcohol poisoning, risky sexual behaviors, high blood pressure, and stroke. If you decide to quit smoking contact your healthcare practitioner or pharmacist for help. </item>
+        <item index="6">If you reduce the number of alcoholic beverages you drink, you may avoid short and long term health risks associated with drinking such as alcohol poisoning, risky sexual behaviors, high blood pressure, and stroke. The American Heart Association recommends women drink no more than one drink per day and men drink no more than two drinks per day.  If you need help reducing then number of alcoholic beverages you drink contact your healthcare practitioner or pharmacist for help. </item>
+        <item index="7">A low salt diet can lower your blood pressure and reduce the risk of your body holding on to too much fluid which can cause swelling of the legs or feet and other health problems. Salt, also known as sodium, is in many of the frozen, boxed, bagged, and canned foods available in the grocery store as well as table salt. A common goal for a low sodium diet is eating less than 2,000 milligrams (mgs) per day which is about one teaspoon of table salt.  Low sodium foods should have 140 mgs or less of sodium per serving. Review the food labels on your food to make your choice of which foods you should eat. Please contact your healthcare practitioner or pharmacist if you would like to learn more about low salt diets. </item>
+    </string-array>
+
+
+    <string-array name="LifestyleSurvey">
+        <item index="0">Do you exercise (ex. walking, jogging, running, chair exercises, swimming, or lifting weights)?_Never_1–2 times per month or less_3-4 times per month_2-4 times per week_5 times per week or more</item>
+        <item index="1">Do you smoke cigarettes or use smokeless tobacco products?_Never_1-2 packs/cans per month or less_3-4 packs/cans per month_2-4 packs/cans per week_5 packs/cans per week or more</item>
+        <item index="2">Do you plan on quitting smoking cigarettes or using smokeless tobacco products in the next 2 weeks?_Yes_No</item>
+        <item index="3">Do you plan on reducing the number of cigarettes smoked or frequency of smokeless tobacco product use in the next 2 weeks?_Yes_No</item>
+        <item index="4">Do you drink alcohol?_Never_7 times per month or less_2-4 times a week_5-7 times per week_More than once per day</item>
+        <item index="5">Do you plan on quitting drinking alcohol in the next 2 weeks?_Yes_No</item>
+        <item index="6">Do you plan on reducing the number of alcoholic beverages in the next 2 weeks?_Yes_No</item>
+        <item index="7">Do you follow a low salt diet?_Never_1 meal per week or less_2-6 meals per week_1-2 meals per day_Every meal</item>
+    </string-array>
+
+    <string-array name="LifestyleSurveyAnswers">
+        <item index="0">3_4</item>
+        <item index="1">0</item>
+        <item index="2">2</item>
+        <item index="3">2</item>
+        <item index="4">0</item>
+        <item index="5">2</item>
+        <item index="6">2</item>
+        <item index="7">4</item>
+    </string-array>
+
+    <string-array name="LifestyleSurveyAnswersNA">
+        <item index="0">0</item>
+        <item index="1">0</item>
+        <item index="2">1</item>
+        <item index="3">1</item>
+        <item index="4">0</item>
+        <item index="5">1</item>
+        <item index="6">1</item>
+        <item index="7">0</item>
+    </string-array>
+
+    <string-array name="LiteracySurveyExample">
+        <item index="0">Option, (?), has been checked in Question 1, then () was checked in Quesiton 2._Option 1_Option 2_Option 3_Option 4</item>
+        <item index="1">Option, (), has been checked in Question 1, then (?) was checked in Quesiton 2._Option 1_Option 2_Option 3_Option 4</item>
+    </string-array>
+
+
+    <string-array name="LitExampleSurveyAnswers">
+        <item index="0">0</item>
+        <item index="1">0</item>
+    </string-array>
+
+    <string-array name="LitExampleSurveyAnswersNA">
+        <item index="0">0</item>
+        <item index="1">0</item>
+    </string-array>
+
+
+    <string-array name="LiteracySurvey">
+        <item index="0">Your doctor has sent you to have a (?) X-ray._stomach_diabetes_stitches_germs</item>
+        <item index="1">You must have an (?) stomach when you come for ()._asthma_empty_incest_anemia</item>
+        <item index="2">You must have an () stomach when you come for (?)._is_am_if_it</item>
+        <item index="3">The X-ray will (?) from 1 to 3 () to do._take_view_talk_look</item>
+        <item index="4">The X-ray will () from 1 to 3 (?) to do._beds_brains_hours_diets</item>
+        <item index="5">For supper have only a (?) snack of fruit, () and jelly, with coffee or tea._little_broth_attack_nausea</item>
+        <item index="6">For supper have only a () snack of fruit, (?) and jelly, with coffee or tea._toes_throat_toast_thigh</item>
+        <item index="7">After (?), you must not () or drink anything at () until after you have () the X-ray._minute_midnight_during_before</item>
+        <item index="8">After (), you must not (?) or drink anything at () until after you have () the X-ray._easy_ate_drank_eat</item>
+        <item index="9">After (), you must not () or drink anything at (?) until after you have () the X-ray._ill_all_each_any</item>
+        <item index="10">After (), you must not () or drink anything at () until after you have (?) the X-ray._are_has_had_was</item>
+        <item index="11">Do not eat (?)._appointment_walk-in_breakfast_clinic</item>
+        <item index="12">Do not (?), even ()._drive_drink_dress_dose</item>
+        <item index="13">Do not (), even (?)._heart_breath_water_cancer</item>
+        <item index="14">If you have any (?), call the X-ray () at 6164500._answers_exercises_tracts_questions</item>
+        <item index="15">If you have any (), call the X-ray (?) at 6164500._Department_Sprain_Pharmacy_Toothache</item>
+        <item index="16">I agree to give correct information to (?) if I can receive Medicaid._hair_salt_see_ache</item>
+        <item index="17">I (?) to provide the county information to () any statements given in this () and hereby give permission to the () to get such proof._agree_probe_send_gain</item>
+        <item index="18">I () to provide the county information to (?) any statements given in this () and hereby give permission to the () to get such proof._hide_risk_discharge_prove</item>
+        <item index="19">I () to provide the county information to () any statements given in this (?) and hereby give permission to the () to get such proof._emphysema_application_gallbladder_relationship</item>
+        <item index="20">I () to provide the county information to () any statements given in this () and hereby give permission to the (?) to get such proof._inflammation_religion_iron_county</item>
+        <item index="21">I (?) that for Medicaid I must report any () in my circumstances within () days of becoming () of the change._investigate_entertain_understand_establish</item>
+        <item index="22">I () that for Medicaid I must report any (?) in my circumstances within () days of becoming () of the change._changes_hormones_antacids_charges</item>
+        <item index="23">I () that for Medicaid I must report any () in my circumstances within (?) days of becoming () of the change._three_one_five_ten</item>
+        <item index="24">I () that for Medicaid I must report any () in my circumstances within () days of becoming (?) of the change._award_aware_away_await</item>
+        <item index="25">I understand (?) if I DO NOT like the () made on my case, I have the () to a fair hearing._thus_this_that_than</item>
+        <item index="26">I understand () if I DO NOT like the (?) made on my case, I have the () to a fair hearing._marital_occupation_adult_decision</item>
+        <item index="27">I understand () if I DO NOT like the () made on my case, I have the (?) to a fair hearing._bright_left_wrong_right</item>
+        <item index="28">I can (?) a hearing by writing or () the county where I applied._request_refuse_fail_mend</item>
+        <item index="29">I can () a hearing by writing or (?) the county where I applied._counting_reading_calling_smelling</item>
+        <item index="30">If you (?) TANF for any family (), you will have to () a different application form._wash_want_cover_tape</item>
+        <item index="31">If you () TANF for any family (?), you will have to () a different application form._member_history_weight_seatbelt</item>
+        <item index="32">If you () TANF for any family (), you will have to (?) a different application form._relax_break_inhale_sign</item>
+        <item index="33">(?), we will use the () on this form to determine your ()._Since_Whether_However_Because</item>
+        <item index="34">(), we will use the (?) on this form to determine your ()._lung_date_meal_pelvic</item>
+        <item index="35">(), we will use the () on this form to determine your (?)._hypoglycemia_eligibility_osteoporosis_schizophrenia</item>
+    </string-array>
+
+    <string-array name="LiteracySurveyAnswers">
+        <item index="0">0</item>
+        <item index="1">1</item>
+        <item index="2">3</item>
+        <item index="3">0</item>
+        <item index="4">2</item>
+        <item index="5">0</item>
+        <item index="6">2</item>
+        <item index="7">1</item>
+        <item index="8">3</item>
+        <item index="9">1</item>
+        <item index="10">2</item>
+        <item index="11">2</item>
+        <item index="12">1</item>
+        <item index="13">2</item>
+        <item index="14">3</item>
+        <item index="15">0</item>
+        <item index="16">2</item>
+        <item index="17">0</item>
+        <item index="18">3</item>
+        <item index="19">1</item>
+        <item index="20">3</item>
+        <item index="21">2</item>
+        <item index="22">0</item>
+        <item index="23">3</item>
+        <item index="24">1</item>
+        <item index="25">2</item>
+        <item index="26">3</item>
+        <item index="27">3</item>
+        <item index="28">0</item>
+        <item index="29">2</item>
+        <item index="30">1</item>
+        <item index="31">0</item>
+        <item index="32">3</item>
+        <item index="33">2</item>
+        <item index="34">1</item>
+        <item index="35">1</item>
+    </string-array>
+
+    <string-array name="LiteracySurveyAnswersNA">
+        <item index="0">0</item>
+        <item index="1">0</item>
+        <item index="2">0</item>
+        <item index="3">0</item>
+        <item index="4">0</item>
+        <item index="5">0</item>
+        <item index="6">0</item>
+        <item index="7">0</item>
+        <item index="8">0</item>
+        <item index="9">0</item>
+        <item index="10">0</item>
+        <item index="11">0</item>
+        <item index="12">0</item>
+        <item index="13">0</item>
+        <item index="14">0</item>
+        <item index="15">0</item>
+        <item index="16">0</item>
+        <item index="17">0</item>
+        <item index="18">0</item>
+        <item index="19">0</item>
+        <item index="20">0</item>
+        <item index="21">0</item>
+        <item index="22">0</item>
+        <item index="23">0</item>
+        <item index="24">0</item>
+        <item index="25">0</item>
+        <item index="26">0</item>
+        <item index="27">0</item>
+        <item index="28">0</item>
+        <item index="29">0</item>
+        <item index="30">0</item>
+        <item index="31">0</item>
+        <item index="32">0</item>
+        <item index="33">0</item>
+        <item index="34">0</item>
+        <item index="35">0</item>
+    </string-array>
+
+    <string-array name="AppSatisfactionSurvey">
+        <item index="0">Overall, I find this application useful._Strongly agree_Somewhat agree_Do not agree or disagree_Somewhat disagree_Strongly disagree</item>
+        <item index="1">I find the medication reminders useful._Strongly agree_Somewhat agree_Do not agree or disagree_Somewhat disagree_Strongly disagree</item>
+        <item index="2">I find the blood pressure log useful._Strongly agree_Somewhat agree_Do not agree or disagree_Somewhat disagree_Strongly disagree</item>
+        <!--<item index="3">I find the body weight log useful._Strongly agree_Somewhat agree_Do not agree or disagree_Somewhat disagree_Strongly disagree</item>-->
+        <item index="3">I find the medication utilization log useful._Strongly agree_Somewhat agree_Do not agree or disagree_Somewhat disagree_Strongly disagree</item>
+        <item index="4">I find the tips on how to stay healthy and adhere to my medication useful._Strongly agree_Somewhat agree_Do not agree or disagree_Somewhat disagree_Strongly disagree</item>
+        <item index="5">I find the call your pharmacist button useful._Strongly agree_Somewhat agree_Do not agree or disagree_Somewhat disagree_Strongly disagree</item>
+        <item index="6">How often do you use the feature: Blood Pressure Log_Never_Rarely_Sometimes_Often_Always</item>
+        <!--<item index="7">How often do you use the feature: Body Weight Log_Never_Rarely_Sometimes_Often_Always</item>-->
+        <item index="7">How often do you use the feature: Medication Reminders_Never_Rarely_Sometimes_Often_Always</item>
+        <item index="8">How often do you use the feature: Medication Utilization Log_Never_Rarely_Sometimes_Often_Always</item>
+        <item index="9">How often do you use the feature: Call Your Pharmacist Feature_Never_Rarely_Sometimes_Often_Always</item>
+        <item index="10">How would you rate the ease of the feature use: Blood Pressure Log_Very Easy_Easy_Moderate_Difficult_Very Difficult</item>
+        <!--<item index="11">How would you rate the ease of the feature use: Body Weight Log_Very Easy_Easy_Moderate_Difficult_Very Difficult</item>-->
+        <item index="11">How would you rate the ease of the feature use: Medication Reminders_Very Easy_Easy_Moderate_Difficult_Very Difficult</item>
+        <item index="12">How would you rate the ease of the feature use: Medication Utilization Log_Very Easy_Easy_Moderate_Difficult_Very Difficult</item>
+        <item index="13">How would you rate the ease of the feature use: Call Your Pharmacist Feature_Very Easy_Easy_Moderate_Difficult_Very Difficult</item>
+        <item index="14">How likely are you to recommend this app to someone else?_Not At All Likely_Slightly Likely_Moderately Likely_Very Likely_Completely</item>
+        <item index="15">What is your favorite feature of this application and why is it your favorite feature?_ans</item>
+        <item index="16">What is your least favorite feature of this application and why is it your least favorite feature?_ans</item>
+        <item index="17">What is your Android device version?_ans</item>  <!-- make, model, and-->
+    </string-array>
+
+
+    <string-array name="ArmsSurvey">
+        <item index="0">How often do you forget to take your medicine?_none of the time_some of the time_most of the time_all of the time</item>
+        <item index="1">How often do you decide not to take your medicine?_none of the time_some of the time_most of the time_all of the time</item>
+        <item index="2">How often do you forget to get prescriptions filled?_none of the time_some of the time_most of the time_all of the time</item>
+        <item index="3">How often do you run out of medicine?_none of the time_some of the time_most of the time_all of the time</item>
+        <item index="4">How often do you miss taking your medicine when you feel better?_none of the time_some of the time_most of the time_all of the time</item>
+        <item index="5">How often do you miss taking your medicine when you feel sick?_none of the time_some of the time_most of the time_all of the time</item>
+        <item index="6">How often do you plan ahead and refill your medicines before they run out?_none of the time_some of the time_most of the time_all of the time</item>
+    </string-array>
+
+    <string-array name="ArmsPositiveMessagesArray">
+        <item index="0">Even though you may not have any symptoms when your blood pressure is high, it is important to take your medication(s) as directed by your healthcare provider. Consider using a pill box, setting an alarm, using the alerts on this mobile application, or combining your pill taking with a routine task (for example: brushing your teeth or eating your meals) to help you remember to take your medication(s). High blood pressure increases the risk of heart disease and stroke which are two of the leading causes of death in America.</item>
+        <item index="1">Even though you may not have any symptoms when your blood pressure is high, it is important to take your medication(s) as directed by your healthcare provider. If you are having any problems with your medication(s) please contact your healthcare practitioner or pharmacist. Taking your blood pressure medication(s) lowers your risk of serious health conditions such as heart disease and stroke.</item>
+        <item index="2">High blood pressure increases the risk of heart disease and stroke which are two leading causes of death in the United States. Taking your blood pressure medication(s) lowers your risk of serious health conditions. Consider setting a reminder to call the pharmacy monthly or refilling a 60 or 90 day supply of your medication(s) if allowed by your insurance company. If you do not have insurance or drug costs is an issue, your pharmacist or healthcare provider may be able to provide you with access to payment assistant programs or recommend a cheaper option.</item>
+        <item index="3">Consider using a pill box to help track your medication(s). It also may be helpful to use a calendar, alarms, or the alerts in this mobile app to remind you when it is time for you to refill your medicine. Early refill or automatic prescription refill programs may be an option. Discuss these options with your pharmacist or healthcare provider. If you do not have insurance or drug costs is an issue, your pharmacist or healthcare provider may be able to provide you with access to payment assistant programs or recommend a cheaper option.</item>
+        <item index="4">Even though you may not have any symptoms when your blood pressure is high, it is important to take your medication(s) as directed by your healthcare provider. High blood pressure is often called a silent killer because there are not usually many symptoms with it. High blood pressure increases the risk of heart disease and stroke which are two of the leading causes of death in America.</item>
+        <item index="5">It is important that you continue taking your medication(s) as directed by your healthcare provider to lower your risk of the serious side effects associated with high blood pressure. Please contact your pharmacist or healthcare provider if you have any concerns or think your medication(s) may be making you feel sick.</item>
+        <item index="6">Consider using a pill box to help track your medication(s). It may also be helpful to use a calendar, alarms, or the alerts in this mobile app to remind you when it is time for you to refill your medicine. Early refill or automatic prescription refill programs may be an option. Discuss these options with your pharmacist or healthcare provider. If you do not have insurance or drug costs is an issue, your pharmacist or healthcare provider may be able to provide you with access to payment assistant prorams or recommend a cheaper option.</item>
+    </string-array>
+
+    <string-array name="ArmsNegativeMessagesArray">
+        <item index="0">It sounds like you are doing a great job remembering to take your medication(s). Keep up your hard work!</item>
+        <item index="1">Great! Please let your healthcare provider know if you have any problems with your medication(s).</item>
+        <item index="2">Great job! Keep it up!</item>
+        <item index="3">Great job remembering to refill your blood pressure medication(s)! Keep up the good work!</item>
+        <item index="4">Great job taking your medication(s) as prescribed. Your blood pressure medication(s) should help keep your blood pressure under control.</item>
+        <item index="5">Great job taking your medication(s) as prescribed.</item>
+        <item index="6">Great job! You are on the right track!</item>
+    </string-array>
+
+</resources>

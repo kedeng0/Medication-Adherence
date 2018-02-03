@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/mcalendar_mul"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/calendarbg"
+        app:mcv_arrowColor="@android:color/black"
+        app:mcv_calendarMode="month"
+        app:mcv_dateTextAppearance="@style/monthTextAppearance"
+        app:mcv_headerTextAppearance="@style/headerTextAppearance"
+        app:mcv_selectionColor="@color/appOrange"
+        app:mcv_showOtherDates="out_of_range"
+        app:mcv_tileHeight="35dp"
+        app:mcv_weekDayTextAppearance="@style/weekTextAppearancemember" />
+
+    <LinearLayout
+        android:id="@+id/nfcLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="8dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp" >
+
+        <ListView
+            android:id="@+id/medsname"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/medication_text"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp" />
+    </LinearLayout>
+</LinearLayout>

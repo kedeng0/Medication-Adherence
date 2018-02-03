@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">"Snake for Android "</string>
+    <string name="title_activity_achievements">Achievements</string>
+    <string name="large_text">
+        <p>"Hello and welcome to nostalgia in the 21st century!</p>\n\n<p>If you have not played snake before then do not worry it is very simple.</p>\n\n
+
+
+        <p><h>What is the Aim? </h>\n
+            &#8226;To try and eat as much food as possible\n
+            &#8226;To stay inside the walls of the game\n
+            &#8226;Do not eat yourself!\n
+            &#8226;Try and get the highest score possible\n
+            &#8226;Most importantly HAVE FUN!!\n
+        </p>
+
+        \n\n
+        <p><h>Controls</h>
+        \n
+        for the controls you have 2 options:\n
+        1. use the buttons provided\n
+        2. use voice commands (beware of the lag!!)\n\n
+
+        to use voice commands either say \"Up\", \"Down\" , \"Left\", or \"right\" \n\n
+        you can turn voice commands off in the settings.</p>
+
+    </string>
+    <string name="action_settings">Settings</string>
+</resources>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http:schemas.android.com/apk/res-auto"
+    xmlns:app2="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    tools:context="com.example.joelclarke.snakeforandroid.MainMenu">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_weight="0.8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Snake"
+            android:textColor="@color/writing"
+            android:textAlignment="center"
+            android:textSize="70sp"
+            android:layout_weight="0.3"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app2:srcCompat="@drawable/snake_icon"
+            android:id="@+id/imageView"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+
+
+    <Button
+        android:shadowRadius="2"
+        android:shadowColor="@color/no_achieve"
+        android:textColor="@color/writing"
+        android:text="New Game"
+        android:textSize="16sp"
+        android:background="@null"
+        android:layout_weight="0.9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/game_menu" />
+
+    <Button
+        android:shadowRadius="2"
+        android:textSize="16sp"
+        android:shadowColor="@color/no_achieve"
+        android:id="@+id/highscores_menu"
+        android:textColor="@color/writing"
+        android:text="Highscores"
+        android:background="@null"
+        android:layout_weight="0.9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <Button
+        android:textSize="16sp"
+        android:shadowRadius="2"
+        android:shadowColor="@color/no_achieve"
+        android:id="@+id/achievements_menu"
+        android:textColor="@color/writing"
+        android:text="Achievements"
+        android:background="@null"
+        android:layout_weight="0.9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <Button
+        android:textSize="16sp"
+        android:shadowRadius="2"
+        android:shadowColor="@color/no_achieve"
+        android:id="@+id/settings_menu"
+        android:textColor="@color/writing"
+        android:text="Settings"
+        android:background="@null"
+        android:layout_weight="0.9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <Button
+        android:textSize="16sp"
+        android:shadowRadius="2"
+        android:shadowColor="@color/no_achieve"
+        android:id="@+id/how_to_play"
+        android:textColor="@color/writing"
+        android:text="How to Play"
+        android:background="@null"
+        android:layout_weight="0.9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <Button
+        android:textSize="16sp"
+        android:shadowRadius="2"
+        android:shadowColor="@color/no_achieve"
+        android:id="@+id/exit_menu"
+        android:textColor="@color/writing"
+        android:text="Exit"
+        android:background="@null"
+        android:layout_weight="0.9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>

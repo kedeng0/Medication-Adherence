@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/newbackground"
+    >
+
+    <ImageView
+        android:id="@+id/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/buglogotransparent"
+       />
+    <ImageView
+        android:id="@+id/bug"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="330dip"
+        android:layout_marginLeft="-320dip"
+        android:src="@drawable/beebackground"
+        />
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dip"
+        android:layout_marginLeft="20dip"
+        android:padding="20dip"
+        android:paddingRight="40dp"
+        android:text="@string/button_send"
+        android:onClick = "newGame"
+        />
+    <Button
+        android:id="@+id/rulesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="290dip"
+        android:layout_marginLeft="-90dip"
+        android:padding="20dip"
+        android:paddingRight="40dp"
+        android:text="@string/button_send2"
+        android:onClick = "rulesGame"
+       />
+
+
+
+
+</LinearLayout>

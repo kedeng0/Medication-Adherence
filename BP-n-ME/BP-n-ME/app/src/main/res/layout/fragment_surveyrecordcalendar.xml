@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorAccent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="5dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/text_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#FFF"
+            android:textSize="19sp" />
+    </RelativeLayout>
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/mcalendarsurvey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/calendarbg"
+        app:mcv_tileHeight="35dp"
+        app:mcv_showOtherDates="out_of_range"
+        app:mcv_calendarMode="month"
+        app:mcv_arrowColor="@android:color/black"
+        app:mcv_selectionColor="@color/appOrange"
+        app:mcv_headerTextAppearance="@style/headerTextAppearance"
+        app:mcv_dateTextAppearance="@style/monthTextAppearance"
+        app:mcv_weekDayTextAppearance="@style/weekTextAppearancemember"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/survey_text_record"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:padding="16dp" />
+
+</LinearLayout>

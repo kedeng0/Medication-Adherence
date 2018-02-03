@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.appzoro.BP_n_ME.activity.PatientSelection">
+
+    <LinearLayout
+        android:id="@+id/search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:background="@color/appOrange" >
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:hint="@string/search"
+            android:maxLines="1"
+            android:drawableLeft="@drawable/ic_search"
+            android:drawablePadding="5dp"
+            android:background="@drawable/search_border" />
+
+        <!--<ImageView
+            android:id="@+id/switch_List"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="16dp"
+            android:layout_gravity="center"
+            android:src="@drawable/switch1" />-->
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/patientList"
+        android:layout_below="@+id/search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbarThumbVertical="@android:color/transparent" >
+    </ListView>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/floatingactionmenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        fab:menu_colorNormal="@color/appBlue"
+        fab:menu_colorPressed="@color/appOrange"
+        fab:menu_fab_size="normal"
+        fab:menu_openDirection="up" >
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/registerpatient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/fab_add"
+        fab:fab_colorNormal="@color/appBlue"
+        fab:fab_colorPressed="@color/appOrange"
+        fab:fab_label="Patient Registration"
+        fab:fab_size="mini" />
+    </com.github.clans.fab.FloatingActionMenu>
+</RelativeLayout>

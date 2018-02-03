@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="#fff" >
+
+    <ScrollView
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbarThumbVertical="@android:color/transparent" >
+
+        <LinearLayout
+            android:id="@+id/ll_surveys"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="vertical" >
+
+            <!--<TextView
+                android:id="@+id/tv_symptomSurvey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:paddingStart="10dp"
+                android:gravity="center|start"
+                android:text="@string/text_SYMPTOM_SURVEY"
+                android:textColor="@android:color/black"
+                android:drawableEnd="@drawable/ic_arrow_right_black"
+                android:background="@drawable/edittext_border" />-->
+
+            <TextView
+                android:id="@+id/tv_armsSurvey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:paddingStart="10dp"
+                android:gravity="center|start"
+                android:text="@string/text_arms_Survey"
+                android:textColor="@android:color/black"
+                android:drawableEnd="@drawable/ic_arrow_right_black"
+                android:background="@drawable/edittext_border" />
+
+            <TextView
+                android:id="@+id/tv_lifeStyleSurvey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:paddingStart="10dp"
+                android:gravity="center|start"
+                android:text="@string/text_LIFE_STYLE_SURVEY"
+                android:textColor="@android:color/black"
+                android:drawableEnd="@drawable/ic_arrow_right_black"
+                android:background="@drawable/edittext_border"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/tv_healthLiteracySurvey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:gravity="center|start"
+                android:text="@string/text_HEALTH_LITERACY_SURVEY"
+                android:textColor="@android:color/black"
+                android:drawableEnd="@drawable/ic_arrow_right_black"
+                android:background="@drawable/edittext_border"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/tv_mobileSurvey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|start"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:paddingStart="10dp"
+                android:text="@string/text_MOBILE_APP_SATISFACATION_SURVEY"
+                android:textColor="@android:color/black"
+                android:drawableEnd="@drawable/ic_arrow_right_black"
+                android:background="@drawable/edittext_border"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/appOrange"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_last_time_survey"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_datesymptomSurvey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Symptom Survey: 10-4-2017"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/tv_dateLifeStyleSurvey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lifestyle Survey: 10-4-2017"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+</RelativeLayout>

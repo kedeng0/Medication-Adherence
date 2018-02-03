@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/mcalendar_bw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/calendarbg"
+        app:mcv_tileHeight="35dp"
+        app:mcv_calendarMode="month"
+        app:mcv_showOtherDates="out_of_range"
+        app:mcv_arrowColor="@android:color/black"
+        app:mcv_selectionColor="@color/appOrange"
+        app:mcv_headerTextAppearance="@style/headerTextAppearance"
+        app:mcv_dateTextAppearance="@style/monthTextAppearance"
+        app:mcv_weekDayTextAppearance="@style/weekTextAppearancemember" />
+
+    <TextView
+        android:id="@+id/bw_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:gravity="start"
+        android:text="@string/weight_text"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:padding="16dp" />
+
+    <ListView
+        android:id="@+id/weightListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:scrollbarThumbVertical="@android:color/transparent" />
+</LinearLayout>

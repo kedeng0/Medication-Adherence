@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="E:\Anuj\android-game-kill-them-all-part-1-master\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="E:\Anuj\android-game-kill-them-all-part-1-master\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_b9c7e182e2a7521d02b2b3242825252494ea0861\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Anuj\android-game-kill-them-all-part-1-master\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="f5d509be99b1fab57e19107de797f54db105784a">
+        <dex dex="E:\Anuj\android-game-kill-them-all-part-1-master\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_a3e15c343e690cafcb500d64d9ca6f6e69a56cdd\classes.dex" />
+    </item>
+
+</items>

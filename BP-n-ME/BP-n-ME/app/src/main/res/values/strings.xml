@@ -1,0 +1,103 @@
+<resources>
+    <string name="app_name">BP-n-ME</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_slider_login">SliderLoginActivity</string>
+    <string name="Sign_In">Sign In</string>
+    <string name="Enter_Username_Password">Enter Username and Password</string>
+    <string name="Patient">Patient</string>
+    <string name="Pharmacist">Pharmacist</string>
+    <string name="Patient_Registration">Patient Registration</string>
+    <string name="Password">Password</string>
+    <string name="Show_Password">Show Password</string>
+    <string name="Confirm_Password">Confirm Password</string>
+    <string name="Discharge_Date">Discharge Date</string>
+    <string name="Enrollment_Date">Enrollment Date</string>
+    <string name="Pharmacy_Name">Pharmacy Name</string>
+    <string name="Pharmacy_Phone_Number">Pharmacy Phone Number</string>
+    <string name="Pharmacist_Name">Physician Name</string>
+    <string name="Pharmacist_Phone_Number">Physician Phone Number</string>
+    <string name="mAuth_failed">Authentication failed, check your email and password or sign up</string>
+    <string name="register_email">We just need your registered email to send you a link to get back into your account</string>
+    <string name="signin"><![CDATA[ Already have an account? <b><font color=#f78e17>Sign In</b>]]></string>
+    <string name="signup"><![CDATA[ Don\'t have an account? <b><font color=#f78e17>Sign Up</b>]]></string>
+    <string name="click_question">Click an above Question to start the survey.</string>
+    <string name="bp_text">Click on the date from the calendar above to record today\'s blood pressure or view a previous entry.</string>
+    <string name="weight_text">Click on the date from the calendar above to record today\'s body weight or view a previous entry.</string>
+    <string name="medication_text">Click on the date from the calendar above to record today\'s dose taken or view a previous entry.</string>
+    <string name="taken_medication_text">Click on the date from the calendar above to view a Medication record.</string>
+    <string name="bp_text_record">Click on the date from the calendar above to view a blood pressure record.</string>
+    <string name="weight_text_record">Click on the date from the calendar above to view a body weight record.</string>
+    <string name="survey_text_record">Click on the date from the calendar above to view a survey record.</string>
+    <string name="text_SYMPTOM_SURVEY">DAILY SYMPTOM SURVEY</string>
+    <string name="text_arms_Survey">ARMS-7 SURVEY</string>
+    <string name="text_LIFE_STYLE_SURVEY">LIFESTYLE SURVEY</string>
+    <string name="text_HEALTH_LITERACY_SURVEY">STOFHLA SURVEY</string>
+    <string name="text_MOBILE_APP_SATISFACATION_SURVEY">MOBILE APP SATISFACTION SURVEY</string>
+    <string name="text_MEDICATION_ADHERENCE_CARVEDILOL">MEDICATION ADHERENCE: CARVEDILOL</string>
+    <string name="text_MEDICATION_ADHERENCE_TYLENOL">MEDICATION ADHERENCE: TYLENOL</string>
+    <string name="text_last_time_survey">The last time that you took a survey was:</string>
+    <string name="text_literacy_survey">Literacy Survey: </string>
+    <string name="text_lifestyle_survey">LifeStyle Survey: </string>
+    <string name="text_clinical_team">If you have any question or concerns about using the mobile application of the study please contact a member of our study team:</string>
+    <string name="text_Update_Patient">Update Patient</string>
+    <string name="text_Enter_Patient_username">Enter the Patient\'s username below:</string>
+    <string name="health_stofhla_info">
+        Here are some other medical instructions that you or anybody might see around the hospital. These instructions are in sentences that have some of the words missing.
+        Where a word is missing, a black line is drawn, and 4 possible words that can go in the black appear just below it.
+        I want you to figure out which of those 4 words should go in the blank, which word makes the sentence make sense. When you think you know which one it is,
+        circle the letter in front of that word, and go on to the next one. When you finish the page, turn the page and keep going until you finish all the pages.\n
+    </string>
+    <string name="health_survey">This is an example of how the Health Literacy Survey is conducted. The below radio buttons are used to answer the questions and your responses will be filled in at the (?) in the question. Please press Question 1 above to begin, then Question 2.</string>
+    <string name="title_activity_patient_monitor">PatientMonitor</string>
+    <string name="add_medication">ADD MEDICATION</string>
+    <string name="enter_medication_name">Enter Medication Name :</string>
+    <string name="patient_registration">Patient Registration</string>
+    <string name="change_pharmcy">Change Pharmacy</string>
+    <string name="discharge_date">Update Enrollment Date</string>
+    <string name="text_medication_list">Medication List : </string>
+    <string name="text_diag_list">Diagnosis List : </string>
+    <string name="text_discharge_date">Discharge Date : </string>
+    <string name="text_enrollment_date">Enrollment Date : </string>
+    <string name="text_admit_date">Admit Date : </string>
+    <string name="text_patient_name">Patient Name : </string>
+    <string name="check_logs">CHECK LOGS</string>
+    <string name="submit">SUBMIT</string>
+    <string name="close">CLOSE</string>
+    <string name="enter_weight_log">Enter Weight Here</string>
+    <string name="username">Username</string>
+    <string name="tip_of_the_day">Tips of the Day</string>
+    <string name="send_compiled_email">SEND COMPILED EMAIL</string>
+    <string name="cancel">CANCEL</string>
+    <string name="search">Search</string>
+    <string name="medication_adherence_servey">Medication Adherence Survey</string>
+    <string name="question">Questions</string>
+    <string name="medication_log_record">Medication Log Record</string>
+    <string name="medication_input_logs">Medication Input Log</string>
+    <string name="heart_rate">Heart Rate</string>
+    <string name="heart_rat">Heart Rate (if known):</string>
+    <string name="blood_pressure_input_logs">Blood Pressure Input Log</string>
+    <string name="medasol">Medasol</string>
+    <string name="body_weight_input_log">Body Weight Input Log</string>
+    <string name="weight">Body Weight (pounds) :</string>
+    <string name="medication">MEDICATION</string>
+    <string name="diagnosis">DIAGNOSIS</string>
+    <string name="Patient_Selection">Patient Selection</string>
+    <string name="Patient_registration">PATIENT REGISTRATION</string>
+    <string name="update_patient">UPDATE PATIENT</string>
+    <string name="patient_list">PATIENT LIST</string>
+    <string name="Update_Patient">Update Patient</string>
+    <string name="show_pass">Show Password</string>
+    <string name="password">Password</string>
+    <string name="pharmacist">Pharmacist</string>
+    <string name="patient">Patient</string>
+    <string name="lifesyle_servey">Lifestyle Survey</string>
+    <string name="arms_servey">ARMS-7 Survey</string>
+    <string name="bp_log_record">Blood Pressure Log</string>
+    <string name="body_weight_log">Body Weight Log</string>
+    <string name="logout">Logout</string>
+</resources>
