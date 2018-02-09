@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ben.smap">
 
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,7 +22,8 @@
         </activity>
         <activity android:name=".RePage" />
         <activity android:name=".Reload" />
-        <activity android:name=".Refill"></activity>
+        <activity android:name=".Refill" />
+        <activity android:name=".Ble"></activity>
     </application>
 
 </manifest>

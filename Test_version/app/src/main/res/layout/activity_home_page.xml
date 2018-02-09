@@ -14,4 +14,13 @@
         android:layout_marginBottom="132dp"
         android:text="@string/repage" />
 
+    <Button
+        android:id="@+id/button_ble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_repage"
+        android:layout_marginBottom="30dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/ble" />
+
 </RelativeLayout>

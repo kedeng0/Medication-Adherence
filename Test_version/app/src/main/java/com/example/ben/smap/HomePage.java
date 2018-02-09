@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class HomePage extends AppCompatActivity {
     private Button repage;
-
+    private Button ble;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +23,16 @@ public class HomePage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        ble = findViewById(R.id.button_ble);
+        ble.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Start your second activity
+                Intent intent = new Intent(HomePage.this, Ble.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 
