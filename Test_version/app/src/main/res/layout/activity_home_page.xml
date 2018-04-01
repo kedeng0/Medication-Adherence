@@ -6,21 +6,29 @@
     tools:context="com.example.ben.smap.HomePage">
 
     <Button
-        android:id="@+id/button_repage"
+        android:id="@+id/btn_repage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="132dp"
+        android:layout_below="@+id/btn_status"
+        android:layout_marginTop="30dp"
         android:text="@string/repage" />
 
     <Button
-        android:id="@+id/button_ble"
+        android:id="@+id/btn_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button_repage"
-        android:layout_marginBottom="30dp"
         android:layout_centerHorizontal="true"
-        android:text="@string/ble" />
+        android:layout_centerVertical="true"
+        android:text="@string/status" />
+
+    <Button
+        android:id="@+id/btn_drop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_status"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:text="@string/drop" />
 
 </RelativeLayout>

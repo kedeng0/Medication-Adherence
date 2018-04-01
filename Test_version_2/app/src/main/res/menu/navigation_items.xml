@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_home"
+        android:title="@string/menu_home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home_black"
+        app:showAsAction="always|withText" />
+
+    <item
+        android:id="@+id/menu_schedule"
+        android:title="@string/menu_schedule"
+        android:enabled="true"
+        android:icon="@drawable/ic_schedule_black"
+        app:showAsAction="always|withText" />
+
+    <item
+        android:id="@+id/menu_status"
+        android:title="@string/menu_status"
+        android:enabled="true"
+        android:icon="@drawable/ic_status_black"
+        app:showAsAction="always|withText"/>
+
+    <item
+        android:id="@+id/menu_more"
+        android:title="@string/menu_more"
+        android:enabled="true"
+        android:icon="@drawable/ic_more_black"
+        app:showAsAction="always|withText"/>
+</menu>

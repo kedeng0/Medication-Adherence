@@ -9,12 +9,14 @@ import android.widget.TextView;
 
 public class HomePage extends AppCompatActivity {
     private Button repage;
-    private Button ble;
+    private Button status;
+    private Button drop;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-        repage = findViewById(R.id.button_repage);
+        // Navigate to Reload Refill Page once clicked
+        repage = findViewById(R.id.btn_repage);
         repage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -23,16 +25,26 @@ public class HomePage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        ble = findViewById(R.id.button_ble);
-        ble.setOnClickListener(new View.OnClickListener() {
+        // Navigate to Status Page once clicked
+        status = findViewById(R.id.btn_status);
+        status.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Start your second activity
-                Intent intent = new Intent(HomePage.this, Ble.class);
+                Intent intent = new Intent(HomePage.this, StatusPage.class);
                 startActivity(intent);
             }
         });
-
+        // Navigate to Drop Page once clicked
+        drop = findViewById(R.id.btn_drop);
+        drop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Start your second activity
+                Intent intent = new Intent(HomePage.this, DropPage.class);
+                startActivity(intent);
+            }
+        });
     }
 
 

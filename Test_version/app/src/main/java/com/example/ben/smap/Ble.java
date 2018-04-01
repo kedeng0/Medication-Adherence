@@ -4,10 +4,12 @@ import android.Manifest;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothSocket;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.ParcelUuid;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +21,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.IOException;
+import java.lang.reflect.Method;
+import java.util.UUID;
+
 
 import java.util.ArrayList;
 import java.util.Set;
@@ -31,6 +39,11 @@ public class Ble extends AppCompatActivity {
     private ArrayList<BluetoothDevice> device_list = new ArrayList<>();
     ListView ListView;// Locate list view
     ArrayAdapter<String> adapter;
+//    BluetoothConnectionService mBluetoothConnection;
+    BluetoothDevice mBTDevice;
+    private static UUID MY_UUID_INSECURE =
+            UUID.fromString("0000a000-0000-1000-8000-00805f9b34fb");
+    BluetoothSocket btSocket = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,48 +71,92 @@ public class Ble extends AppCompatActivity {
 
         IntentFilter BondIntent = new IntentFilter(BluetoothDevice.ACTION_BOND_STATE_CHANGED);
         registerReceiver(mReceiver2, BondIntent);
+
+        boolean newDiscovery = true;
 //        Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
 //        Log.i(TAG, "Paired Devices\n");
 //        if (pairedDevices.size() > 0) {
 //            // There are paired devices. Get the name and address of each paired device.
 //            for (BluetoothDevice device : pairedDevices) {
 //                String deviceName = device.getName();
-//                String deviceHardwareAddress = device.getAddress(); // MAC address
 //                Log.i(TAG,deviceName);
+//                if (deviceName.equals("Golden's Pro")) {
+//                    if(Build.VERSION.SDK_INT > Build.VERSION_CODES.JELLY_BEAN_MR2){
+//                        Log.d(TAG, "Trying to pair with Golden's Pro");
+//                        newDiscovery = false;
+//                        device.createBond();
+//                    }
+//                }
 //            }
 //        }
-        if (mBluetoothAdapter.isDiscovering()) {
-            mBluetoothAdapter.cancelDiscovery();
+        if (newDiscovery) {
+            if (mBluetoothAdapter.isDiscovering()) {
+                mBluetoothAdapter.cancelDiscovery();
+            }
+            mBluetoothAdapter.startDiscovery();
         }
-        mBluetoothAdapter.startDiscovery();
+
     }
 
 
     private AdapterView.OnItemClickListener mDeviceClickListener = new AdapterView.OnItemClickListener() {
         public void onItemClick(AdapterView<?> av, View v, int i, long j) {
             // Cancel discovery because it's costly and we're about to connect
+
             mBluetoothAdapter.cancelDiscovery();
             BluetoothDevice selected = device_list.get(i);
-
+            mBTDevice = selected;
             // Get the device MAC address, which is the last 17 chars in the View
             String selectedName = selected.getName();
             Log.d(TAG, "Selected Device Name: " + selectedName);
             String selectedAddress = selected.getAddress();
             Log.d(TAG, selectedAddress);
+
             // Create the result Intent and include the MAC address
-//            intent.putExtra(EXTRA_DEVICE_ADDRESS, address);
-            if(Build.VERSION.SDK_INT > Build.VERSION_CODES.JELLY_BEAN_MR2){
-                Log.d(TAG, "Trying to pair with " + selectedName);
-                selected.createBond();
+            //            intent.putExtra(EXTRA_DEVICE_ADDRESS, address);
+            //            if(Build.VERSION.SDK_INT > Build.VERSION_CODES.JELLY_BEAN_MR2){
+            //                Log.d(TAG, "Trying to pair with " + selectedName);
+            //                selected.createBond();
+            //            }
+
+            //                Log.d(TAG, "Found mBed");
+            try {
+                // Get a BluetoothSocket to connect with the given BluetoothDevice.
+                // MY_UUID is the app's UUID string, also used in the server code.
+
+                btSocket = selected.createRfcommSocketToServiceRecord(MY_UUID_INSECURE);
+            } catch (IOException e) {
+                Log.e(TAG, "Socket's create() method failed", e);
             }
+
+            try {
+                btSocket.connect();
+            } catch (IOException connectException) {
+                // Unable to connect; close the socket and return.
+                Log.e(TAG, "Connection failed",connectException);
+                Toast.makeText(getApplicationContext(),"Connection Failed", Toast.LENGTH_SHORT).show();
+                try {
+                    btSocket.close();
+                } catch (IOException closeException) {
+                    Log.e(TAG, "Could not close the client socket", closeException);
+                }
+                return;
+            }
+            Toast.makeText(getApplicationContext(),"Connected", Toast.LENGTH_SHORT).show();
+//                mBluetoothConnection = new BluetoothConnectionService(Ble.this);
+//                Log.d(TAG, "startBTConnection: Initializing RFCOM Bluetooth Connection.");
+//
+//                mBluetoothConnection.startClient(mBTDevice, MY_UUID_INSECURE);
+            Intent intent_home_page = new Intent(Ble.this, HomePage.class);
+            startActivity(intent_home_page);
         }
     };
+
 
     protected void onDestroy() {
         mBluetoothAdapter.cancelDiscovery();
         unregisterReceiver(mReceiver1);
         unregisterReceiver(mReceiver2);
-
         super.onDestroy();
         // Don't forget to unregister the ACTION_FOUND receiver.
     }
@@ -137,6 +194,7 @@ public class Ble extends AppCompatActivity {
                 //case1: bonded already
                 if (mDevice.getBondState() == BluetoothDevice.BOND_BONDED){
                     Log.d(TAG, "BroadcastReceiver: BOND_BONDED.");
+
                 }
                 //case2: creating a bone
                 if (mDevice.getBondState() == BluetoothDevice.BOND_BONDING) {
