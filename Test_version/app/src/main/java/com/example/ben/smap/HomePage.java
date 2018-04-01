@@ -10,10 +10,15 @@ import android.widget.TextView;
 public class HomePage extends AppCompatActivity {
     private Button repage;
     private Button ble;
+    private Button dispense;
+
+    private BleManager mBleManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+        mBleManager = BleManager.getInstance(this);
+
         repage = findViewById(R.id.button_repage);
         repage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,6 +37,15 @@ public class HomePage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        dispense = findViewById(R.id.button_dispense);
+        dispense.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Start your second activity
+                mBleManager.dispense();
+            }
+        });
+
 
     }
 
