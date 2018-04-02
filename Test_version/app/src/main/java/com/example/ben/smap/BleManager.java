@@ -192,7 +192,7 @@ public class BleManager  {
                     return false;
                 }
                 //write 'rua' to characteristic
-                String str = "rua";
+                String str = "g";
                 final byte[] value = str.getBytes();
                 rx.setValue(value);
                 mGatt.writeCharacteristic(rx);
