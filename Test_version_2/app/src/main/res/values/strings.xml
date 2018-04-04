@@ -15,6 +15,9 @@
     <string name="medicine_type">Medicine Type</string>
     <string name="frequency_prompt">How often do you want to take this pill:</string>
     <string name="amount_prompt">How much do you want to take this pill: (INTEGER)</string>
+    <string name="connection_status">Hardware Connection Status: </string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

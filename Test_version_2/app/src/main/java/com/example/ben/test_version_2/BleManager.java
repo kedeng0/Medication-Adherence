@@ -8,6 +8,7 @@ import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattService;
 import android.bluetooth.BluetoothProfile;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
 import java.util.List;
@@ -93,6 +94,7 @@ public class BleManager  {
             Log.d(TAG, "Trying to use an existing mBluetoothGatt for connection.");
             if (mGatt.connect()) {
                 mConnectionState = STATE_CONNECTING;
+
                 return true;
             } else {
                 return false;
@@ -109,8 +111,27 @@ public class BleManager  {
         mGatt = device.connectGatt(context, false, mGattCallback);
         Log.d(TAG, "Trying to create a new connection.");
         mDeviceAddress = address;
+        mDevice = device;
         mConnectionState = STATE_CONNECTING;
         return true;
+    }
+
+
+    public boolean disconnect() {
+        if (mAdapter == null) {
+            Log.w(TAG, "BluetoothAdapter not initialized");
+            return false;
+        }
+        if (mConnectionState != STATE_CONNECTED) {
+            Log.w(TAG, "Not connected to any device");
+            Utils.toast(activityContext,"Not connected to any device");
+            return false;
+        } else {
+            mGatt.disconnect();
+            return true;
+        }
+
+
     }
 
     private final BluetoothGattCallback mGattCallback = new BluetoothGattCallback() {
@@ -120,7 +141,7 @@ public class BleManager  {
             if (newState == BluetoothProfile.STATE_CONNECTED) {
                 intentAction = ACTION_GATT_CONNECTED;
                 mConnectionState = STATE_CONNECTED;
-//                broadcastUpdate(intentAction);
+                broadcastUpdate(intentAction);
                 Log.i(TAG, "Connected to GATT server.");
                 // Attempts to discover services after successful connection.
                 Log.i(TAG, "Attempting to start service discovery:" +
@@ -130,7 +151,9 @@ public class BleManager  {
                 intentAction = ACTION_GATT_DISCONNECTED;
                 mConnectionState = STATE_DISCONNECTED;
                 Log.i(TAG, "Disconnected from GATT server.");
-//                broadcastUpdate(intentAction);
+                mDeviceAddress = null;
+                mDevice = null;
+                broadcastUpdate(intentAction);
             }
         }
 
@@ -163,10 +186,10 @@ public class BleManager  {
         }
     };
 
-//    private void broadcastUpdate(final String action) {
-//        final Intent intent = new Intent(action);
-//        sendBroadcast(intent);
-//    }
+    private void broadcastUpdate(final String action) {
+        final Intent intent = new Intent(action);
+        activityContext.sendBroadcast(intent);
+    }
 
         public void DisplayService(List<BluetoothGattService> list) {
             for (BluetoothGattService service : list) {
@@ -191,13 +214,19 @@ public class BleManager  {
                     return false;
                 }
                 //write 'rua' to characteristic
-                String str = "rua";
+                String str = "g";
                 final byte[] value = str.getBytes();
                 rx.setValue(value);
                 mGatt.writeCharacteristic(rx);
                 return true;
             }
         }
+
+
+        public BluetoothDevice getDevice() {
+            return mDevice;
+        }
+        public boolean getConnectionStatus() {return mConnectionState == STATE_CONNECTED;}
 
 
 

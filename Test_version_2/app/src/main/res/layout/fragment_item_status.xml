@@ -5,9 +5,44 @@
     tools:context="com.example.ben.test_version_2.ItemStatusFragment">
 
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_status_fragment" />
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/connection_status"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        />
+
+        <TextView
+            android:id="@+id/connection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Connection Status" />
+
+        <Button
+        android:id="@+id/disconnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Disconnect"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"/>
+
+        <Button
+            android:id="@+id/newconnection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Connect to other devices"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
+
 
 </FrameLayout>

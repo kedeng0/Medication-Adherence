@@ -63,7 +63,9 @@ public class Ble extends AppCompatActivity {
         mBleDevicesScanner = new BleDevicesScanner(this, 5000, -75);
         mBleManager = BleManager.getInstance(this);
 
-
+        if (mBleManager.getConnectionStatus()) {
+            mBleManager.disconnect();
+        }
 
         startScan();
 
@@ -116,6 +118,8 @@ public class Ble extends AppCompatActivity {
             String selectedAddress = selected.getAddress();
             Log.d(TAG, selectedAddress);
 
+//            Intent intent = new Intent(Ble.this, HomePage.class);
+//            startActivity(intent);
             if (connectDevice(selected)) {
                 Utils.toast(getApplicationContext(),"Connected to " + selected.getName());
                 Intent intent = new Intent(Ble.this, HomePage.class);

@@ -7,15 +7,28 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 public class HomePage extends AppCompatActivity {
     private BottomNavigationView mBottomNav;
     private int mSelectedItem;
+    public BleManager mBleManager;
+    private final static String TAG = HomePage.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+
+
+        //Ble
+        mBleManager = BleManager.getInstance(this);
+        if (mBleManager.getDevice() != null) {
+            Log.d(TAG, "current device: " + mBleManager.getDevice().getName());
+
+        }
+
         mBottomNav = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         BottomNavigationViewHelper.removeShiftMode(mBottomNav);
         mBottomNav.setOnNavigationItemSelectedListener
