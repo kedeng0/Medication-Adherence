@@ -1,7 +1,0 @@
-#Internal package file, do not edit.
-#Tue Jan 23 18:06:03 EST 2018
-0.baseType=DIRECTORY
-0.base=C\:\\Users\\Ben\\Documents\\GitHub\\Medication-Adherence\\AMC-N-ME\\MedAdhereSolutionsApp\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
-0.path=classes.dex
-0.set=DEX
-count=1

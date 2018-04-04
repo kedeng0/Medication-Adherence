@@ -1,0 +1,41 @@
+
+{
+	"buildFiles" : 
+	[
+		"/Users/admin/Desktop/Medication-Adherence/Test_version/app/CMakeLists.txt"
+	],
+	"cleanCommands" : 
+	[
+		"/Users/admin/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/admin/Desktop/Medication-Adherence/Test_version/app/.externalNativeBuild/cmake/release/x86 --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"native-lib-Release-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "native-lib",
+			"buildCommand" : "/Users/admin/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/admin/Desktop/Medication-Adherence/Test_version/app/.externalNativeBuild/cmake/release/x86 --target native-lib",
+			"buildType" : "release",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/admin/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/admin/Library/Android/sdk/ndk-bundle/sysroot  -Dnative_lib_EXPORTS -isystem /Users/admin/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/admin/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem /Users/admin/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/admin/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=18 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security   -O2 -DNDEBUG  -fPIC    -c ",
+					"src" : "/Users/admin/Desktop/Medication-Adherence/Test_version/app/src/main/cpp/native-lib.cpp",
+					"workingDirectory" : "/Users/admin/Desktop/Medication-Adherence/Test_version/app/.externalNativeBuild/cmake/release/x86"
+				}
+			],
+			"output" : "/Users/admin/Desktop/Medication-Adherence/Test_version/app/build/intermediates/cmake/release/obj/x86/libnative-lib.so",
+			"toolchain" : "7902362879982753818"
+		}
+	},
+	"toolchains" : 
+	{
+		"7902362879982753818" : 
+		{
+			"cCompilerExecutable" : "/Users/admin/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+			"cppCompilerExecutable" : "/Users/admin/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+		}
+	}
+}

@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">SMAP</string>
-    <string name="reload">RELOAD PRESCRIPTION</string>
-    <string name="refill">REFILL PILLS</string>
-    <string name="repage">RELOAD REFILL</string>
-    <string name="ble">Bluetooth Connection</string>
-</resources>
