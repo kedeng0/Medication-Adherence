@@ -1,11 +1,14 @@
 package com.example.ben.test_version_2;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.app.NavUtils;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,6 +20,8 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -26,8 +31,19 @@ public class AddMedicine extends AppCompatActivity {
     private ListView listView;
     EditText medicineType;
     TimePicker timePicker;
+    TextView frequencyPicker;
+    TextView frequencyResult;
+    TextView amountPicker;
+    TextView amountResult;
+
     private final static int TIME_PICKER_INTERVAL = 5;
     private final String TAG = this.getClass().getName();
+    AlertDialog frequency_dialog;
+    AlertDialog amount_dialog;
+    String frequency;
+    String amount;
+    String hour;
+    String min;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +52,16 @@ public class AddMedicine extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         medicineType = (EditText) findViewById(R.id.medicine_type);
-        timePicker=(TimePicker)findViewById(R.id.timePicker); // initiate a time picker
+
+
+        //*************************
+        // Time picker
+        final AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = this.getLayoutInflater();
+        final View view = inflater.inflate(R.layout.dialog_time, null);
+        dialogBuilder.setView(view);
+        // Time picker setup
+        timePicker = (TimePicker) findViewById(R.id.timePicker); // initiate a time picker
         timePicker.setIs24HourView(true);
         // set the current time as default value
         Calendar c = Calendar.getInstance();
@@ -44,7 +69,6 @@ public class AddMedicine extends AppCompatActivity {
         timePicker.setCurrentMinute(c.get(Calendar.MINUTE));
         int hour = c.get(Calendar.HOUR_OF_DAY);
         int minute = c.get(Calendar.MINUTE);
-
         setTimePickerInterval(timePicker);
 
         // Configure displayed time
@@ -55,20 +79,118 @@ public class AddMedicine extends AppCompatActivity {
                 minute = minute % 60;
                 hour++;
             }
-
             timePicker.setCurrentHour(hour);
             timePicker.setCurrentMinute(minute / TIME_PICKER_INTERVAL);
         }
 
-        Button btn = (Button) findViewById(R.id.button);
-        final TextView result = (TextView) findViewById(R.id.result);
-        btn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                String hour = timePicker.getCurrentHour().toString();
+        dialogBuilder.setTitle("Time Picker");
+        dialogBuilder.setMessage("Pick the dosing time");
+        dialogBuilder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                 = timePicker.getCurrentHour().toString();
                 String min = timePicker.getCurrentMinute().toString();
-                result.setText(new StringBuilder().append(medicineType.getText()).append(", ").append(hour).append(" : ").append(min)
-                        .append(" "));
+                amountResult.setText(amount);
+            }
+        });
+        dialogBuilder.setNegativeButton("Cancel", null);
+        amount_dialog = dialogBuilder.create();
+        amountResult = (TextView) findViewById(R.id.amountResult);
+        amountPicker = (TextView) findViewById(R.id.amountPicker_prompt);
+        amountPicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                amount_dialog.show();
+            }
+        });
+
+
+
+
+
+//        // Test only start
+//        Button btn = (Button) findViewById(R.id.button);
+//        final TextView result = (TextView) findViewById(R.id.result);
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//
+//                String hour = timePicker.getCurrentHour().toString();
+//                String min = timePicker.getCurrentMinute().toString();
+//                result.setText(new StringBuilder().append(medicineType.getText()).append(", ").append(hour).append(" : ").append(min)
+//                        .append(" "));
+//            }
+//        });//Test only end
+
+        //*****************************
+        // Frequency dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Choose an Option");
+        final String[] options = { "Everyday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int item) {
+                switch (item) {
+                    case 0: // Delete
+                        frequency = options[item];
+                        break;
+                    case 1: // Copy
+                        frequency = options[item];
+                        break;
+                    case 2: // Edit
+                        frequency = options[item];
+                        break;
+                    case 3: // Delete
+                        frequency = options[item];
+                        break;
+                    case 4: // Copy
+                        frequency = options[item];
+                        break;
+                    case 5: // Edit
+                        frequency = options[item];
+                        break;
+                    case 6: // Delete
+                        frequency = options[item];
+                        break;
+                    case 7: // Copy
+                        frequency = options[item];
+                        break;
+                    default:
+                        break;
+                }
+                frequencyResult.setText(frequency);// Display result
+            }
+        });
+        builder.setNegativeButton("Cancel", null);
+        frequency_dialog = builder.create();
+        frequencyResult = (TextView) findViewById(R.id.frequencyResult);
+        frequencyPicker = (TextView) findViewById(R.id.frequencyPicker_prompt);
+        frequencyPicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                frequency_dialog.show();
+            }
+        });
+        //*****************************
+        // Amount dialog
+        final AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = this.getLayoutInflater();
+        final View dialogView = inflater.inflate(R.layout.dialog_amount, null);
+        dialogBuilder.setView(dialogView);
+        final EditText edt = (EditText) dialogView.findViewById(R.id.amountPicker);
+        dialogBuilder.setTitle("Amount Picker");
+        dialogBuilder.setMessage("Enter amount of pills");
+        dialogBuilder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                amount = edt.getText().toString();
+                amountResult.setText(amount);
+            }
+        });
+        dialogBuilder.setNegativeButton("Cancel", null);
+        amount_dialog = dialogBuilder.create();
+        amountResult = (TextView) findViewById(R.id.amountResult);
+        amountPicker = (TextView) findViewById(R.id.amountPicker_prompt);
+        amountPicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                amount_dialog.show();
             }
         });
     }
@@ -122,4 +244,6 @@ public class AddMedicine extends AppCompatActivity {
             Log.e(TAG, "Exception: " + e);
         }
     }
+
+
 }

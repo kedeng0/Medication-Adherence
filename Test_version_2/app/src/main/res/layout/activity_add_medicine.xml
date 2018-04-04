@@ -62,33 +62,44 @@
         android:layout_below="@+id/medicine_type_layout"
         android:text="@string/medicine_time_prompt" />
 
-    <TimePicker
-        android:id="@+id/timePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:timePickerMode="spinner"
-        android:layout_below="@+id/medicine_time_prompt"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"/>
+
+
 
     <TextView
-        android:id="@+id/result"
+        android:id="@+id/frequencyPicker_prompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/timePicker"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp" />
-
-    <Button
-        android:id="@+id/button"
+        android:text="@string/frequency_prompt" />
+    <TextView
+        android:id="@+id/frequencyResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:text="Button" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/timePicker"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/frequencyPicker_prompt"
+        android:layout_toRightOf="@+id/frequencyPicker_prompt" />
+
+    <TextView
+        android:id="@+id/amountPicker_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frequencyPicker_prompt"
+        android:text="@string/amount_prompt" />
+    <TextView
+        android:id="@+id/amountResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/amountPicker_prompt"
+        android:layout_alignEnd="@+id/frequencyResult"
+        android:layout_alignRight="@+id/frequencyResult"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/amountPicker_prompt"
+        android:layout_toRightOf="@+id/amountPicker_prompt"/>
 
 
 </RelativeLayout>
