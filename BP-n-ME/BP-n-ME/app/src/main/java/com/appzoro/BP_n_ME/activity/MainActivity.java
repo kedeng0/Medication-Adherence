@@ -30,6 +30,7 @@ import com.appzoro.BP_n_ME.fragment.CallforClinicalCareFragment;
 import com.appzoro.BP_n_ME.fragment.ClinicalContactFragment;
 import com.appzoro.BP_n_ME.fragment.MedicationUtilizationFragment;
 import com.appzoro.BP_n_ME.fragment.NotificationFragment;
+import com.appzoro.BP_n_ME.fragment.ScheduleFragment;
 import com.appzoro.BP_n_ME.fragment.SurveysFragment;
 import com.appzoro.BP_n_ME.fragment.TipsFragment;
 import com.appzoro.BP_n_ME.fragment.SMAPFragment;
@@ -239,6 +240,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         item9.setItemName("Hardware Status");
         listDataItem.add(item9);
 
+        NavigationMenuItems item10 = new NavigationMenuItems();
+        item10.setItemImg(R.drawable.schedule);
+        item10.setItemName("Schedule");
+        listDataItem.add(item10);
         /*NavigationMenuItems item9 = new NavigationMenuItems();
         item9.setItemImg(R.drawable.t_c);
         item9.setItemName("Informed Consent");
@@ -294,6 +299,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         } else if (position == 7) {
             getSupportFragmentManager().beginTransaction().replace
                     (R.id.Fragment_frame_main_activity, new SMAPFragment()).commit();
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else if (position == 8) {
+            getSupportFragmentManager().beginTransaction().replace
+                    (R.id.Fragment_frame_main_activity, new ScheduleFragment()).commit();
             drawerLayout.closeDrawer(GravityCompat.START);
         }
         /*else if (position == 7) {
@@ -693,10 +703,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     mList.clear();
                     if (medsDate.equals(curDate)) {
                         medsList = Arrays.asList(Medication.replace("{", "").replace("}", "").split(", "));
-                        for (int i = 0; i < medsList.size(); i++) {
-                            String meds = medsList.get(i).split("=")[1];
-                            mList.add(meds);
+                            for (int i = 0; i < medsList.size(); i++) {
+                                String meds = medsList.get(i).split("=")[0];
+                                mList.add(meds);
                         }
+
                     }
                 }
                 prefs.setMedsLog(mList);

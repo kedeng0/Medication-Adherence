@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+
+
+    <TextView
+        android:id="@+id/medicine_type_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/medicine_type_prompt" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/medicine_type_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/medicine_type_prompt">
+        <EditText
+            android:id="@+id/medicine_type"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:ems="10"
+            android:hint="@string/medicine_type"
+            android:inputType="textNoSuggestions" />
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/frequencyPicker_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/medicine_type_layout"
+        android:text="@string/frequency_prompt" />
+
+    <TextView
+        android:id="@+id/frequencyResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/medicine_type_layout"
+        android:layout_toEndOf="@+id/frequencyPicker_prompt"
+        android:layout_alignBottom="@+id/frequencyPicker_prompt"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/time_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/frequencyPicker_prompt"
+        android:text="@string/medicine_time_prompt" />
+    <TextView
+        android:id="@+id/timeResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/time_prompt"
+        android:layout_below="@+id/frequencyPicker_prompt"
+        android:layout_alignBottom="@+id/time_prompt"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_alignParentEnd="true" />
+
+
+
+
+
+    <TextView
+        android:id="@+id/amountPicker_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/time_prompt"
+        android:text="@string/amount_prompt" />
+    <TextView
+        android:id="@+id/amountResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/amountPicker_prompt"
+        android:layout_alignEnd="@+id/frequencyResult"
+        android:layout_alignRight="@+id/frequencyResult"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/amountPicker_prompt"/>
+
+
+
+
+</RelativeLayout>

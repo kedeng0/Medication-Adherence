@@ -100,4 +100,13 @@
     <string name="bp_log_record">Blood Pressure Log</string>
     <string name="body_weight_log">Body Weight Log</string>
     <string name="logout">Logout</string>
+
+    <string name="hello_schedule_fragment">Here is your upcoming schedule</string>
+    <string name="menu_add">Add Medicine</string>
+    <string name="medicine_type_prompt">Please enter the medicine type below:</string>
+    <string name="medicine_time_prompt">Please choose the dosing time:</string>
+    <string name="medicine_type">Medicine Type</string>
+    <string name="frequency_prompt">How often do you want to take this pill:</string>
+    <string name="amount_prompt">How much do you want to take this pill: (INTEGER)</string>
+    <string name="action_bar_save">Save</string>
 </resources>
