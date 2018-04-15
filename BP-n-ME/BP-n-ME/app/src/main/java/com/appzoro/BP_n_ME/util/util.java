@@ -2,13 +2,20 @@ package com.appzoro.BP_n_ME.util;
 
 import android.app.Activity;
 import android.app.Service;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothManager;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.text.InputFilter;
 import android.text.Spanned;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
+
+import com.appzoro.BP_n_ME.fragment.BleDevicesFragment;
 
 import java.util.Calendar;
 
@@ -147,5 +154,38 @@ public class util {
         } catch (NullPointerException e) {
         }
     }
+
+    public static void toast(Context context, String string) {
+
+        Toast toast = Toast.makeText(context, string, Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER | Gravity.BOTTOM, 0, 0);
+        toast.show();
+    }
+
+    public static BluetoothAdapter getBluetoothAdapter(Context context) {
+        final BluetoothManager bluetoothManager = (BluetoothManager) context.getSystemService(Context.BLUETOOTH_SERVICE);
+        if (bluetoothManager == null) {
+            return null;
+        } else {
+            return bluetoothManager.getAdapter();
+        }
+    }
+    public static boolean checkBluetooth(BluetoothAdapter bluetoothAdapter) {
+
+        // Ensures Bluetooth is available on the device and it is enabled. If not,
+        // displays a dialog requesting user permission to enable Bluetooth.
+        if (bluetoothAdapter == null || !bluetoothAdapter.isEnabled()) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    //
+    public static void requestUserBluetooth(Activity activity) {
+        Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+        activity.startActivityForResult(enableBtIntent, BleDevicesFragment.REQUEST_ENABLE_BT);
+    }
+
 
 }

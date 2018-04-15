@@ -1,0 +1,78 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Spinner
+            android:id="@+id/medicationSpinner2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_border"
+            android:paddingBottom="12dp"
+            android:paddingEnd="0dp"
+            android:paddingStart="6dp"
+            android:paddingTop="12dp"
+            android:layout_marginTop="20dp"
+            android:spinnerMode="dropdown" />
+
+        <Button
+            android:id="@+id/dispense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Dispense Pill" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="Hardware Connection Status"
+        android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/connection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Connection Status"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/disconnect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Disconnect" />
+
+        <Button
+            android:id="@+id/newconnection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Connect to other devices" />
+
+    </LinearLayout>
+
+
+</FrameLayout>

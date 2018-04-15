@@ -32,6 +32,7 @@ import com.appzoro.BP_n_ME.fragment.MedicationUtilizationFragment;
 import com.appzoro.BP_n_ME.fragment.NotificationFragment;
 import com.appzoro.BP_n_ME.fragment.SurveysFragment;
 import com.appzoro.BP_n_ME.fragment.TipsFragment;
+import com.appzoro.BP_n_ME.fragment.SMAPFragment;
 import com.appzoro.BP_n_ME.model.NavigationMenuItems;
 import com.appzoro.BP_n_ME.prefs.MedasolPrefs;
 import com.appzoro.BP_n_ME.util.Progress_dialog;
@@ -212,6 +213,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         item4.setItemName("Medication Utilization Log");
         listDataItem.add(item4);
 
+
         NavigationMenuItems item5 = new NavigationMenuItems();
         item5.setItemImg(R.drawable.survey);
         item5.setItemName("Surveys");
@@ -231,6 +233,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         item8.setItemImg(R.drawable.notifications);
         item8.setItemName("Notifications");
         listDataItem.add(item8);
+
+        NavigationMenuItems item9 = new NavigationMenuItems();
+        item9.setItemImg(R.drawable.phone);
+        item9.setItemName("Hardware Status");
+        listDataItem.add(item9);
 
         /*NavigationMenuItems item9 = new NavigationMenuItems();
         item9.setItemImg(R.drawable.t_c);
@@ -283,6 +290,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         else if (position == 6) {
             getSupportFragmentManager().beginTransaction().replace
                     (R.id.Fragment_frame_main_activity, new NotificationFragment()).commit();
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else if (position == 7) {
+            getSupportFragmentManager().beginTransaction().replace
+                    (R.id.Fragment_frame_main_activity, new SMAPFragment()).commit();
             drawerLayout.closeDrawer(GravityCompat.START);
         }
         /*else if (position == 7) {
