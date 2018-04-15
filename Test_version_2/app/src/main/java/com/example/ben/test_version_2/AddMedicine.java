@@ -1,7 +1,9 @@
 package com.example.ben.test_version_2;
 
+import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -13,12 +15,14 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -27,23 +31,28 @@ import java.util.Calendar;
 import java.util.List;
 
 public class AddMedicine extends AppCompatActivity {
-    private List list;
-    private ListView listView;
     EditText medicineType;
-    TimePicker timePicker;
+
     TextView frequencyPicker;
     TextView frequencyResult;
     TextView amountPicker;
     TextView amountResult;
+    TextView timePrompt;
+    TextView timeResult;
+
+
 
     private final static int TIME_PICKER_INTERVAL = 5;
     private final String TAG = this.getClass().getName();
     AlertDialog frequency_dialog;
     AlertDialog amount_dialog;
-    String frequency;
-    String amount;
-    String hour;
-    String min;
+    AlertDialog time_dialog;
+    int frequency;
+    int amount;
+    int current_hour;
+    int current_minute;
+    int hour;
+    int minute;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,56 +65,29 @@ public class AddMedicine extends AppCompatActivity {
 
         //*************************
         // Time picker
-        final AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        LayoutInflater inflater = this.getLayoutInflater();
-        final View view = inflater.inflate(R.layout.dialog_time, null);
-        dialogBuilder.setView(view);
-        // Time picker setup
-        timePicker = (TimePicker) findViewById(R.id.timePicker); // initiate a time picker
-        timePicker.setIs24HourView(true);
+        timeResult = (TextView) findViewById(R.id.timeResult);
+        timePrompt = (TextView) findViewById(R.id.time_prompt);
         // set the current time as default value
         Calendar c = Calendar.getInstance();
-        timePicker.setCurrentHour(c.get(Calendar.HOUR));
-        timePicker.setCurrentMinute(c.get(Calendar.MINUTE));
-        int hour = c.get(Calendar.HOUR_OF_DAY);
-        int minute = c.get(Calendar.MINUTE);
-        setTimePickerInterval(timePicker);
-
-        // Configure displayed time
-        if (((minute % TIME_PICKER_INTERVAL) != 0)) {
-            int minuteFloor = (minute + TIME_PICKER_INTERVAL) - (minute % TIME_PICKER_INTERVAL);
-            minute = minuteFloor + (minute == (minuteFloor + 1) ? TIME_PICKER_INTERVAL : 0);
-            if (minute >= 60) {
-                minute = minute % 60;
-                hour++;
-            }
-            timePicker.setCurrentHour(hour);
-            timePicker.setCurrentMinute(minute / TIME_PICKER_INTERVAL);
-        }
-
-        dialogBuilder.setTitle("Time Picker");
-        dialogBuilder.setMessage("Pick the dosing time");
-        dialogBuilder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                 = timePicker.getCurrentHour().toString();
-                String min = timePicker.getCurrentMinute().toString();
-                amountResult.setText(amount);
-            }
-        });
-        dialogBuilder.setNegativeButton("Cancel", null);
-        amount_dialog = dialogBuilder.create();
-        amountResult = (TextView) findViewById(R.id.amountResult);
-        amountPicker = (TextView) findViewById(R.id.amountPicker_prompt);
-        amountPicker.setOnClickListener(new View.OnClickListener() {
+        current_hour = c.get(Calendar.HOUR_OF_DAY);
+        current_minute = c.get(Calendar.MINUTE);
+        // Launch Time Picker Dialog
+        final DurationTimePickDialog  timePickerDialog = new DurationTimePickDialog (this, new DurationTimePickDialog .OnTimeSetListener() {
+                @Override
+                public void onTimeSet(TimePicker view, int hourOfDay, int minuteOfDay) {
+                    hour = hourOfDay;
+                    minute = minuteOfDay;
+                    timeResult.setText(hour + ":" + minute);
+                }
+            }, current_hour, current_minute, true, 5);
+        timePickerDialog.setTitle("");
+        timePickerDialog.setMessage("Pick the dosing time");
+        timePrompt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                amount_dialog.show();
+                timePickerDialog.show();
             }
         });
-
-
-
-
 
 //        // Test only start
 //        Button btn = (Button) findViewById(R.id.button);
@@ -120,46 +102,24 @@ public class AddMedicine extends AppCompatActivity {
 //            }
 //        });//Test only end
 
-        //*****************************
-        // Frequency dialog
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Choose an Option");
-        final String[] options = { "Everyday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
-        builder.setItems(options, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int item) {
-                switch (item) {
-                    case 0: // Delete
-                        frequency = options[item];
-                        break;
-                    case 1: // Copy
-                        frequency = options[item];
-                        break;
-                    case 2: // Edit
-                        frequency = options[item];
-                        break;
-                    case 3: // Delete
-                        frequency = options[item];
-                        break;
-                    case 4: // Copy
-                        frequency = options[item];
-                        break;
-                    case 5: // Edit
-                        frequency = options[item];
-                        break;
-                    case 6: // Delete
-                        frequency = options[item];
-                        break;
-                    case 7: // Copy
-                        frequency = options[item];
-                        break;
-                    default:
-                        break;
-                }
-                frequencyResult.setText(frequency);// Display result
+
+        //***************************
+        // Freq picker
+        final AlertDialog.Builder freqBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater_freq = this.getLayoutInflater();
+        final View dialogView_freq = inflater_freq.inflate(R.layout.freq_amount, null);
+        freqBuilder.setView(dialogView_freq);
+        final EditText input_freq = (EditText) dialogView_freq.findViewById(R.id.freqPicker);
+        freqBuilder.setTitle("Frequency Picker");
+        freqBuilder.setMessage("Enter times of dosing");
+        freqBuilder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                frequency = Integer.parseInt(input_freq.getText().toString());
+                frequencyResult.setText(input_freq.getText().toString());
             }
         });
-        builder.setNegativeButton("Cancel", null);
-        frequency_dialog = builder.create();
+        freqBuilder.setNegativeButton("Cancel", null);
+        frequency_dialog = freqBuilder.create();
         frequencyResult = (TextView) findViewById(R.id.frequencyResult);
         frequencyPicker = (TextView) findViewById(R.id.frequencyPicker_prompt);
         frequencyPicker.setOnClickListener(new View.OnClickListener() {
@@ -168,23 +128,26 @@ public class AddMedicine extends AppCompatActivity {
                 frequency_dialog.show();
             }
         });
+
+
+
         //*****************************
         // Amount dialog
-        final AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        LayoutInflater inflater = this.getLayoutInflater();
-        final View dialogView = inflater.inflate(R.layout.dialog_amount, null);
-        dialogBuilder.setView(dialogView);
-        final EditText edt = (EditText) dialogView.findViewById(R.id.amountPicker);
-        dialogBuilder.setTitle("Amount Picker");
-        dialogBuilder.setMessage("Enter amount of pills");
-        dialogBuilder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
+        final AlertDialog.Builder amountBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater_amount = this.getLayoutInflater();
+        final View dialogView_amount = inflater_amount.inflate(R.layout.dialog_amount, null);
+        amountBuilder.setView(dialogView_amount);
+        final EditText input_amount = (EditText) dialogView_amount.findViewById(R.id.amountPicker);
+        amountBuilder.setTitle("Amount Picker");
+        amountBuilder.setMessage("Enter amount of pills");
+        amountBuilder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                amount = edt.getText().toString();
-                amountResult.setText(amount);
+                amount = Integer.parseInt(input_amount.getText().toString());
+                amountResult.setText(input_amount.getText().toString());
             }
         });
-        dialogBuilder.setNegativeButton("Cancel", null);
-        amount_dialog = dialogBuilder.create();
+        amountBuilder.setNegativeButton("Cancel", null);
+        amount_dialog = amountBuilder.create();
         amountResult = (TextView) findViewById(R.id.amountResult);
         amountPicker = (TextView) findViewById(R.id.amountPicker_prompt);
         amountPicker.setOnClickListener(new View.OnClickListener() {
@@ -194,6 +157,7 @@ public class AddMedicine extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         //handle presses on the action bar items
@@ -203,13 +167,12 @@ public class AddMedicine extends AppCompatActivity {
                 finish();
                 return true;
             case R.id.action_save:
-                String hour = timePicker.getCurrentHour().toString();
-                String min = timePicker.getCurrentMinute().toString();
                 Intent i = new Intent();
                 Bundle extras = new Bundle();
-                extras.putString("EXTRA_HOUR",hour);
-                extras.putString("EXTRA_MINUTE",min);
-                extras.putString("EXTRA_MEDICINE",medicineType.getText().toString());
+                extras.putString("EXTRA_NAME",medicineType.getText().toString());
+                extras.putInt("EXTRA_HOUR",hour);
+                extras.putInt("EXTRA_MINUTE",minute);
+                extras.putInt("EXTRA_AMOUNT",amount);
                 i.putExtras(extras);
                 setResult(RESULT_OK, i);
                 finish();
@@ -230,7 +193,6 @@ public class AddMedicine extends AppCompatActivity {
      */
     private void setTimePickerInterval(TimePicker timePicker) {
         try {
-
             NumberPicker minutePicker = (NumberPicker) timePicker.findViewById(getResources().getSystem().getIdentifier(
                     "minute", "id", "android"));
             minutePicker.setMinValue(0);
@@ -244,6 +206,4 @@ public class AddMedicine extends AppCompatActivity {
             Log.e(TAG, "Exception: " + e);
         }
     }
-
-
 }

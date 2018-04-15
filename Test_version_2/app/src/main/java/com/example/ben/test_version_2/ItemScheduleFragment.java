@@ -12,19 +12,21 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import static android.app.Activity.RESULT_OK;
 
 
 public class ItemScheduleFragment extends Fragment {
-    String hour;
-    String min;
-    String medicine_type;
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
+
+    ArrayList<Pill> pills;
+    ListView listView;
+    private static CustomAdapter adapter;
 
 
     public ItemScheduleFragment() {
@@ -42,19 +44,27 @@ public class ItemScheduleFragment extends Fragment {
     }
     // UI interface first create
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_item_schedule, container, false);
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.schedule_list);
-        // use a linear layout manager
-        mLayoutManager = new LinearLayoutManager(getActivity());
-        mRecyclerView.setLayoutManager(mLayoutManager);
+        // List view test
+        listView=(ListView)view.findViewById(R.id.list);
+        pills= new ArrayList<>();
+        pills.add(new Pill("Aspirin",10, 0,1));
+        pills.add(new Pill("Pain killer",15, 50,1));
+        pills.add(new Pill("Hypnotic",22, 30,1));
+        adapter= new CustomAdapter(pills,getActivity());
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        // specify an adapter (see also next example)
-//        mAdapter = new MyAdapter(myDataset);
-        mRecyclerView.setAdapter(mAdapter);
+                Pill pill= pills.get(position);
+                Utils.toast(getActivity(),Integer.toString(position));
+            }
+        });
+        // ************
         return view;
     }
 
@@ -81,10 +91,12 @@ public class ItemScheduleFragment extends Fragment {
         if (requestCode == 1) {
             if(resultCode == RESULT_OK) {
                 Bundle extras = data.getExtras();
-                hour = extras.getString("EXTRA_HOUR");
-                min = extras.getString("EXTRA_MINUTE");
-                medicine_type = extras.getString("EXTRA_MEDICINE");
-                Toast.makeText(getActivity(),hour+" "+min+" "+medicine_type,Toast.LENGTH_SHORT).show();
+                String name = extras.getString("EXTRA_NAME");
+                int hour = extras.getInt("EXTRA_HOUR");
+                int minute = extras.getInt("EXTRA_MINUTE");
+                int amount = extras.getInt("EXTRA_AMOUNT");
+                pills.add(new Pill(name,hour, minute,amount));
+                adapter.notifyDataSetChanged();
             }
         }
     }

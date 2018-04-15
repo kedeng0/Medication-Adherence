@@ -78,8 +78,20 @@ public class HomePage extends AppCompatActivity {
                 break;
         }
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.container, selectedFragment);
+        transaction.add(R.id.container, selectedFragment,Fragment.class.getSimpleName());
         transaction.commit();
+
+//        if (getSupportFragmentManager().findFragmentByTag(.class.getSimpleName()) == null) {
+//            Utils.toast(getApplicationContext(),"add");
+//            FragmentTransaction t = getSupportFragmentManager().beginTransaction();
+//            t.add(R.id.container, selectedFragment, Fragment.class.getSimpleName());
+//            t.commit();
+//        } else {
+//            Utils.toast(getApplicationContext(),"attach");
+//            FragmentTransaction t = getSupportFragmentManager().beginTransaction();
+//            t.attach(getSupportFragmentManager().findFragmentByTag(Fragment.class.getSimpleName()));
+//            t.commit();
+//        }
 
         // Uncheck the other items
         for (int i = 0; i< mBottomNav.getMenu().size(); i++) {
