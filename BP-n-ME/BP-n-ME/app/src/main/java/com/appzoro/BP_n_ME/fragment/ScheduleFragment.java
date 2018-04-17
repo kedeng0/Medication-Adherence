@@ -1,6 +1,7 @@
 package com.appzoro.BP_n_ME.fragment;
 
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -22,10 +23,23 @@ import com.appzoro.BP_n_ME.activity.MainActivity;
 import com.appzoro.BP_n_ME.model.Pill;
 import com.appzoro.BP_n_ME.adapter.CustomAdapter;
 import com.appzoro.BP_n_ME.R;
+import com.appzoro.BP_n_ME.model.PillComparator;
+import com.appzoro.BP_n_ME.prefs.MedasolPrefs;
 import com.appzoro.BP_n_ME.util.BleManager;
 import com.appzoro.BP_n_ME.util.util;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -35,8 +49,13 @@ public class ScheduleFragment extends Fragment {
     ArrayList<Pill> pills;
     ListView listView;
     private static CustomAdapter adapter;
+    private DatabaseReference mDatabase;
+    MedasolPrefs prefs;
+    String UID;
+//    private ArrayList<ArrayList<String>> aObject;
 
-    private boolean disableButtonFlag = false;
+
+
     public ScheduleFragment() {
         // Required empty public constructor
     }
@@ -61,32 +80,20 @@ public class ScheduleFragment extends Fragment {
         //((MainActivity)getActivity()).getSupportActionBar().show();
         getActivity().setTitle("Schedule");
         Log.d(TAG, "On create view");
-        //get Data
-        Bundle bundle = this.getArguments();
-        disableButtonFlag = false;
-        if (bundle != null) {
-
-            String name = bundle.getString("EXTRA_NAME");
-            int hour = bundle.getInt("EXTRA_HOUR");
-            int minute = bundle.getInt("EXTRA_MINUTE");
-            int amount = bundle.getInt("EXTRA_AMOUNT");
-            util.toast(getActivity(),name+hour+minute+amount);
-            pills.add(new Pill(name, hour, minute, amount));
-            adapter.notifyDataSetChanged();
-        }
 
 
         // List view test
+        pills = new ArrayList<>();
         listView=(ListView)view.findViewById(R.id.list);
-        pills= new ArrayList<>();
-        pills.add(new Pill("Aspirin",10, 0,1));
-        pills.add(new Pill("Pain killer",15, 50,1));
-        pills.add(new Pill("Hypnotic",22, 30,1));
+//        pills.add(new Pill("Aspirin",10, 0,1));
+//        pills.add(new Pill("Pain killer",15, 50,1));
+//        pills.add(new Pill("Hypnotic",22, 30,1));
         adapter= new CustomAdapter(pills,getActivity());
         listView.setAdapter(adapter);
+        readFromFile(getActivity());
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
                 long viewId = view.getId();
                 if (viewId == R.id.iv_delete) {
                     //Log.e("Delete", String.valueOf(item));
@@ -98,6 +105,9 @@ public class ScheduleFragment extends Fragment {
                             .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     //remove and update
+                                    deleteLine(position, getActivity());
+//                                    getActivity().invalidateOptionsMenu();
+                                    adapter.notifyDataSetChanged();
                                 }
                             })
                             .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -113,14 +123,119 @@ public class ScheduleFragment extends Fragment {
 //                util.toast(getActivity(),Integer.toString(position));
             }
         });
-        getActivity().invalidateOptionsMenu();
+
+//        getActivity().invalidateOptionsMenu();
         return view;
     }
 
+    private void readFromFile(Context context) {
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        prefs = new MedasolPrefs(getActivity().getApplicationContext());
+        UID = prefs.getUID();
+//        String filename = UID + ".txt";
+        pills.clear();
+        String filename = "b.txt";
+        File file = new File(context.getFilesDir(), filename);
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            DataInputStream in = new DataInputStream(fis);
+            BufferedReader br = new BufferedReader(new InputStreamReader(in));
+            String strLine;
+            while ((strLine = br.readLine()) != null) {
+
+                String[] stringArray = strLine.split(", ");
+                Log.d("DEBUG",stringArray[0]+stringArray[1]+stringArray[2]+stringArray[3]);
+//                String name = stringArray[0];
+//                int hour = Integer.parseInt(stringArray[1]);
+//                int minute = Integer.parseInt(stringArray[2]);
+//                int amount = Integer.parseInt(stringArray[3]);
+//                Log.d("DEBUG",name+hour+minute+amount);
+                pills.add(new Pill(stringArray[0], Integer.parseInt(stringArray[1]),
+                        Integer.parseInt(stringArray[2]), Integer.parseInt(stringArray[3])));
+//                adapter.notifyDataSetChanged();
+            }
+            Log.d("DEBUG",Integer.toString(pills.size()));
+            in.close();
+            fis.close();
+        }
+        catch (Exception e) {
+            Log.e("Exception", "File read failed: " + e.toString());
+        }
+        Collections.sort(pills,new PillComparator());
+        Log.d("DEBUG","Sorted write start");
+        writePillsToFile(file);
+    }
+
+    private void deleteLine(int position, Context context) {
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        prefs = new MedasolPrefs(getActivity().getApplicationContext());
+        UID = prefs.getUID();
+//        String filename = UID + ".txt";
+        pills.clear();
+        String filename = "b.txt";
+        File file = new File(context.getFilesDir(), filename);
+        try {
+            Log.d("DEBUG","Delete read start");
+            FileInputStream fis = new FileInputStream(file);
+            DataInputStream in = new DataInputStream(fis);
+            BufferedReader br = new BufferedReader(new InputStreamReader(in));
+            String strLine;
+            int i = 0;
+            while ((strLine = br.readLine()) != null) {
+                String[] stringArray = strLine.split(", ");
+                if (i != position) {
+                    Log.d("DEBUG",Integer.toString(i));
+                Log.d("DEBUG",stringArray[0]+stringArray[1]+stringArray[2]+stringArray[3]);
+//                String name = stringArray[0];
+//                int hour = Integer.parseInt(stringArray[1]);
+//                int minute = Integer.parseInt(stringArray[2]);
+//                int amount = Integer.parseInt(stringArray[3]);
+//                Log.d("DEBUG",name+hour+minute+amount);
+                    pills.add(new Pill(stringArray[0], Integer.parseInt(stringArray[1]),
+                            Integer.parseInt(stringArray[2]), Integer.parseInt(stringArray[3])));
+                }
+//                adapter.notifyDataSetChanged();
+                i++;
+            }
+            in.close();
+            fis.close();
+        }
+        catch (Exception e)
+        {
+            Log.e("Exception", "File delete read failed: " + e.toString());
+        }
+        Log.d("DEBUG","Delete write start");
+        writePillsToFile(file);
+    }
+
+    private void writePillsToFile(File file) {
+        // write pills to text
+        try {
+            FileOutputStream fos = new FileOutputStream(file,false);
+            for (int i = 0; i < pills.size(); i++) {
+                StringBuilder text = new StringBuilder();
+                String concatenate = ", ";
+                text.append(pills.get(i).getName() + concatenate);
+                text.append(pills.get(i).getHour());
+                text.append(concatenate);
+                text.append(pills.get(i).getMinute());
+                text.append(concatenate);
+                text.append(pills.get(i).getAmount());
+                text.append(concatenate);
+                text.append(System.getProperty("line.separator"));
+                Log.d("DEBUG",text.toString());
+                fos.write(text.toString().getBytes());
+            }
+            fos.close();
+        }
+        catch (IOException e) {
+            Log.e("Exception", "File write failed: " + e.toString());
+        }
+    }
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.action_bar_add_item, menu);
-        menu.findItem(R.id.action_add).setVisible(!disableButtonFlag);
+        //menu.findItem(R.id.action_add).setVisible(!disableButtonFlag);
     }
 
     @Override
@@ -129,11 +244,11 @@ public class ScheduleFragment extends Fragment {
         switch (item.getItemId()) {
             case R.id.action_add:
                 //startActivityForResult(new Intent(getActivity(), AddMedicine.class), 1);
-                getFragmentManager().beginTransaction().add
-                        (R.id.Fragment_frame_main_activity, new AddMedicineFragment()).addToBackStack("AddMedicineFragment").commit();
-                disableButtonFlag = true;
-
-                //                getFragmentManager().popBackStack();
+//                getFragmentManager().beginTransaction().add
+//                        (R.id.Fragment_frame_main_activity, new AddMedicineFragment()).addToBackStack("AddMedicineFragment").commit();
+                //disableButtonFlag = true;
+                getFragmentManager().beginTransaction().replace
+                    (R.id.Fragment_frame_main_activity, new AddMedicineFragment()).addToBackStack("AddMedicineFragment").commit();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -158,8 +273,25 @@ public class ScheduleFragment extends Fragment {
     @Override
     public void onStop() {
         super.onStop();
-
 //        ((MainActivity)getActivity()).getSupportActionBar().show();
     }
+//
+//    @Override
+//    public void onResume() {
+//        Log.e("DEBUG", "onResume of Schedule Fragment");
+//        //disableButtonFlag = false;
+//        Bundle bundle = this.getArguments();
+//        if (bundle != null) {
+//            Log.e("DEBUG", "Bundle");
+//            String name = bundle.getString("EXTRA_NAME");
+//            int hour = bundle.getInt("EXTRA_HOUR");
+//            int minute = bundle.getInt("EXTRA_MINUTE");
+//            int amount = bundle.getInt("EXTRA_AMOUNT");
+//            util.toast(getActivity(),name+hour+minute+amount);
+//            pills.add(new Pill(name, hour, minute, amount));
+//            adapter.notifyDataSetChanged();
+//        }
+//        super.onResume();
+//    }
 
 }

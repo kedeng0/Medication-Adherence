@@ -1,6 +1,7 @@
 package com.appzoro.BP_n_ME.fragment;
 
 
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -22,20 +23,26 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import com.appzoro.BP_n_ME.R;
 import com.appzoro.BP_n_ME.activity.MainActivity;
 import com.appzoro.BP_n_ME.fragment.ScheduleFragment;
+import com.appzoro.BP_n_ME.prefs.MedasolPrefs;
 import com.appzoro.BP_n_ME.util.DurationTimePickDialog;
 import com.appzoro.BP_n_ME.util.util;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class AddMedicineFragment extends Fragment {
     EditText medicineType;
 
-    TextView frequencyPicker;
-    TextView frequencyResult;
+//    TextView frequencyPicker;
+//    TextView frequencyResult;
     TextView amountPicker;
     TextView amountResult;
     TextView timePrompt;
@@ -45,16 +52,17 @@ public class AddMedicineFragment extends Fragment {
 
     private final static int TIME_PICKER_INTERVAL = 5;
     private final String TAG = this.getClass().getName();
-    AlertDialog frequency_dialog;
+//    AlertDialog frequency_dialog;
     AlertDialog amount_dialog;
-    AlertDialog time_dialog;
-    int frequency;
+//    int frequency;
     int amount;
     int current_hour;
     int current_minute;
     int hour;
     int minute;
-
+    private DatabaseReference mDatabase;
+    MedasolPrefs prefs;
+    String UID;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -119,30 +127,30 @@ public class AddMedicineFragment extends Fragment {
 
 
         //***************************
-        // Freq picker
-        final AlertDialog.Builder freqBuilder = new AlertDialog.Builder(getActivity());
-        LayoutInflater inflater_freq = this.getLayoutInflater();
-        final View dialogView_freq = inflater_freq.inflate(R.layout.freq_amount, null);
-        freqBuilder.setView(dialogView_freq);
-        final EditText input_freq = (EditText) dialogView_freq.findViewById(R.id.freqPicker);
-        freqBuilder.setTitle("Frequency Picker");
-        freqBuilder.setMessage("Enter times of dosing");
-        freqBuilder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                frequency = Integer.parseInt(input_freq.getText().toString());
-                frequencyResult.setText(input_freq.getText().toString());
-            }
-        });
-        freqBuilder.setNegativeButton("Cancel", null);
-        frequency_dialog = freqBuilder.create();
-        frequencyResult = (TextView) view.findViewById(R.id.frequencyResult);
-        frequencyPicker = (TextView) view.findViewById(R.id.frequencyPicker_prompt);
-        frequencyPicker.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                frequency_dialog.show();
-            }
-        });
+//        // Freq picker
+//        final AlertDialog.Builder freqBuilder = new AlertDialog.Builder(getActivity());
+//        LayoutInflater inflater_freq = this.getLayoutInflater();
+//        final View dialogView_freq = inflater_freq.inflate(R.layout.freq_amount, null);
+//        freqBuilder.setView(dialogView_freq);
+//        final EditText input_freq = (EditText) dialogView_freq.findViewById(R.id.freqPicker);
+//        freqBuilder.setTitle("Frequency Picker");
+//        freqBuilder.setMessage("Enter times of dosing");
+//        freqBuilder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
+//            public void onClick(DialogInterface dialog, int whichButton) {
+//                frequency = Integer.parseInt(input_freq.getText().toString());
+//                frequencyResult.setText(input_freq.getText().toString());
+//            }
+//        });
+//        freqBuilder.setNegativeButton("Cancel", null);
+//        frequency_dialog = freqBuilder.create();
+//        frequencyResult = (TextView) view.findViewById(R.id.frequencyResult);
+//        frequencyPicker = (TextView) view.findViewById(R.id.frequencyPicker_prompt);
+//        frequencyPicker.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                frequency_dialog.show();
+//            }
+//        });
 
 
         //*****************************
@@ -186,14 +194,19 @@ public class AddMedicineFragment extends Fragment {
                 getFragmentManager().popBackStack();
                 break;
             case R.id.action_save:
-                Bundle extras = new Bundle();
-                extras.putString("EXTRA_NAME",medicineType.getText().toString());
-                extras.putInt("EXTRA_HOUR",hour);
-                extras.putInt("EXTRA_MINUTE",minute);
-                extras.putInt("EXTRA_AMOUNT",amount);
-                fragment.setArguments(extras);
-//                getFragmentManager().beginTransaction().replace
-//                        (R.id.Fragment_frame_main_activity, new ScheduleFragment()).addToBackStack("AddMedicineFragment").commit();
+                String name = medicineType.getText().toString();
+                if (name.length() > 0) {
+                    writeToFile(medicineType.getText().toString(), hour, minute, amount, getActivity());
+                }
+                    //                Bundle extras = new Bundle();
+//                extras.putString("EXTRA_NAME",medicineType.getText().toString());
+//                extras.putInt("EXTRA_HOUR",hour);
+//                extras.putInt("EXTRA_MINUTE",minute);
+//                extras.putInt("EXTRA_AMOUNT",amount);
+//                fragment.setArguments(extras);
+//                getFragmentManager().beginTransaction().add
+//                        (R.id.Fragment_frame_main_activity, fragment).addToBackStack("AddMedicineFragment").commit();
+                //addToBackStack("AddMedicineFragment").
                 getFragmentManager().popBackStack();
                 util.hideSOFTKEYBOARD(view);
                 break;
@@ -235,5 +248,42 @@ public class AddMedicineFragment extends Fragment {
 //        super.onStop();
 //        ((MainActivity)getActivity()).getSupportActionBar().show();
 //    }
+private void writeToFile(String name, int hour, int minute, int amount, Context context) {
+    //get Data from txt
+    // Construct text
+    StringBuilder text = new StringBuilder();
+    String concatenate = ", ";
+    text.append(name + concatenate);
+    text.append(hour);
+    text.append(concatenate);
+    text.append(minute);
+    text.append(concatenate);
+    text.append(amount);
+    text.append(concatenate);
+    text.append(System.getProperty("line.separator"));
 
+    mDatabase = FirebaseDatabase.getInstance().getReference();
+    prefs = new MedasolPrefs(getActivity().getApplicationContext());
+    UID = prefs.getUID();
+//    String filename = UID + ".txt";
+    String filename = "b.txt";
+    Log.d("DEBUG","UID: " + filename);
+    Log.d("DEBUG",context.getFilesDir().getAbsolutePath());
+    File file = new File(context.getFilesDir(), filename);
+    try {
+        FileOutputStream fos = new FileOutputStream(file,true);
+//        FileOutputStream fos = new FileOutputStream(file, true);
+        // Write to file
+//            if(file.exists()) {
+//
+//            } else {
+//
+//            }
+        fos.write(text.toString().getBytes());
+        fos.close();
+    }
+    catch (IOException e) {
+        Log.e("Exception", "File write failed: " + e.toString());
+    }
+}
 }

@@ -101,7 +101,7 @@
     <string name="body_weight_log">Body Weight Log</string>
     <string name="logout">Logout</string>
 
-    <string name="hello_schedule_fragment">Here is your upcoming schedule</string>
+    <string name="hello_schedule_fragment">Here is your upcoming schedule:</string>
     <string name="menu_add">Add Medicine</string>
     <string name="medicine_type_prompt">Please enter the medicine type below:</string>
     <string name="medicine_time_prompt">Please choose the dosing time:</string>

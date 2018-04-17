@@ -1,10 +1,12 @@
 package com.appzoro.BP_n_ME.model;
 
+import java.util.Comparator;
+
 /**
  * Created by Ben on 4/14/2018.
  */
 
-public class Pill {
+public class Pill{
     String name;
     int hour;
     int minute;
@@ -29,5 +31,5 @@ public class Pill {
         return amount;
     }
 
-
 }
+
