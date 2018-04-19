@@ -2,6 +2,7 @@ package com.appzoro.BP_n_ME.fragment;
 
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -63,6 +64,10 @@ public class AddMedicineFragment extends Fragment {
     private DatabaseReference mDatabase;
     MedasolPrefs prefs;
     String UID;
+
+    SharedPreferences amount_sharedpref;
+    SharedPreferences.Editor amount_editor;
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -84,6 +89,8 @@ public class AddMedicineFragment extends Fragment {
         ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         medicineType = (EditText) view.findViewById(R.id.medicine_type);
+        amount_sharedpref = getActivity().getSharedPreferences("pill_amount", Context.MODE_PRIVATE);
+        amount_editor = amount_sharedpref.edit();
 
 
         //*************************
@@ -197,6 +204,8 @@ public class AddMedicineFragment extends Fragment {
                 String name = medicineType.getText().toString();
                 if (name.length() > 0) {
                     writeToFile(medicineType.getText().toString(), hour, minute, amount, getActivity());
+                    amount_editor.putInt(medicineType.getText().toString(), 0);
+                    amount_editor.apply();
                 }
                     //                Bundle extras = new Bundle();
 //                extras.putString("EXTRA_NAME",medicineType.getText().toString());

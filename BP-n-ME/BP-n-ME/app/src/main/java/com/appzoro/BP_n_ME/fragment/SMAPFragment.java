@@ -1,6 +1,9 @@
 package com.appzoro.BP_n_ME.fragment;
 
 import android.Manifest;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
@@ -11,6 +14,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,11 +22,14 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.appzoro.BP_n_ME.R;
+import com.appzoro.BP_n_ME.model.Pill;
 import com.appzoro.BP_n_ME.prefs.MedasolPrefs;
 import com.appzoro.BP_n_ME.util.BleManager;
 import com.appzoro.BP_n_ME.util.util;
@@ -32,11 +39,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -56,6 +69,8 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
     private Button disconnectButton;
     private Button connectNewDeviceButton;
     private Button dispenseButton;
+    private Button reloadButton;
+    private TextView numPillTextView;
     Spinner spinner;
 
 
@@ -66,7 +81,10 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
     MedasolPrefs prefs;
     private DatabaseReference mDatabase;
     double doses;
-    int goalFreq;
+    int goalFreq,numPill, numChannel;
+    SharedPreferences amount_sharedpref;
+    SharedPreferences.Editor amount_editor;
+
 
     //Connect to BLE Device variable needed
     private BleManager mBleManager;
@@ -132,65 +150,99 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
         disconnectButton = (Button) view.findViewById(R.id.disconnect);
         connectNewDeviceButton = (Button) view.findViewById(R.id.newconnection);
         dispenseButton = (Button) view.findViewById(R.id.dispense);
+        reloadButton = (Button) view.findViewById(R.id.reload);
         spinner = view.findViewById(R.id.medicationSpinner2);
+        numPillTextView = view.findViewById(R.id.pill_amount);
 
-        SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd");
+        amount_sharedpref = getActivity().getSharedPreferences("pill_amount", Context.MODE_PRIVATE);
+        amount_editor = amount_sharedpref.edit();
 
-        ParseDate = outputFormat.format(new Date());
 
-        Log.e("ParseDate",ParseDate);
+//
+//        ************Get Pill From Database***************
+//        SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd");
+//
+//        ParseDate = outputFormat.format(new Date());
+//
+//        Log.e("ParseDate",ParseDate);
+//
+//        mDatabase = FirebaseDatabase.getInstance().getReference();
+//        prefs = new MedasolPrefs(getActivity().getApplicationContext());
+//        UID = prefs.getUID();
+//
+//        medication =  new ArrayList<String>(Arrays.asList(prefs.getMeds().replace("[","").replace("]","").replace(" ","").split(",")));
+//        Log.e("meds", String.valueOf(medication));
+//
+//        for(int ind = 0; ind<medication.size(); ind++){
+//            medication.set(ind, medication.get(ind));
+//        }
+//
+//        setArray(medication);
+//        frequency =  new ArrayList<String>(Arrays.asList(prefs.getFreqList().trim().replace("[","").replace("]","").split(", ")));
+//
+//        goalFreq = 0;
+//        for (int i = 0; i < frequency.size(); i++) {
+//            if (frequency.get(i).equals("Daily")) {
+//                goalFreq += 1;
+//            }
+//            if (frequency.get(i).equals("Twice daily")) {
+//                goalFreq += 2;
+//            }
+//            if (frequency.get(i).equals("Three times daily")) {
+//                goalFreq += 3;
+//            }
+//            if (frequency.get(i).equals("Four times per day")) {
+//                goalFreq += 4;
+//            }
+//        }
+//        //Log.e("totalfreq", String.valueOf(goalFreq));
+//
+//        mDatabase.child("app").child("users").child(UID).child("medicineLog").child(ParseDate).addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                medsList.clear();
+//                Iterator<DataSnapshot> it = dataSnapshot.getChildren().iterator();
+//                while (it.hasNext()) {
+//                    DataSnapshot medicine = it.next();
+//                    String medsDate = medicine.getKey();
+//                    String Medication = medicine.getValue().toString();
+//                    //Log.e("Medication Date", medsDate);
+//                    //Log.e("Medication ", Medication);
+//                    medsList.add(Medication);
+//                }
+//                //Log.e("meds size", String.valueOf(medsList.size()));
+//            }
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//                //Log.w(TAG, "getUser:onCancelled", databaseError.toException());
+//            }
+//        });
 
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        prefs = new MedasolPrefs(getActivity().getApplicationContext());
-        UID = prefs.getUID();
+//        Get Pill from internal storage file.
+        String filename = "b.txt";
+        File file = new File(getActivity().getFilesDir(), filename);
+        medication =  new ArrayList<String>();
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            DataInputStream in = new DataInputStream(fis);
+            BufferedReader br = new BufferedReader(new InputStreamReader(in));
 
-        medication =  new ArrayList<String>(Arrays.asList(prefs.getMeds().replace("[","").replace("]","").replace(" ","").split(",")));
-        Log.e("meds", String.valueOf(medication));
+            String strLine;
+            while ((strLine = br.readLine()) != null) {
 
-        for(int ind = 0; ind<medication.size(); ind++){
-            medication.set(ind, medication.get(ind));
+                String[] stringArray = strLine.split(", ");
+                Log.d("DEBUG",stringArray[0]+stringArray[1]+stringArray[2]+stringArray[3]);
+                medication.add(stringArray[0]);
+
+            }
+            in.close();
+            fis.close();
         }
-
+        catch (Exception e) {
+            Log.e("Exception", "File read failed: " + e.toString());
+        }
+        Collections.sort(medication);
         setArray(medication);
-        frequency =  new ArrayList<String>(Arrays.asList(prefs.getFreqList().trim().replace("[","").replace("]","").split(", ")));
-
-        goalFreq = 0;
-        for (int i = 0; i < frequency.size(); i++) {
-            if (frequency.get(i).equals("Daily")) {
-                goalFreq += 1;
-            }
-            if (frequency.get(i).equals("Twice daily")) {
-                goalFreq += 2;
-            }
-            if (frequency.get(i).equals("Three times daily")) {
-                goalFreq += 3;
-            }
-            if (frequency.get(i).equals("Four times per day")) {
-                goalFreq += 4;
-            }
-        }
-        //Log.e("totalfreq", String.valueOf(goalFreq));
-
-        mDatabase.child("app").child("users").child(UID).child("medicineLog").child(ParseDate).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                medsList.clear();
-                Iterator<DataSnapshot> it = dataSnapshot.getChildren().iterator();
-                while (it.hasNext()) {
-                    DataSnapshot medicine = it.next();
-                    String medsDate = medicine.getKey();
-                    String Medication = medicine.getValue().toString();
-                    //Log.e("Medication Date", medsDate);
-                    //Log.e("Medication ", Medication);
-                    medsList.add(Medication);
-                }
-                //Log.e("meds size", String.valueOf(medsList.size()));
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                //Log.w(TAG, "getUser:onCancelled", databaseError.toException());
-            }
-        });
 
     }
 
@@ -200,9 +252,7 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
         disconnectButton.setOnClickListener(this);
         connectNewDeviceButton.setOnClickListener(this);
         dispenseButton.setOnClickListener(this);
-
-
-
+        reloadButton.setOnClickListener(this);
 
     }
 
@@ -223,6 +273,9 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
             case R.id.dispense:
                 dispense();
                 break;
+            case R.id.reload:
+                reload();
+                break;
         }
     }
 
@@ -241,114 +294,153 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
         if (mBleManager.getConnectionStatus()) {
             if (mBleManager.dispense()) {
                 //log pill taking behavior in the calendar
-                submit();
+//                submit();
             }
         } else {
             util.toast(context, "Not connected to any device");
         }
-
-
     }
 
-    private void submit() {
-        Calendar calander = Calendar.getInstance();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
-        String curtime = simpleDateFormat.format(calander.getTime());
-        if (medicine !=" ") {
-            int entryNo = 0;
-            int medsSize = 1;
-            for (int j = 0;j<medication.size();j++){
-                if (medication.get(j).contains(medicine)){
-                    String freq = frequency.get(j);
-                    Log.e("<<<<<<<<<<", medicine +" "+  freq);
-                    if (frequency.get(j).equals("Daily")){
-                        entryNo = 1;
-                    } else if (frequency.get(j).equals("Twice daily")){
-                        entryNo = 2;
-                    } else if (frequency.get(j).equals("Three times daily")){
-                        entryNo = 3;
-                    } else if (frequency.get(j).equals("Four times per day")) {
-                        entryNo = 4;
-                    }
-                }
+    public void reload() {
+
+        final Dialog amountDialog = new Dialog(getContext());
+        amountDialog.setTitle("Amount of Pills After Reload:");
+        amountDialog.setContentView(R.layout.dialog_reload_amount);
+        Button done = (Button) amountDialog.findViewById(R.id.done);
+        Button cancel = (Button) amountDialog.findViewById(R.id.cancel);
+        final NumberPicker np = (NumberPicker) amountDialog.findViewById(R.id.numberPicker1);
+        np.setMaxValue(20);
+        np.setMinValue(0);
+        np.setWrapSelectorWheel(false);
+        np.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker numberPicker, int i, int i1) {
+                numPill = i1;
             }
-            //Log.e("entryNo",""+entryNo );
-            for (int i=0;i<medsList.size();i++){
-                if (medsList.get(i).contains(medicine)){
-                    medsSize++;
-                }
+        });
+        done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                UpdatePillAmount();
+                numPillTextView.setText(Integer.toString(numPill));
+                amountDialog.dismiss();
             }
-            //Log.e("medsSize", ""+medsSize);
-
-            if (!(medsSize > entryNo)){
-                mDatabase.child("app").child("users").child(UID).child("medicineLog").child(ParseDate).child(curtime).setValue(medicine);
-
-                Log.e("size", ""+ medsList.size() +"   "+goalFreq );
-                doses = ((double) (medsList.size()+1) / goalFreq) * 100;
-                Log.e("doses", ""+ doses );
-                if (doses >= 80){
-                    mDatabase.child("app").child("users").child(UID).child("MedicalCondition").child(ParseDate).setValue("green");
-                } else {
-                    mDatabase.child("app").child("users").child(UID).child("MedicalCondition").child(ParseDate).setValue("red");
-                }
-
-                //TODO: add cancel of repeating alarm within a time frame
-
-                    /*//10AM  limit to 5AM to 12PM
-                    if((timePicker.getCurrentHour()<12)&(timePicker.getCurrentHour()>5)){
-                        final Intent intent = getActivity().getIntent();
-                        Log.e("Should Cancel", "sending 4");
-                        *//*Intent i = new Intent(getActivity(), ReminderService.class);
-                        i.putExtra("type", 4);
-                        getActivity().startService(i);*//*
-                    }
-                    //2PM  limit to 12PM to 4PM
-                    if((timePicker.getCurrentHour()<16)&(timePicker.getCurrentHour()>=12)){
-                        Log.e("Alarm", "sending....");
-                        Intent alarmIntent = new Intent(getActivity(), MyAlarmReceiver.class);
-                        alarmIntent.setData(Uri.parse("custom://" + 1000002));
-                        alarmIntent.setAction(String.valueOf(1000002));
-                        AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(ALARM_SERVICE);
-                        PendingIntent displayIntent = PendingIntent.getBroadcast(getActivity(), 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-                        alarmManager.cancel(displayIntent);
-                    }
-                    //8PM  limit to 4PM to 12AM
-                    if((timePicker.getCurrentHour()<24)&(timePicker.getCurrentHour()>=14)){
-                        Intent alarmIntent = new Intent(getActivity(), MyAlarmReceiver.class);
-                        alarmIntent.setData(Uri.parse("custom://" + 1000003));
-                        alarmIntent.setAction(String.valueOf(1000003));
-                        AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(ALARM_SERVICE);
-                        PendingIntent displayIntent = PendingIntent.getBroadcast(getActivity(), 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-                        alarmManager.cancel(displayIntent);
-                    }*/
-                int colonNdx = curtime.indexOf(":");
-                String subKey = curtime.substring(0,colonNdx);
-                String subKey1 = curtime.substring(colonNdx,curtime.length());
-                int HR =Integer.parseInt(subKey);
-                //int MIN =Integer.parseInt(subKey1);
-
-                if(HR >= 12){
-                    if(HR > 12){
-                        HR = HR - 12;
-                    }
-                    if (HR < 10){
-                        Toast.makeText(getActivity(), "Your medication '"+medicine+"' has been logged at " + "0" + HR + subKey1 + " PM ", Toast.LENGTH_LONG).show();
-                    }
-                    else {
-                        Toast.makeText(getActivity(), "Your medication '"+medicine+"' has been logged at " + HR + subKey1 + " PM ", Toast.LENGTH_LONG).show();
-                    }
-                }else{
-                    Toast.makeText(getActivity(), "Your medication '"+medicine+"' has been logged at " + curtime+ " AM ", Toast.LENGTH_LONG).show();
-                }
+        });
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                amountDialog.dismiss();
             }
-            else {
-                Toast.makeText(getActivity(), "This number of doses exceeds your prescribed frequency!", Toast.LENGTH_LONG).show();
-            }
-        }
-        else{
-            Toast.makeText(getActivity(), "Please select a medication!", Toast.LENGTH_SHORT).show();
-        }
+        });
+        amountDialog.show();
     }
+
+    private void UpdatePillAmount() {
+        amount_editor.putInt(medicine, numPill);
+        amount_editor.apply();
+    }
+
+    //This function records the current pill-taking behavior to the firebase databse.
+    //Not Used For Now.
+//    private void submit() {
+//        Calendar calander = Calendar.getInstance();
+//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
+//        String curtime = simpleDateFormat.format(calander.getTime());
+//        if (medicine !=" ") {
+//            int entryNo = 0;
+//            int medsSize = 1;
+//            for (int j = 0;j<medication.size();j++){
+//                if (medication.get(j).contains(medicine)){
+//                    String freq = frequency.get(j);
+//                    Log.e("<<<<<<<<<<", medicine +" "+  freq);
+//                    if (frequency.get(j).equals("Daily")){
+//                        entryNo = 1;
+//                    } else if (frequency.get(j).equals("Twice daily")){
+//                        entryNo = 2;
+//                    } else if (frequency.get(j).equals("Three times daily")){
+//                        entryNo = 3;
+//                    } else if (frequency.get(j).equals("Four times per day")) {
+//                        entryNo = 4;
+//                    }
+//                }
+//            }
+//            //Log.e("entryNo",""+entryNo );
+//            for (int i=0;i<medsList.size();i++){
+//                if (medsList.get(i).contains(medicine)){
+//                    medsSize++;
+//                }
+//            }
+//            //Log.e("medsSize", ""+medsSize);
+//
+//            if (!(medsSize > entryNo)){
+//                mDatabase.child("app").child("users").child(UID).child("medicineLog").child(ParseDate).child(curtime).setValue(medicine);
+//
+//                Log.e("size", ""+ medsList.size() +"   "+goalFreq );
+//                doses = ((double) (medsList.size()+1) / goalFreq) * 100;
+//                Log.e("doses", ""+ doses );
+//                if (doses >= 80){
+//                    mDatabase.child("app").child("users").child(UID).child("MedicalCondition").child(ParseDate).setValue("green");
+//                } else {
+//                    mDatabase.child("app").child("users").child(UID).child("MedicalCondition").child(ParseDate).setValue("red");
+//                }
+//
+//                //TODO: add cancel of repeating alarm within a time frame
+//
+//                    /*//10AM  limit to 5AM to 12PM
+//                    if((timePicker.getCurrentHour()<12)&(timePicker.getCurrentHour()>5)){
+//                        final Intent intent = getActivity().getIntent();
+//                        Log.e("Should Cancel", "sending 4");
+//                        *//*Intent i = new Intent(getActivity(), ReminderService.class);
+//                        i.putExtra("type", 4);
+//                        getActivity().startService(i);*//*
+//                    }
+//                    //2PM  limit to 12PM to 4PM
+//                    if((timePicker.getCurrentHour()<16)&(timePicker.getCurrentHour()>=12)){
+//                        Log.e("Alarm", "sending....");
+//                        Intent alarmIntent = new Intent(getActivity(), MyAlarmReceiver.class);
+//                        alarmIntent.setData(Uri.parse("custom://" + 1000002));
+//                        alarmIntent.setAction(String.valueOf(1000002));
+//                        AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(ALARM_SERVICE);
+//                        PendingIntent displayIntent = PendingIntent.getBroadcast(getActivity(), 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+//                        alarmManager.cancel(displayIntent);
+//                    }
+//                    //8PM  limit to 4PM to 12AM
+//                    if((timePicker.getCurrentHour()<24)&(timePicker.getCurrentHour()>=14)){
+//                        Intent alarmIntent = new Intent(getActivity(), MyAlarmReceiver.class);
+//                        alarmIntent.setData(Uri.parse("custom://" + 1000003));
+//                        alarmIntent.setAction(String.valueOf(1000003));
+//                        AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(ALARM_SERVICE);
+//                        PendingIntent displayIntent = PendingIntent.getBroadcast(getActivity(), 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+//                        alarmManager.cancel(displayIntent);
+//                    }*/
+//                int colonNdx = curtime.indexOf(":");
+//                String subKey = curtime.substring(0,colonNdx);
+//                String subKey1 = curtime.substring(colonNdx,curtime.length());
+//                int HR =Integer.parseInt(subKey);
+//                //int MIN =Integer.parseInt(subKey1);
+//
+//                if(HR >= 12){
+//                    if(HR > 12){
+//                        HR = HR - 12;
+//                    }
+//                    if (HR < 10){
+//                        Toast.makeText(getActivity(), "Your medication '"+medicine+"' has been logged at " + "0" + HR + subKey1 + " PM ", Toast.LENGTH_LONG).show();
+//                    }
+//                    else {
+//                        Toast.makeText(getActivity(), "Your medication '"+medicine+"' has been logged at " + HR + subKey1 + " PM ", Toast.LENGTH_LONG).show();
+//                    }
+//                }else{
+//                    Toast.makeText(getActivity(), "Your medication '"+medicine+"' has been logged at " + curtime+ " AM ", Toast.LENGTH_LONG).show();
+//                }
+//            }
+//            else {
+//                Toast.makeText(getActivity(), "This number of doses exceeds your prescribed frequency!", Toast.LENGTH_LONG).show();
+//            }
+//        }
+//        else{
+//            Toast.makeText(getActivity(), "Please select a medication!", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 
 
     // Handles various events fired by the Service.
@@ -397,6 +489,9 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
                 // TODO Auto-generated method stub
                 //Log.v("item", (String) parent.getItemAtPosition(position));
                 medicine = parent.getItemAtPosition(position).toString();
+                numPill = amount_sharedpref.getInt(medicine,0);
+                numPillTextView.setText(Integer.toString(numPill));
+
             }
             @Override
             public void onNothingSelected(AdapterView<?> arg0) {
