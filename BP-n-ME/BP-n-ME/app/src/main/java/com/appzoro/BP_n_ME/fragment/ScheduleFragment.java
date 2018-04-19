@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.appzoro.BP_n_ME.activity.MainActivity;
 import com.appzoro.BP_n_ME.model.Pill;
@@ -39,6 +40,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 
 import static android.app.Activity.RESULT_OK;
@@ -52,6 +54,8 @@ public class ScheduleFragment extends Fragment {
     private DatabaseReference mDatabase;
     MedasolPrefs prefs;
     String UID;
+    TextView next_schedule;
+    private Calendar c;
 //    private ArrayList<ArrayList<String>> aObject;
 
 
@@ -81,6 +85,9 @@ public class ScheduleFragment extends Fragment {
         getActivity().setTitle("Schedule");
         Log.d(TAG, "On create view");
 
+
+        // Next schedule
+        next_schedule = (TextView) view.findViewById(R.id.next);
 
         // List view test
         pills = new ArrayList<>();
@@ -274,6 +281,22 @@ public class ScheduleFragment extends Fragment {
     public void onStop() {
         super.onStop();
 //        ((MainActivity)getActivity()).getSupportActionBar().show();
+    }
+    private String findNextPill() {
+        StringBuilder a = new StringBuilder();
+        c = Calendar.getInstance();
+        int current_hour = c.get(Calendar.HOUR_OF_DAY);
+        int current_minute = c.get(Calendar.MINUTE);
+        for (int i = 0; i < pills.size(); i++) {
+            if (current_hour == pills.get(i).getHour()){
+                if(current_minute >= pills.get(i).getMinute()) {
+                    a.append(Integer.toString(pills.get(i).getHour()));
+                    a.append(":");
+                    a.append(Integer.toString(pills.get(i).getMinute()));
+                }
+            }
+        }
+        return a.toString();
     }
 //
 //    @Override
