@@ -27,6 +27,8 @@ import com.appzoro.BP_n_ME.model.PillComparator;
 import com.appzoro.BP_n_ME.prefs.MedasolPrefs;
 import com.appzoro.BP_n_ME.util.BleManager;
 import com.appzoro.BP_n_ME.util.util;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -39,6 +41,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 import static android.app.Activity.RESULT_OK;
@@ -50,7 +53,10 @@ public class ScheduleFragment extends Fragment {
     ListView listView;
     private static CustomAdapter adapter;
     private DatabaseReference mDatabase;
+    FirebaseUser user;
     MedasolPrefs prefs;
+    ArrayList<String> medication, frequency;
+
     String UID;
 //    private ArrayList<ArrayList<String>> aObject;
 
@@ -81,6 +87,9 @@ public class ScheduleFragment extends Fragment {
         getActivity().setTitle("Schedule");
         Log.d(TAG, "On create view");
 
+        prefs = new MedasolPrefs(getActivity().getApplicationContext());
+        medication = new ArrayList<String>(Arrays.asList(prefs.getMeds().replace("[", "").replace("]", "").replace(" ", "").split(",")));
+        frequency =  new ArrayList<String>(Arrays.asList(prefs.getFreqList().trim().replace("[","").replace("]","").split(", ")));
 
         // List view test
         pills = new ArrayList<>();
@@ -105,9 +114,30 @@ public class ScheduleFragment extends Fragment {
                             .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     //remove and update
+                                    String deletedPillName = pills.get(position).getName();
                                     deleteLine(position, getActivity());
 //                                    getActivity().invalidateOptionsMenu();
                                     adapter.notifyDataSetChanged();
+                                    for (Pill p : pills) {
+                                        if(p.getName().equals(deletedPillName)) {
+                                            int ind = medication.indexOf(p.getName());
+                                            String temp = frequency.get(ind);
+                                            String res = "Daily";
+                                            if(temp.equals("Twice daily")) {
+                                                res = "Daily";
+                                            } else if (temp.equals("Three times daily")) {
+                                                res = "Twice daily";
+                                            } else if (temp.equals("Four times per day")) {
+                                                res = "Three times daily";
+                                            }
+                                            frequency.set(ind, res);
+                                            prefs.setFrequency(frequency);
+                                            return;
+                                        }
+                                    }
+                                    medication.remove(deletedPillName);
+                                    prefs.setMeds(medication);
+                                    writeToDatabase();
                                 }
                             })
                             .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -130,6 +160,7 @@ public class ScheduleFragment extends Fragment {
 
     private void readFromFile(Context context) {
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        user = FirebaseAuth.getInstance().getCurrentUser();
         prefs = new MedasolPrefs(getActivity().getApplicationContext());
         UID = prefs.getUID();
 //        String filename = UID + ".txt";
@@ -252,6 +283,15 @@ public class ScheduleFragment extends Fragment {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void writeToDatabase() {
+        for (int i = 0; i < medication.size(); i++) {
+            String userMeds = medication.get(i);
+            Log.e("meds",medication.get(i) + frequency.get(i).trim());
+            mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child(userMeds).child("name").setValue(medication.get(i).trim());
+            mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child(userMeds).child("frequency").setValue(frequency.get(i).trim());
         }
     }
 

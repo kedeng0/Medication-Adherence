@@ -28,14 +28,19 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 import com.appzoro.BP_n_ME.R;
+import com.appzoro.BP_n_ME.activity.AddMedicationActivity;
+import com.appzoro.BP_n_ME.activity.DatabaseActivity;
 import com.appzoro.BP_n_ME.activity.MainActivity;
 import com.appzoro.BP_n_ME.fragment.ScheduleFragment;
 import com.appzoro.BP_n_ME.prefs.MedasolPrefs;
 import com.appzoro.BP_n_ME.util.DurationTimePickDialog;
 import com.appzoro.BP_n_ME.util.util;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -62,11 +67,10 @@ public class AddMedicineFragment extends Fragment {
     int hour;
     int minute;
     private DatabaseReference mDatabase;
+    FirebaseUser user;
     MedasolPrefs prefs;
     String UID;
-
-    SharedPreferences amount_sharedpref;
-    SharedPreferences.Editor amount_editor;
+    ArrayList<String> medication, frequency;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
@@ -89,9 +93,14 @@ public class AddMedicineFragment extends Fragment {
         ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         medicineType = (EditText) view.findViewById(R.id.medicine_type);
-        amount_sharedpref = getActivity().getSharedPreferences("pill_amount", Context.MODE_PRIVATE);
-        amount_editor = amount_sharedpref.edit();
+        prefs = new MedasolPrefs(getActivity().getApplicationContext());
+        medication = new ArrayList<String>(Arrays.asList(prefs.getMeds().replace("[", "").replace("]", "").replace(" ", "").split(",")));
+        frequency =  new ArrayList<String>(Arrays.asList(prefs.getFreqList().trim().replace("[","").replace("]","").split(", ")));
 
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        prefs = new MedasolPrefs(getActivity().getApplicationContext());
+        UID = prefs.getUID();
 
         //*************************
         // Time picker
@@ -203,9 +212,34 @@ public class AddMedicineFragment extends Fragment {
             case R.id.action_save:
                 String name = medicineType.getText().toString();
                 if (name.length() > 0) {
-                    writeToFile(medicineType.getText().toString(), hour, minute, amount, getActivity());
-                    amount_editor.putInt(medicineType.getText().toString(), 0);
-                    amount_editor.apply();
+                    writeToFile(name, hour, minute, amount, getActivity());
+                    boolean addNew = true;
+                    for (int i = 0; i < medication.size();i++) {
+                        if (name.equals(medication.get(i))) {
+                            String temp = frequency.get(i);
+                            String res;
+                            if (temp.equals("Daily")) {
+                                res  = "Twice daily";
+                            } else if (temp.equals("Twice daily")) {
+                                res = "Three times daily";
+                            } else {
+                                res = "Four times per day";
+                            }
+                            frequency.set(i, res);
+                            addNew = false;
+                            break;
+                        }
+                    }
+                    if(addNew) {
+                        medication.add(name);
+                        frequency.add("Daily");
+                        prefs.setMeds(medication);
+                        prefs.setFrequency(frequency);
+                    } else {
+                        prefs.setFrequency(frequency);
+                    }
+                    writeToDatabase();
+
                 }
                     //                Bundle extras = new Bundle();
 //                extras.putString("EXTRA_NAME",medicineType.getText().toString());
@@ -271,16 +305,14 @@ private void writeToFile(String name, int hour, int minute, int amount, Context 
     text.append(concatenate);
     text.append(System.getProperty("line.separator"));
 
-    mDatabase = FirebaseDatabase.getInstance().getReference();
-    prefs = new MedasolPrefs(getActivity().getApplicationContext());
-    UID = prefs.getUID();
+
 //    String filename = UID + ".txt";
     String filename = "b.txt";
-    Log.d("DEBUG","UID: " + filename);
-    Log.d("DEBUG",context.getFilesDir().getAbsolutePath());
+    Log.d("DEBUG", "UID: " + filename);
+    Log.d("DEBUG", context.getFilesDir().getAbsolutePath());
     File file = new File(context.getFilesDir(), filename);
     try {
-        FileOutputStream fos = new FileOutputStream(file,true);
+        FileOutputStream fos = new FileOutputStream(file, true);
 //        FileOutputStream fos = new FileOutputStream(file, true);
         // Write to file
 //            if(file.exists()) {
@@ -290,9 +322,18 @@ private void writeToFile(String name, int hour, int minute, int amount, Context 
 //            }
         fos.write(text.toString().getBytes());
         fos.close();
-    }
-    catch (IOException e) {
+    } catch (IOException e) {
         Log.e("Exception", "File write failed: " + e.toString());
     }
 }
+
+    private void writeToDatabase() {
+        for (int i = 0; i < medication.size(); i++) {
+            String userMeds = medication.get(i);
+            Log.e("meds",medication.get(i) + frequency.get(i).trim());
+            mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child(userMeds).child("name").setValue(medication.get(i).trim());
+            mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child(userMeds).child("frequency").setValue(frequency.get(i).trim());
+        }
+    }
 }
+
