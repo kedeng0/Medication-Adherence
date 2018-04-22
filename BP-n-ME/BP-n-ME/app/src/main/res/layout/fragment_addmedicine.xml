@@ -2,15 +2,52 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
+    android:clickable="true"
+    android:focusable="true"
     android:background="@android:color/white">
 
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorAccent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="5dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_back"
+            android:layout_centerHorizontal="true"
+            android:text="@string/menu_add"
+            android:textColor="#FFF"
+            android:textSize="19sp" />
+
+        <TextView
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_back"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:text="@string/action_bar_save"
+            android:textColor="#FFF"
+            android:textSize="19sp" />
+    </RelativeLayout>
 
 
     <TextView
         android:id="@+id/medicine_type_prompt"
+        android:layout_below="@+id/rl_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -79,6 +116,7 @@
             android:layout_centerHorizontal="true"
             android:textColor="#333"
             android:textSize="16sp"
+            android:hint="@string/time_hint"
             android:layout_below="@+id/time_prompt"/>
 
 
@@ -101,7 +139,8 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/amountPicker_prompt"
             android:textColor="#333"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:hint="@string/amount_hint"/>
 
 
 

@@ -1,6 +1,7 @@
 package com.appzoro.BP_n_ME.fragment;
 
 
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.content.DialogInterface;
@@ -11,6 +12,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -19,6 +22,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -48,7 +52,8 @@ public class AddMedicineFragment extends Fragment {
     TextView timePrompt;
     TextView timeResult;
     View view;
-
+    ImageView img_back;
+    TextView save;
 
     private final static int TIME_PICKER_INTERVAL = 5;
     private final String TAG = this.getClass().getName();
@@ -66,25 +71,42 @@ public class AddMedicineFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-
         view = inflater.inflate(R.layout.fragment_addmedicine, container, false);
         getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         //getActivity().setTitle("Add Medicine");
-        setHasOptionsMenu(true);
+        setHasOptionsMenu(false);
         init();
         return view;
-
     }
 
     private void init() {
-
-        //Toolbar myToolbar = (Toolbar) view.findViewById(R.id.toolbar_add_medicine);
-        //((MainActivity)getActivity()).getSupportActionBar().hide();
-        //((MainActivity)getActivity()).setSupportActionBar(myToolbar);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        // Hide default action bar for this fragment
+        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
+        // Pill name
         medicineType = (EditText) view.findViewById(R.id.medicine_type);
-
+        // Navigate back function
+        img_back = view.findViewById(R.id.iv_back);
+        img_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().popBackStack();
+            }
+        });
+        // Save function
+        save = view.findViewById(R.id.save);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name = medicineType.getText().toString();
+                if (name.length() > 0) {
+                    // Add new pill information to storage
+                    writeToFile(medicineType.getText().toString(), hour, minute, amount, getActivity());
+                }
+                getFragmentManager().popBackStack();
+                // Hide keyboard
+                util.hideSOFTKEYBOARD(view);
+            }
+        });
 
         //*************************
         // Time picker
@@ -95,35 +117,22 @@ public class AddMedicineFragment extends Fragment {
         current_hour = c.get(Calendar.HOUR_OF_DAY);
         current_minute = c.get(Calendar.MINUTE);
         // Launch Time Picker Dialog
-        final DurationTimePickDialog timePickerDialog = new DurationTimePickDialog(getActivity(), new DurationTimePickDialog.OnTimeSetListener() {
+        final TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(), new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minuteOfDay) {
                 hour = hourOfDay;
                 minute = minuteOfDay;
                 timeResult.setText(hour + ":" + minute);
             }
-        }, current_hour, current_minute, true, 5);
+        }, current_hour, current_minute, true);
         timePickerDialog.setTitle("");
         timePickerDialog.setMessage("Pick the dosing time");
-        timePrompt.setOnClickListener(new View.OnClickListener() {
+        timeResult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 timePickerDialog.show();
             }
         });
-
-//        // Test only start
-//        Button btn = (Button) findViewById(R.id.button);
-//        final TextView result = (TextView) findViewById(R.id.result);
-//        btn.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//
-//                String hour = timePicker.getCurrentHour().toString();
-//                String min = timePicker.getCurrentMinute().toString();
-//                result.setText(new StringBuilder().append(medicineType.getText()).append(", ").append(hour).append(" : ").append(min)
-//                        .append(" "));
-//            }
-//        });//Test only end
 
 
         //***************************
@@ -172,7 +181,7 @@ public class AddMedicineFragment extends Fragment {
         amount_dialog = amountBuilder.create();
         amountResult = (TextView) view.findViewById(R.id.amountResult);
         amountPicker = (TextView) view.findViewById(R.id.amountPicker_prompt);
-        amountPicker.setOnClickListener(new View.OnClickListener() {
+        amountResult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 amount_dialog.show();
@@ -180,64 +189,64 @@ public class AddMedicineFragment extends Fragment {
         });
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        //handle presses on the action bar items
-        ScheduleFragment fragment = new ScheduleFragment();
-        switch (item.getItemId()) {
-            case android.R.id.home:
-//                NavUtils.navigateUpFromSameTask(this);
-//                getFragmentManager().beginTransaction().replace
-//                        (R.id.Fragment_frame_main_activity, new ScheduleFragment()).commit();
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        //handle presses on the action bar items
+//        ScheduleFragment fragment = new ScheduleFragment();
+//        switch (item.getItemId()) {
+//            case android.R.id.home:
+////                NavUtils.navigateUpFromSameTask(this);
+////                getFragmentManager().beginTransaction().replace
+////                        (R.id.Fragment_frame_main_activity, new ScheduleFragment()).commit();
+//
+////                return true;
+//                getFragmentManager().popBackStack();
+//                break;
+//            case R.id.action_save:
+//                String name = medicineType.getText().toString();
+//                if (name.length() > 0) {
+//                    writeToFile(medicineType.getText().toString(), hour, minute, amount, getActivity());
+//                }
+//                    //                Bundle extras = new Bundle();
+////                extras.putString("EXTRA_NAME",medicineType.getText().toString());
+////                extras.putInt("EXTRA_HOUR",hour);
+////                extras.putInt("EXTRA_MINUTE",minute);
+////                extras.putInt("EXTRA_AMOUNT",amount);
+////                fragment.setArguments(extras);
+////                getFragmentManager().beginTransaction().add
+////                        (R.id.Fragment_frame_main_activity, fragment).addToBackStack("AddMedicineFragment").commit();
+//                //addToBackStack("AddMedicineFragment").
+//                getFragmentManager().popBackStack();
+//                util.hideSOFTKEYBOARD(view);
+//                break;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
-//                return true;
-                getFragmentManager().popBackStack();
-                break;
-            case R.id.action_save:
-                String name = medicineType.getText().toString();
-                if (name.length() > 0) {
-                    writeToFile(medicineType.getText().toString(), hour, minute, amount, getActivity());
-                }
-                    //                Bundle extras = new Bundle();
-//                extras.putString("EXTRA_NAME",medicineType.getText().toString());
-//                extras.putInt("EXTRA_HOUR",hour);
-//                extras.putInt("EXTRA_MINUTE",minute);
-//                extras.putInt("EXTRA_AMOUNT",amount);
-//                fragment.setArguments(extras);
-//                getFragmentManager().beginTransaction().add
-//                        (R.id.Fragment_frame_main_activity, fragment).addToBackStack("AddMedicineFragment").commit();
-                //addToBackStack("AddMedicineFragment").
-                getFragmentManager().popBackStack();
-                util.hideSOFTKEYBOARD(view);
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.action_bar_save_item, menu);
-    }
-    /**
-     * Set TimePicker interval by adding a custom minutes list
-     *
-     * @param timePicker
-     */
-    private void setTimePickerInterval(TimePicker timePicker) {
-        try {
-            NumberPicker minutePicker = (NumberPicker) timePicker.findViewById(getResources().getSystem().getIdentifier(
-                    "minute", "id", "android"));
-            minutePicker.setMinValue(0);
-            minutePicker.setMaxValue((60 / TIME_PICKER_INTERVAL) - 1);
-            List<String> displayedValues = new ArrayList<String>();
-            for (int i = 0; i < 60; i += TIME_PICKER_INTERVAL) {
-                displayedValues.add(String.format("%02d", i));
-            }
-            minutePicker.setDisplayedValues(displayedValues.toArray(new String[0]));
-        } catch (Exception e) {
-            Log.e(TAG, "Exception: " + e);
-        }
-    }
+//    @Override
+//    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+//        inflater.inflate(R.menu.action_bar_save_item, menu);
+//    }
+//    /**
+//     * Set TimePicker interval by adding a custom minutes list
+//     *
+//     * @param timePicker
+//     */
+//    private void setTimePickerInterval(TimePicker timePicker) {
+//        try {
+//            NumberPicker minutePicker = (NumberPicker) timePicker.findViewById(getResources().getSystem().getIdentifier(
+//                    "minute", "id", "android"));
+//            minutePicker.setMinValue(0);
+//            minutePicker.setMaxValue((60 / TIME_PICKER_INTERVAL) - 1);
+//            List<String> displayedValues = new ArrayList<String>();
+//            for (int i = 0; i < 60; i += TIME_PICKER_INTERVAL) {
+//                displayedValues.add(String.format("%02d", i));
+//            }
+//            minutePicker.setDisplayedValues(displayedValues.toArray(new String[0]));
+//        } catch (Exception e) {
+//            Log.e(TAG, "Exception: " + e);
+//        }
+//    }
 //    @Override
 //    public void onResume() {
 //        super.onResume();
@@ -248,42 +257,35 @@ public class AddMedicineFragment extends Fragment {
 //        super.onStop();
 //        ((MainActivity)getActivity()).getSupportActionBar().show();
 //    }
-private void writeToFile(String name, int hour, int minute, int amount, Context context) {
-    //get Data from txt
-    // Construct text
-    StringBuilder text = new StringBuilder();
-    String concatenate = ", ";
-    text.append(name + concatenate);
-    text.append(hour);
-    text.append(concatenate);
-    text.append(minute);
-    text.append(concatenate);
-    text.append(amount);
-    text.append(concatenate);
-    text.append(System.getProperty("line.separator"));
+    private void writeToFile(String name, int hour, int minute, int amount, Context context) {
+        //get Data from txt
+        // Construct text
+        StringBuilder text = new StringBuilder();
+        String concatenate = ", ";
+        text.append(name + concatenate);
+        text.append(hour);
+        text.append(concatenate);
+        text.append(minute);
+        text.append(concatenate);
+        text.append(amount);
+        text.append(concatenate);
+        text.append(System.getProperty("line.separator"));
 
-    mDatabase = FirebaseDatabase.getInstance().getReference();
-    prefs = new MedasolPrefs(getActivity().getApplicationContext());
-    UID = prefs.getUID();
-//    String filename = UID + ".txt";
-    String filename = "b.txt";
-    Log.d("DEBUG","UID: " + filename);
-    Log.d("DEBUG",context.getFilesDir().getAbsolutePath());
-    File file = new File(context.getFilesDir(), filename);
-    try {
-        FileOutputStream fos = new FileOutputStream(file,true);
-//        FileOutputStream fos = new FileOutputStream(file, true);
-        // Write to file
-//            if(file.exists()) {
-//
-//            } else {
-//
-//            }
-        fos.write(text.toString().getBytes());
-        fos.close();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        prefs = new MedasolPrefs(getActivity().getApplicationContext());
+        UID = prefs.getUID();
+        String filename = UID + ".txt";
+//        String filename = "b.txt";
+        Log.d("DEBUG","UID: " + filename);
+        Log.d("DEBUG",context.getFilesDir().getAbsolutePath());
+        File file = new File(context.getFilesDir(), filename);
+        try {
+            FileOutputStream fos = new FileOutputStream(file,true);
+            fos.write(text.toString().getBytes());
+            fos.close();
+        }
+        catch (IOException e) {
+            Log.e("Exception", "File write failed: " + e.toString());
+        }
     }
-    catch (IOException e) {
-        Log.e("Exception", "File write failed: " + e.toString());
-    }
-}
 }

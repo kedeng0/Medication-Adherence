@@ -72,7 +72,13 @@ public class CustomAdapter extends ArrayAdapter<Pill>{
 //        result.startAnimation(animation);
         lastPosition = position;
         viewHolder.txtName.setText(pill.getName());
-        viewHolder.txtTime.setText(Integer.toString(pill.getHour()) + ":" + Integer.toString(pill.getMinute()));
+        String temp;
+        if (pill.getMinute() < 10){
+            temp = "0" + Integer.toString(pill.getMinute());
+        } else {
+            temp = Integer.toString(pill.getMinute());
+        }
+        viewHolder.txtTime.setText(Integer.toString(pill.getHour()) + ":" + temp);
         viewHolder.txtAmount.setText(Integer.toString(pill.getAmount()));
         return convertView;
     }

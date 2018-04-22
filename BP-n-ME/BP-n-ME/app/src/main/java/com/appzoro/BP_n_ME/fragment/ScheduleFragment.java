@@ -78,7 +78,7 @@ public class ScheduleFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
+        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
         View view = inflater.inflate(R.layout.fragment_item_schedule, container, false);
         getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         //((MainActivity)getActivity()).getSupportActionBar().show();
@@ -86,8 +86,7 @@ public class ScheduleFragment extends Fragment {
         Log.d(TAG, "On create view");
 
 
-        // Next schedule
-        next_schedule = (TextView) view.findViewById(R.id.next);
+
 
         // List view test
         pills = new ArrayList<>();
@@ -131,6 +130,10 @@ public class ScheduleFragment extends Fragment {
             }
         });
 
+        // Next schedule
+        next_schedule = (TextView) view.findViewById(R.id.next);
+        next_schedule.setText(findNextPill());
+
 //        getActivity().invalidateOptionsMenu();
         return view;
     }
@@ -139,9 +142,9 @@ public class ScheduleFragment extends Fragment {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         prefs = new MedasolPrefs(getActivity().getApplicationContext());
         UID = prefs.getUID();
-//        String filename = UID + ".txt";
+        String filename = UID + ".txt";
         pills.clear();
-        String filename = "b.txt";
+//        String filename = "b.txt";
         File file = new File(context.getFilesDir(), filename);
         try {
             FileInputStream fis = new FileInputStream(file);
@@ -177,9 +180,9 @@ public class ScheduleFragment extends Fragment {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         prefs = new MedasolPrefs(getActivity().getApplicationContext());
         UID = prefs.getUID();
-//        String filename = UID + ".txt";
+        String filename = UID + ".txt";
         pills.clear();
-        String filename = "b.txt";
+//        String filename = "b.txt";
         File file = new File(context.getFilesDir(), filename);
         try {
             Log.d("DEBUG","Delete read start");
@@ -287,14 +290,36 @@ public class ScheduleFragment extends Fragment {
         c = Calendar.getInstance();
         int current_hour = c.get(Calendar.HOUR_OF_DAY);
         int current_minute = c.get(Calendar.MINUTE);
+        Log.d("CURRENTTIME", Integer.toString(current_hour)+" "+Integer.toString(current_minute));
         for (int i = 0; i < pills.size(); i++) {
-            if (current_hour == pills.get(i).getHour()){
-                if(current_minute >= pills.get(i).getMinute()) {
+            if (a.length() < 1) {
+                if (current_hour < pills.get(i).getHour()) {
+                    a.append(pills.get(i).getName());
+                    a.append(" | ");
                     a.append(Integer.toString(pills.get(i).getHour()));
                     a.append(":");
+                    if (pills.get(i).getMinute() < 10){
+                        a.append("0");
+                    }
                     a.append(Integer.toString(pills.get(i).getMinute()));
+                    Log.d("DEBUG", "great" + a.toString());
+                } else if (current_hour == pills.get(i).getHour()) {
+                    if (current_minute <= pills.get(i).getMinute()) {
+                        a.append(pills.get(i).getName());
+                        a.append(" | ");
+                        a.append(Integer.toString(pills.get(i).getHour()));
+                        a.append(":");
+                        if (pills.get(i).getMinute() < 10){
+                            a.append("0");
+                        }
+                        a.append(Integer.toString(pills.get(i).getMinute()));
+                        Log.d("DEBUG", "equal" + a.toString());
+                    }
                 }
             }
+        }
+        if (a.length() < 1) {
+            a.append("DONE");
         }
         return a.toString();
     }

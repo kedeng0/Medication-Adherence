@@ -30,7 +30,7 @@
         android:background="#FFF"
         android:orientation="horizontal"
         android:layout_marginTop="20dp"
-        android:weightSum="3">
+        android:weightSum="3.5">
         <TextView
             android:layout_width="30dp"
             android:layout_height="wrap_content"

@@ -106,7 +106,8 @@
     <string name="medicine_type_prompt">Please enter the medicine type below:</string>
     <string name="medicine_time_prompt">Please choose the dosing time:</string>
     <string name="medicine_type">Medicine Type</string>
-    <string name="frequency_prompt">How often do you want to take this pill:</string>
-    <string name="amount_prompt">How much do you want to take this pill: (INTEGER)</string>
+    <string name="amount_prompt">How many pills: </string>
     <string name="action_bar_save">Save</string>
+    <string name="time_hint">PICK A TIME</string>
+    <string name="amount_hint">PICK AN AMOUNT</string>
 </resources>
