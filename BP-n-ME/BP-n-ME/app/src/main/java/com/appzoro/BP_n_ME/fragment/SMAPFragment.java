@@ -4,10 +4,15 @@ import android.Manifest;
 import android.app.AlarmManager;
 import android.app.Dialog;
 import android.app.PendingIntent;
+import android.app.KeyguardManager;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.hardware.fingerprint.FingerprintManager;
+import android.security.keystore.KeyGenParameterSpec;
+import android.security.keystore.KeyPermanentlyInvalidatedException;
+import android.security.keystore.KeyProperties;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.content.BroadcastReceiver;
@@ -46,7 +51,16 @@ import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
+import java.security.UnrecoverableKeyException;
+import java.security.cert.CertificateException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -57,6 +71,13 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
+
+import static android.content.Context.FINGERPRINT_SERVICE;
+import static android.content.Context.KEYGUARD_SERVICE;
 import static android.graphics.Color.GREEN;
 import static android.graphics.Color.RED;
 
@@ -92,6 +113,18 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
 
     SharedPreferences channel_sharedpref;
     SharedPreferences.Editor channel_editor;
+
+    //Fingerprints
+    private FingerprintManager fingerprintManager;
+    private KeyguardManager keyguardManager;
+    private KeyStore keyStore;
+    private KeyGenerator keyGenerator;
+    private static final String KEY_NAME = "smapkey";
+    private Cipher cipher;
+    private FingerprintManager.CryptoObject cryptoObject;
+
+
+
 
 
     //Connect to BLE Device variable needed
@@ -145,8 +178,6 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
         init();
         Listener();
 
-
-//        mBleManager.readCharacteristic(mBleManager.getBatteryChar());
         return view;
     }
 
@@ -175,6 +206,22 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
 
         channel_sharedpref = getActivity().getSharedPreferences("channel", Context.MODE_PRIVATE);
         channel_editor = channel_sharedpref.edit();
+
+        keyguardManager = (KeyguardManager)getContext().getSystemService(KEYGUARD_SERVICE);
+        fingerprintManager = (FingerprintManager) getContext().getSystemService(FINGERPRINT_SERVICE);
+
+        if (!keyguardManager.isKeyguardSecure()) {
+            Toast.makeText(getContext(), "Lock screen security not enabled in Settings", Toast.LENGTH_LONG).show();
+        } else if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.USE_FINGERPRINT) != PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(getContext(), "Fingerprint authentication permission not enabled", Toast.LENGTH_LONG).show();
+        } else if (!fingerprintManager.hasEnrolledFingerprints()) {
+            Toast.makeText(getContext(), "Register at least one fingerprint in Settings", Toast.LENGTH_LONG).show();
+        } else {
+            generateKey();
+            if (cipherInit()) {
+                cryptoObject = new FingerprintManager.CryptoObject(cipher);
+            }
+        }
 
         //*****************************
         // Amount dialog
@@ -238,9 +285,6 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
             }
         });
         channel_dialog = channelBuilder.create();
-
-
-
 
 //
 //        ************Get Pill From Database***************
@@ -397,7 +441,7 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
         if (mBleManager.getConnectionStatus()) {
             if (mBleManager.dispense(numChannel)) {
                 //log pill taking behavior in the calendar
-//                submit();
+                submit();
                 numPill--;
                 UpdatePillAmount(numPill);
             }
@@ -407,7 +451,6 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
     }
 
     public void reload() {
-
         amount_dialog.show();
     }
 
@@ -528,6 +571,59 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
         }
         else{
             Toast.makeText(getActivity(), "Please select a medication!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    //Fingerprints Function
+    protected void generateKey() {
+        try {
+            keyStore = KeyStore.getInstance("AndroidKeyStore");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            keyGenerator = KeyGenerator.getInstance(KeyProperties.KEY_ALGORITHM_AES, "AndroidKeyStore");
+        } catch (NoSuchAlgorithmException | NoSuchProviderException e) {
+            throw new RuntimeException(
+                "Failed to get KeyGenerator instance", e);
+        }
+        try {
+            keyStore.load(null);
+            keyGenerator.init(new
+                    KeyGenParameterSpec.Builder(KEY_NAME, KeyProperties.PURPOSE_ENCRYPT | KeyProperties.PURPOSE_DECRYPT)
+                    .setBlockModes(KeyProperties.BLOCK_MODE_CBC)
+                    .setUserAuthenticationRequired(true)
+                    .setEncryptionPaddings(
+                            KeyProperties.ENCRYPTION_PADDING_PKCS7)
+                    .build());
+            keyGenerator.generateKey();
+        } catch (NoSuchAlgorithmException |
+                InvalidAlgorithmParameterException
+                | CertificateException | IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public boolean cipherInit() {
+        try {
+            cipher = Cipher.getInstance(KeyProperties.KEY_ALGORITHM_AES + "/" + KeyProperties.BLOCK_MODE_CBC + "/"
+                    + KeyProperties.ENCRYPTION_PADDING_PKCS7);
+        } catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
+            throw new RuntimeException("Failed to get Cipher", e);
+        }
+
+        try {
+            keyStore.load(null);
+            SecretKey key = (SecretKey) keyStore.getKey(KEY_NAME, null);
+            cipher.init(Cipher.ENCRYPT_MODE, key);
+            return true;
+        } catch (KeyPermanentlyInvalidatedException e) {
+            return false;
+        } catch (KeyStoreException | CertificateException
+                | UnrecoverableKeyException | IOException
+                | NoSuchAlgorithmException | InvalidKeyException e) {
+            throw new RuntimeException("Failed to init Cipher", e);
         }
     }
 

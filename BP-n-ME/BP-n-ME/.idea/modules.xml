@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BP-n-ME.iml" filepath="$PROJECT_DIR$/BP-n-ME.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fingerprint/fingerprint.iml" filepath="$PROJECT_DIR$/fingerprint/fingerprint.iml" />
+      <module fileurl="file://C:\Users\Ben\Documents\GitHub\Medication-Adherence\BP-n-ME\BP-n-ME\fingerprint\fingerprint.iml" filepath="C:\Users\Ben\Documents\GitHub\Medication-Adherence\BP-n-ME\BP-n-ME\fingerprint\fingerprint.iml" />
     </modules>
   </component>
 </project>
