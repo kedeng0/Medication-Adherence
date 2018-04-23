@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "com.appzoro.BP_n_ME"
         minSdkVersion 23
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -53,6 +53,7 @@ dependencies {
     compile 'com.github.clans:fab:1.6.2'
     testCompile 'junit:junit:4.12'
     compile files('libs/volley.jar')
+    implementation project(':fingerprint')
 }
 
 apply plugin: 'com.google.gms.google-services'
