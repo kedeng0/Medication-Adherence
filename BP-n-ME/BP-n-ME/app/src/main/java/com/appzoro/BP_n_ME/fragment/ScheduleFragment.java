@@ -55,7 +55,7 @@ public class ScheduleFragment extends Fragment {
     private DatabaseReference mDatabase;
     FirebaseUser user;
     MedasolPrefs prefs;
-    ArrayList<String> medication, frequency;
+    ArrayList<String> medication, frequency, deletedMedicine;
 
     String UID;
 //    private ArrayList<ArrayList<String>> aObject;
@@ -90,6 +90,8 @@ public class ScheduleFragment extends Fragment {
         prefs = new MedasolPrefs(getActivity().getApplicationContext());
         medication = new ArrayList<String>(Arrays.asList(prefs.getMeds().replace("[", "").replace("]", "").replace(" ", "").split(",")));
         frequency =  new ArrayList<String>(Arrays.asList(prefs.getFreqList().trim().replace("[","").replace("]","").split(", ")));
+
+        deletedMedicine = new ArrayList<String>();
 
         // List view test
         pills = new ArrayList<>();
@@ -132,12 +134,14 @@ public class ScheduleFragment extends Fragment {
                                             }
                                             frequency.set(ind, res);
                                             prefs.setFrequency(frequency);
+                                            writeToDatabase();
                                             return;
                                         }
                                     }
                                     medication.remove(deletedPillName);
                                     prefs.setMeds(medication);
-                                    writeToDatabase();
+                                    mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child(deletedPillName).removeValue();
+
                                 }
                             })
                             .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -293,6 +297,8 @@ public class ScheduleFragment extends Fragment {
             mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child(userMeds).child("name").setValue(medication.get(i).trim());
             mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child(userMeds).child("frequency").setValue(frequency.get(i).trim());
         }
+
+
     }
 
 //
