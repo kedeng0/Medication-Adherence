@@ -236,7 +236,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         listDataItem.add(item8);
 
         NavigationMenuItems item9 = new NavigationMenuItems();
-        item9.setItemImg(R.drawable.phone);
+        item9.setItemImg(R.drawable.status);
         item9.setItemName("Hardware Status");
         listDataItem.add(item9);
 

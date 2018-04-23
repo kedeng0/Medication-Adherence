@@ -78,7 +78,7 @@ public class HomePage extends AppCompatActivity {
                 break;
         }
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.container, selectedFragment,Fragment.class.getSimpleName());
+        transaction.replace(R.id.container, selectedFragment,Fragment.class.getSimpleName());
         transaction.commit();
 
 //        if (getSupportFragmentManager().findFragmentByTag(.class.getSimpleName()) == null) {

@@ -3,6 +3,7 @@ package com.appzoro.BP_n_ME.fragment;
 
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -31,14 +32,19 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 import com.appzoro.BP_n_ME.R;
+import com.appzoro.BP_n_ME.activity.AddMedicationActivity;
+import com.appzoro.BP_n_ME.activity.DatabaseActivity;
 import com.appzoro.BP_n_ME.activity.MainActivity;
 import com.appzoro.BP_n_ME.fragment.ScheduleFragment;
 import com.appzoro.BP_n_ME.prefs.MedasolPrefs;
 import com.appzoro.BP_n_ME.util.DurationTimePickDialog;
 import com.appzoro.BP_n_ME.util.util;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -66,8 +72,11 @@ public class AddMedicineFragment extends Fragment {
     int hour;
     int minute;
     private DatabaseReference mDatabase;
+    FirebaseUser user;
     MedasolPrefs prefs;
     String UID;
+    ArrayList<String> medication, frequency;
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -84,6 +93,7 @@ public class AddMedicineFragment extends Fragment {
         ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
         // Pill name
         medicineType = (EditText) view.findViewById(R.id.medicine_type);
+
         // Navigate back function
         img_back = view.findViewById(R.id.iv_back);
         img_back.setOnClickListener(new View.OnClickListener() {
@@ -107,6 +117,16 @@ public class AddMedicineFragment extends Fragment {
                 util.hideSOFTKEYBOARD(view);
             }
         });
+
+        prefs = new MedasolPrefs(getActivity().getApplicationContext());
+        medication = new ArrayList<String>(Arrays.asList(prefs.getMeds().replace("[", "").replace("]", "").replace(" ", "").split(",")));
+        frequency =  new ArrayList<String>(Arrays.asList(prefs.getFreqList().trim().replace("[","").replace("]","").split(", ")));
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        prefs = new MedasolPrefs(getActivity().getApplicationContext());
+        UID = prefs.getUID();
+
 
         //*************************
         // Time picker
@@ -222,6 +242,68 @@ public class AddMedicineFragment extends Fragment {
 //        }
 //        return super.onOptionsItemSelected(item);
 //    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        //handle presses on the action bar items
+//        ScheduleFragment fragment = new ScheduleFragment();
+//        switch (item.getItemId()) {
+//            case android.R.id.home:
+////                NavUtils.navigateUpFromSameTask(this);
+////                getFragmentManager().beginTransaction().replace
+////                        (R.id.Fragment_frame_main_activity, new ScheduleFragment()).commit();
+//
+////                return true;
+//                getFragmentManager().popBackStack();
+//                break;
+//            case R.id.action_save:
+//                String name = medicineType.getText().toString();
+//                if (name.length() > 0) {
+//                    writeToFile(name, hour, minute, amount, getActivity());
+//                    boolean addNew = true;
+//                    for (int i = 0; i < medication.size();i++) {
+//                        if (name.equals(medication.get(i))) {
+//                            String temp = frequency.get(i);
+//                            String res;
+//                            if (temp.equals("Daily")) {
+//                                res  = "Twice daily";
+//                            } else if (temp.equals("Twice daily")) {
+//                                res = "Three times daily";
+//                            } else {
+//                                res = "Four times per day";
+//                            }
+//                            frequency.set(i, res);
+//                            addNew = false;
+//                            break;
+//                        }
+//                    }
+//                    if(addNew) {
+//                        medication.add(name);
+//                        frequency.add("Daily");
+//                        prefs.setMeds(medication);
+//                        prefs.setFrequency(frequency);
+//                    } else {
+//                        prefs.setFrequency(frequency);
+//                    }
+////                    writeToDatabase();
+//
+//                }
+//                    //                Bundle extras = new Bundle();
+////                extras.putString("EXTRA_NAME",medicineType.getText().toString());
+////                extras.putInt("EXTRA_HOUR",hour);
+////                extras.putInt("EXTRA_MINUTE",minute);
+////                extras.putInt("EXTRA_AMOUNT",amount);
+////                fragment.setArguments(extras);
+////                getFragmentManager().beginTransaction().add
+////                        (R.id.Fragment_frame_main_activity, fragment).addToBackStack("AddMedicineFragment").commit();
+//                //addToBackStack("AddMedicineFragment").
+//                getFragmentManager().popBackStack();
+//                util.hideSOFTKEYBOARD(view);
+//                break;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
+
 
 //    @Override
 //    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -271,6 +353,7 @@ public class AddMedicineFragment extends Fragment {
         text.append(concatenate);
         text.append(System.getProperty("line.separator"));
 
+
         mDatabase = FirebaseDatabase.getInstance().getReference();
         prefs = new MedasolPrefs(getActivity().getApplicationContext());
         UID = prefs.getUID();
@@ -289,3 +372,37 @@ public class AddMedicineFragment extends Fragment {
         }
     }
 }
+
+//
+////    String filename = UID + ".txt";
+//    String filename = "b.txt";
+//    Log.d("DEBUG", "UID: " + filename);
+//    Log.d("DEBUG", context.getFilesDir().getAbsolutePath());
+//    File file = new File(context.getFilesDir(), filename);
+//    try {
+//        FileOutputStream fos = new FileOutputStream(file, true);
+////        FileOutputStream fos = new FileOutputStream(file, true);
+//        // Write to file
+////            if(file.exists()) {
+////
+////            } else {
+////
+////            }
+//        fos.write(text.toString().getBytes());
+//        fos.close();
+//    } catch (IOException e) {
+//        Log.e("Exception", "File write failed: " + e.toString());
+//    }
+//}
+//
+//    private void writeToDatabase() {
+//        for (int i = 0; i < medication.size(); i++) {
+//            String userMeds = medication.get(i);
+//            Log.e("meds",medication.get(i) + frequency.get(i).trim());
+//            mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child(userMeds).child("name").setValue(medication.get(i).trim());
+//            mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child(userMeds).child("frequency").setValue(frequency.get(i).trim());
+//        }
+//    }
+//}
+//
+//>>>>>>> origin/master

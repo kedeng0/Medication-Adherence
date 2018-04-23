@@ -1,6 +1,11 @@
 package com.appzoro.BP_n_ME.fragment;
 
 import android.Manifest;
+import android.app.AlarmManager;
+import android.app.Dialog;
+import android.app.PendingIntent;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
@@ -11,6 +16,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,11 +25,14 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.appzoro.BP_n_ME.R;
+import com.appzoro.BP_n_ME.model.Pill;
 import com.appzoro.BP_n_ME.prefs.MedasolPrefs;
 import com.appzoro.BP_n_ME.util.BleManager;
 import com.appzoro.BP_n_ME.util.util;
@@ -32,11 +42,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -56,7 +72,11 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
     private Button disconnectButton;
     private Button connectNewDeviceButton;
     private Button dispenseButton;
-    Spinner spinner;
+    private Button reloadButton;
+    private TextView numPillTextView;
+    private AlertDialog amount_dialog;
+    private AlertDialog channel_dialog;
+    private Spinner spinner;
 
 
     //Log to calendar variables needed
@@ -66,7 +86,13 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
     MedasolPrefs prefs;
     private DatabaseReference mDatabase;
     double doses;
-    int goalFreq;
+    int goalFreq, numPill, numChannel;
+    SharedPreferences amount_sharedpref;
+    SharedPreferences.Editor amount_editor;
+
+    SharedPreferences channel_sharedpref;
+    SharedPreferences.Editor channel_editor;
+
 
     //Connect to BLE Device variable needed
     private BleManager mBleManager;
@@ -85,7 +111,16 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
 //    public void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
 //    }
-
+    // Text message
+    private String txtMessage = "Hello";
+    private String phoneNo = "4049075666";
+    private static final int MY_PERMISSIONS_REQUEST_SEND_SMS =0 ;
+    // Alarm service for text message
+    final static private long ONE_SECOND = 1000;
+    final static private long TWENTY_SECONDS = ONE_SECOND * 20;
+    PendingIntent pi;
+    BroadcastReceiver br;
+    AlarmManager am;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -102,8 +137,7 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
 
         int permissionCheck = ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION);
 
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED)
-        {
+        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             //ask user permission then restart
             ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 0);
         }
@@ -132,8 +166,84 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
         disconnectButton = (Button) view.findViewById(R.id.disconnect);
         connectNewDeviceButton = (Button) view.findViewById(R.id.newconnection);
         dispenseButton = (Button) view.findViewById(R.id.dispense);
+        reloadButton = (Button) view.findViewById(R.id.reload);
         spinner = view.findViewById(R.id.medicationSpinner2);
+        numPillTextView = view.findViewById(R.id.pill_amount);
 
+        amount_sharedpref = getActivity().getSharedPreferences("pill_amount", Context.MODE_PRIVATE);
+        amount_editor = amount_sharedpref.edit();
+
+        channel_sharedpref = getActivity().getSharedPreferences("channel", Context.MODE_PRIVATE);
+        channel_editor = channel_sharedpref.edit();
+
+        //*****************************
+        // Amount dialog
+        final AlertDialog.Builder amountBuilder = new AlertDialog.Builder(getActivity());
+        LayoutInflater inflater_amount = this.getLayoutInflater();
+        final View dialogView_amount = inflater_amount.inflate(R.layout.dialog_reload_amount, null);
+        amountBuilder.setView(dialogView_amount);
+        final NumberPicker np = (NumberPicker) dialogView_amount.findViewById(R.id.numberPicker1);
+        np.setMaxValue(20);
+        np.setMinValue(0);
+        np.setWrapSelectorWheel(false);
+        np.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker numberPicker, int i, int i1) {
+                numPill = i1;
+            }
+        });
+        amountBuilder.setMessage("Enter amount of pills after reload");
+        amountBuilder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                numPillTextView.setText(Integer.toString(numPill));
+                channel_dialog.show();
+
+            }
+        });
+        amountBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                resetAmount();
+            }
+        });
+        amount_dialog = amountBuilder.create();
+
+        //*****************************
+        // Channel dialog
+        final AlertDialog.Builder channelBuilder = new AlertDialog.Builder(getActivity());
+        LayoutInflater inflater_channel = this.getLayoutInflater();
+        final View dialogView_channel = inflater_channel.inflate(R.layout.dialog_reload_channel, null);
+        channelBuilder.setView(dialogView_channel);
+        final NumberPicker np2 = (NumberPicker) dialogView_channel.findViewById(R.id.numberPicker2);
+        np2.setMaxValue(2);
+        np2.setMinValue(1);
+        np2.setWrapSelectorWheel(false);
+        np2.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker numberPicker, int i, int i1) {
+                numChannel = i1;
+            }
+        });
+        channelBuilder.setMessage("Enter the Channel You are Reloading");
+        channelBuilder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                UpdateChannel(numChannel);
+                UpdatePillAmount(numPill);
+
+            }
+        });
+        channelBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                resetAmount();
+                resetChannel();
+            }
+        });
+        channel_dialog = channelBuilder.create();
+
+
+
+
+//
+//        ************Get Pill From Database***************
         SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         ParseDate = outputFormat.format(new Date());
@@ -191,6 +301,32 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
                 //Log.w(TAG, "getUser:onCancelled", databaseError.toException());
             }
         });
+//**************************
+//        Get Pill from internal storage file.
+//        String filename = "b.txt";
+//        File file = new File(getActivity().getFilesDir(), filename);
+//        medication =  new ArrayList<String>();
+//        try {
+//            FileInputStream fis = new FileInputStream(file);
+//            DataInputStream in = new DataInputStream(fis);
+//            BufferedReader br = new BufferedReader(new InputStreamReader(in));
+//
+//            String strLine;
+//            while ((strLine = br.readLine()) != null) {
+//
+//                String[] stringArray = strLine.split(", ");
+//                Log.d("DEBUG",stringArray[0]+stringArray[1]+stringArray[2]+stringArray[3]);
+//                medication.add(stringArray[0]);
+//
+//            }
+//            in.close();
+//            fis.close();
+//        }
+//        catch (Exception e) {
+//            Log.e("Exception", "File read failed: " + e.toString());
+//        }
+//        Collections.sort(medication);
+//        setArray(medication);
 
     }
 
@@ -200,15 +336,15 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
         disconnectButton.setOnClickListener(this);
         connectNewDeviceButton.setOnClickListener(this);
         dispenseButton.setOnClickListener(this);
-
-
-
+        reloadButton.setOnClickListener(this);
 
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+//        am.cancel(pi);
+//        getActivity().unregisterReceiver(br);
         getContext().unregisterReceiver(mGattUpdateReceiver);
     }
 
@@ -222,6 +358,9 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.dispense:
                 dispense();
+                break;
+            case R.id.reload:
+                reload();
                 break;
         }
     }
@@ -238,18 +377,60 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
 
     public void dispense() {
 
+        numChannel = channel_sharedpref.getInt(medicine,0);
+        numPill = amount_sharedpref.getInt(medicine,0);
+        if (numPill < 4) {
+            //AlertDialog
+            AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
+            alertDialog.setTitle("Alert");
+            alertDialog.setMessage("Please reload to at least 4 pills.");
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+            alertDialog.show();
+            return;
+        }
+
         if (mBleManager.getConnectionStatus()) {
-            if (mBleManager.dispense()) {
+            if (mBleManager.dispense(numChannel)) {
                 //log pill taking behavior in the calendar
-                submit();
+//                submit();
+                numPill--;
+                UpdatePillAmount(numPill);
             }
         } else {
             util.toast(context, "Not connected to any device");
         }
-
-
     }
 
+    public void reload() {
+
+        amount_dialog.show();
+    }
+
+    private void UpdatePillAmount(int num) {
+        amount_editor.putInt(medicine, num);
+        amount_editor.apply();
+    }
+
+    private void resetAmount() {
+        numPill = amount_sharedpref.getInt(medicine,0);
+    }
+
+    private void UpdateChannel(int num) {
+        channel_editor.putInt(medicine, num);
+        channel_editor.apply();
+    }
+
+    private void resetChannel() {
+        numChannel = channel_sharedpref.getInt(medicine,0);
+    }
+
+    //This function records the current pill-taking behavior to the firebase databse.
+    //Not Used For Now.
     private void submit() {
         Calendar calander = Calendar.getInstance();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
@@ -397,6 +578,9 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
                 // TODO Auto-generated method stub
                 //Log.v("item", (String) parent.getItemAtPosition(position));
                 medicine = parent.getItemAtPosition(position).toString();
+                numPill = amount_sharedpref.getInt(medicine,0);
+                numPillTextView.setText(Integer.toString(numPill));
+
             }
             @Override
             public void onNothingSelected(AdapterView<?> arg0) {
@@ -404,4 +588,56 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
             }
         });
     }
+
+
+    //*****************
+    // Text message
+    // This Method for Send a message
+//    protected void sendSMSMessage() {
+//        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+//            if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.SEND_SMS)) {
+//            } else {
+//                ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.SEND_SMS}, MY_PERMISSIONS_REQUEST_SEND_SMS);
+//            }
+//        }
+//    }
+//
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
+//        switch (requestCode) {
+//            case MY_PERMISSIONS_REQUEST_SEND_SMS: {
+//                if (grantResults.length > 0
+//                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                    SmsManager smsManager = SmsManager.getDefault();
+//                    smsManager.sendTextMessage(phoneNo, null, txtMessage, null, null);
+//                    Toast.makeText(getActivity().getApplicationContext(), "SMS sent.",
+//                            Toast.LENGTH_LONG).show();
+//                } else {
+//                    Toast.makeText(getActivity().getApplicationContext(),
+//                            "SMS faild, please try again.", Toast.LENGTH_LONG).show();
+//                    return;
+//                }
+//            }
+//        }
+//
+//    }
+
+    //*****************
+    // Alarm service for text message
+    private void setup() {
+        br = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context c, Intent i) {
+                Toast.makeText(c, "Rise and Shine!", Toast.LENGTH_LONG).show();
+            }
+        };
+        getActivity().registerReceiver(br, new IntentFilter("com.authorwjf.wakeywakey") );
+        pi = PendingIntent.getBroadcast( getActivity(), 0, new Intent("com.authorwjf.wakeywakey"),
+                0 );
+        am = (AlarmManager)(getActivity().getSystemService( Context.ALARM_SERVICE ));
+    }
+    //************
+    // Add this to trigger event
+    // am.set( AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() +TWENTY_SECONDS, pi );
+    //***************
 }

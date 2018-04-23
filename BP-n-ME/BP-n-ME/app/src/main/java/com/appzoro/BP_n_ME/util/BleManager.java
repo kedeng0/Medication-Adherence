@@ -236,7 +236,7 @@ public class BleManager  {
         }
     }
 
-    public boolean dispense() {
+    public boolean dispense(int channel) {
         if (mAdapter == null || mGatt == null || serviceList == null) {
             Log.d(TAG, "Unable to Dispense");
             util.toast(activityContext, "Unable to Dispense");
@@ -253,7 +253,12 @@ public class BleManager  {
                 return false;
             }
             //write 'g' to characteristic
-            String str = "g";
+            String str;
+            if (channel == 1) {
+                 str = "g";
+            } else {
+                 str = "\n";
+            }
             final byte[] value = str.getBytes();
             rx.setValue(value);
             mGatt.writeCharacteristic(rx);
