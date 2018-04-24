@@ -606,6 +606,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.getValue() == null) {
+                                prefs.setFrequency(medFrequency);
+                                return;
+                            }
                             medFrequency.add(dataSnapshot.getValue().toString().trim());
                             prefs.setFrequency(medFrequency);
                             if (finalI == medArray.size() - 1) {

@@ -40,6 +40,7 @@ import com.appzoro.BP_n_ME.R;
 import com.appzoro.BP_n_ME.model.Pill;
 import com.appzoro.BP_n_ME.prefs.MedasolPrefs;
 import com.appzoro.BP_n_ME.util.BleManager;
+import com.appzoro.BP_n_ME.util.MyReceiver;
 import com.appzoro.BP_n_ME.util.util;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -76,6 +77,9 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 
+import me.aflak.libraries.dialog.FingerprintDialog;
+import me.aflak.libraries.callback.FingerprintDialogCallback;
+
 import static android.content.Context.FINGERPRINT_SERVICE;
 import static android.content.Context.KEYGUARD_SERVICE;
 import static android.graphics.Color.GREEN;
@@ -85,7 +89,7 @@ import static android.graphics.Color.RED;
  * Created by Kedeng Pan on 13/4/2018.
  */
 
-public class SMAPFragment extends Fragment implements View.OnClickListener {
+public class SMAPFragment extends Fragment implements View.OnClickListener, FingerprintDialogCallback {
 
     private View view;
     private Context context;
@@ -101,7 +105,6 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
 
 
     //Log to calendar variables needed
-    List<String> medsList = new ArrayList<>();
     List<String> medication, frequency;
     String medicine, date, ParseDate, UID;
     MedasolPrefs prefs;
@@ -182,6 +185,22 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
     }
 
     private void init() {
+
+
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.set(Calendar.HOUR_OF_DAY,1);
+        calendar.set(Calendar.MINUTE,1);
+        calendar.set(Calendar.SECOND,15);
+
+
+        Intent notifyIntent = new Intent(getContext(), MyReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context.getApplicationContext(), 100, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 10000,pendingIntent);
+
+
         connectionStatus = (TextView) view.findViewById(R.id.connection);
 
         if (mBleManager.getConnectionStatus()) {
@@ -207,21 +226,6 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
         channel_sharedpref = getActivity().getSharedPreferences("channel", Context.MODE_PRIVATE);
         channel_editor = channel_sharedpref.edit();
 
-        keyguardManager = (KeyguardManager)getContext().getSystemService(KEYGUARD_SERVICE);
-        fingerprintManager = (FingerprintManager) getContext().getSystemService(FINGERPRINT_SERVICE);
-
-        if (!keyguardManager.isKeyguardSecure()) {
-            Toast.makeText(getContext(), "Lock screen security not enabled in Settings", Toast.LENGTH_LONG).show();
-        } else if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.USE_FINGERPRINT) != PackageManager.PERMISSION_GRANTED) {
-            Toast.makeText(getContext(), "Fingerprint authentication permission not enabled", Toast.LENGTH_LONG).show();
-        } else if (!fingerprintManager.hasEnrolledFingerprints()) {
-            Toast.makeText(getContext(), "Register at least one fingerprint in Settings", Toast.LENGTH_LONG).show();
-        } else {
-            generateKey();
-            if (cipherInit()) {
-                cryptoObject = new FingerprintManager.CryptoObject(cipher);
-            }
-        }
 
         //*****************************
         // Amount dialog
@@ -297,16 +301,19 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         prefs = new MedasolPrefs(getActivity().getApplicationContext());
         UID = prefs.getUID();
+        if(prefs.getMeds().equals("[]")) {
+            medication = new ArrayList<>();
+        } else {
+            medication =  new ArrayList<String>(Arrays.asList(prefs.getMeds().trim().replace("[","").replace("]","").replace(" ","").split(",")));
 
-        medication =  new ArrayList<String>(Arrays.asList(prefs.getMeds().replace("[","").replace("]","").replace(" ","").split(",")));
-        Log.e("meds", String.valueOf(medication));
-
-        for(int ind = 0; ind<medication.size(); ind++){
-            medication.set(ind, medication.get(ind));
+        }
+        if (prefs.getFreqList().equals("[]")) {
+            frequency = new ArrayList<>();
+        } else {
+            frequency =  new ArrayList<String>(Arrays.asList(prefs.getFreqList().trim().replace("[","").replace("]","").split(", ")));
         }
 
         setArray(medication);
-        frequency =  new ArrayList<String>(Arrays.asList(prefs.getFreqList().trim().replace("[","").replace("]","").split(", ")));
 
         goalFreq = 0;
         for (int i = 0; i < frequency.size(); i++) {
@@ -325,26 +332,26 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
         }
         //Log.e("totalfreq", String.valueOf(goalFreq));
 
-        mDatabase.child("app").child("users").child(UID).child("medicineLog").child(ParseDate).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                medsList.clear();
-                Iterator<DataSnapshot> it = dataSnapshot.getChildren().iterator();
-                while (it.hasNext()) {
-                    DataSnapshot medicine = it.next();
-                    String medsDate = medicine.getKey();
-                    String Medication = medicine.getValue().toString();
-                    //Log.e("Medication Date", medsDate);
-                    //Log.e("Medication ", Medication);
-                    medsList.add(Medication);
-                }
-                //Log.e("meds size", String.valueOf(medsList.size()));
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                //Log.w(TAG, "getUser:onCancelled", databaseError.toException());
-            }
-        });
+//        mDatabase.child("app").child("users").child(UID).child("medicineLog").child(ParseDate).addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                medication.clear();
+//                Iterator<DataSnapshot> it = dataSnapshot.getChildren().iterator();
+//                while (it.hasNext()) {
+//                    DataSnapshot medicine = it.next();
+//                    String medsDate = medicine.getKey();
+//                    String Medication = medicine.getValue().toString();
+//                    //Log.e("Medication Date", medsDate);
+//                    //Log.e("Medication ", Medication);
+//                    medication.add(Medication);
+//                }
+//                //Log.e("meds size", String.valueOf(medication.size()));
+//            }
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//                //Log.w(TAG, "getUser:onCancelled", databaseError.toException());
+//            }
+//        });
 //**************************
 //        Get Pill from internal storage file.
 //        String filename = "b.txt";
@@ -439,15 +446,33 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
         }
 
         if (mBleManager.getConnectionStatus()) {
-            if (mBleManager.dispense(numChannel)) {
-                //log pill taking behavior in the calendar
-                submit();
-                numPill--;
-                UpdatePillAmount(numPill);
+            if(FingerprintDialog.isAvailable(getContext())) {
+                FingerprintDialog.initialize(getContext())
+                        .title("Dispense Pill")
+                        .message("Please provide Fingerprint")
+                        .callback(this)
+                        .show();
             }
         } else {
             util.toast(context, "Not connected to any device");
         }
+    }
+
+    @Override
+    public void onAuthenticationSucceeded() {
+        // Logic when fingerprint is recognized
+        if (mBleManager.dispense(numChannel)) {
+            //log pill taking behavior in the calendar
+            submit();
+            numPill--;
+            numPillTextView.setText(Integer.toString(numPill));
+            UpdatePillAmount(numPill);
+        }
+    }
+
+    @Override
+    public void onAuthenticationCancel() {
+        // Logic when user canceled operation
     }
 
     public void reload() {
@@ -473,14 +498,13 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
     }
 
     //This function records the current pill-taking behavior to the firebase databse.
-    //Not Used For Now.
     private void submit() {
         Calendar calander = Calendar.getInstance();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
         String curtime = simpleDateFormat.format(calander.getTime());
         if (medicine !=" ") {
             int entryNo = 0;
-            int medsSize = 1;
+            int medsSize = 0;
             for (int j = 0;j<medication.size();j++){
                 if (medication.get(j).contains(medicine)){
                     String freq = frequency.get(j);
@@ -497,8 +521,8 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
                 }
             }
             //Log.e("entryNo",""+entryNo );
-            for (int i=0;i<medsList.size();i++){
-                if (medsList.get(i).contains(medicine)){
+            for (int i=0;i<medication.size();i++){
+                if (medication.get(i).contains(medicine)){
                     medsSize++;
                 }
             }
@@ -507,8 +531,8 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
             if (!(medsSize > entryNo)){
                 mDatabase.child("app").child("users").child(UID).child("medicineLog").child(ParseDate).child(curtime).setValue(medicine);
 
-                Log.e("size", ""+ medsList.size() +"   "+goalFreq );
-                doses = ((double) (medsList.size()+1) / goalFreq) * 100;
+                Log.e("size", ""+ medication.size() +"   "+goalFreq );
+                doses = ((double) (medication.size()+1) / goalFreq) * 100;
                 Log.e("doses", ""+ doses );
                 if (doses >= 80){
                     mDatabase.child("app").child("users").child(UID).child("MedicalCondition").child(ParseDate).setValue("green");
@@ -574,59 +598,6 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    //Fingerprints Function
-    protected void generateKey() {
-        try {
-            keyStore = KeyStore.getInstance("AndroidKeyStore");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        try {
-            keyGenerator = KeyGenerator.getInstance(KeyProperties.KEY_ALGORITHM_AES, "AndroidKeyStore");
-        } catch (NoSuchAlgorithmException | NoSuchProviderException e) {
-            throw new RuntimeException(
-                "Failed to get KeyGenerator instance", e);
-        }
-        try {
-            keyStore.load(null);
-            keyGenerator.init(new
-                    KeyGenParameterSpec.Builder(KEY_NAME, KeyProperties.PURPOSE_ENCRYPT | KeyProperties.PURPOSE_DECRYPT)
-                    .setBlockModes(KeyProperties.BLOCK_MODE_CBC)
-                    .setUserAuthenticationRequired(true)
-                    .setEncryptionPaddings(
-                            KeyProperties.ENCRYPTION_PADDING_PKCS7)
-                    .build());
-            keyGenerator.generateKey();
-        } catch (NoSuchAlgorithmException |
-                InvalidAlgorithmParameterException
-                | CertificateException | IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public boolean cipherInit() {
-        try {
-            cipher = Cipher.getInstance(KeyProperties.KEY_ALGORITHM_AES + "/" + KeyProperties.BLOCK_MODE_CBC + "/"
-                    + KeyProperties.ENCRYPTION_PADDING_PKCS7);
-        } catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
-            throw new RuntimeException("Failed to get Cipher", e);
-        }
-
-        try {
-            keyStore.load(null);
-            SecretKey key = (SecretKey) keyStore.getKey(KEY_NAME, null);
-            cipher.init(Cipher.ENCRYPT_MODE, key);
-            return true;
-        } catch (KeyPermanentlyInvalidatedException e) {
-            return false;
-        } catch (KeyStoreException | CertificateException
-                | UnrecoverableKeyException | IOException
-                | NoSuchAlgorithmException | InvalidKeyException e) {
-            throw new RuntimeException("Failed to init Cipher", e);
-        }
-    }
-
 
     // Handles various events fired by the Service.
     // ACTION_GATT_CONNECTED: connected to a GATT server.
@@ -674,8 +645,11 @@ public class SMAPFragment extends Fragment implements View.OnClickListener {
                 // TODO Auto-generated method stub
                 //Log.v("item", (String) parent.getItemAtPosition(position));
                 medicine = parent.getItemAtPosition(position).toString();
-                numPill = amount_sharedpref.getInt(medicine,0);
-                numPillTextView.setText(Integer.toString(numPill));
+                if (medicine != null ){
+                    numPill = amount_sharedpref.getInt(medicine,0);
+                    numPillTextView.setText(Integer.toString(numPill));
+                }
+
 
             }
             @Override

@@ -21,6 +21,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.appzoro.BP_n_ME.activity.MainActivity;
+import com.appzoro.BP_n_ME.model.Medication;
 import com.appzoro.BP_n_ME.model.Pill;
 import com.appzoro.BP_n_ME.adapter.CustomAdapter;
 import com.appzoro.BP_n_ME.R;
@@ -60,7 +61,7 @@ public class ScheduleFragment extends Fragment {
     private DatabaseReference mDatabase;
     FirebaseUser user;
     MedasolPrefs prefs;
-    ArrayList<String> medication, frequency, deletedMedicine;
+    ArrayList<String> medication, frequency;
 
     String UID;
     TextView next_schedule;
@@ -94,11 +95,32 @@ public class ScheduleFragment extends Fragment {
         getActivity().setTitle("Schedule");
         Log.d(TAG, "On create view");
 
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        user = FirebaseAuth.getInstance().getCurrentUser();
         prefs = new MedasolPrefs(getActivity().getApplicationContext());
-        medication = new ArrayList<String>(Arrays.asList(prefs.getMeds().replace("[", "").replace("]", "").replace(" ", "").split(",")));
-        frequency =  new ArrayList<String>(Arrays.asList(prefs.getFreqList().trim().replace("[","").replace("]","").split(", ")));
 
-        deletedMedicine = new ArrayList<String>();
+        if(prefs.getMeds().equals("[]")) {
+            medication = new ArrayList<>();
+        } else {
+            medication =  new ArrayList<String>(Arrays.asList(prefs.getMeds().trim().replace("[","").replace("]","").replace(" ","").split(",")));
+
+        }
+        if (prefs.getFreqList().equals("[]")) {
+            frequency = new ArrayList<>();
+        } else {
+            frequency =  new ArrayList<String>(Arrays.asList(prefs.getFreqList().trim().replace("[","").replace("]","").split(", ")));
+        }
+
+//        mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child("name").removeValue();
+//        mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child("frequency").removeValue();
+//          mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child("1").removeValue();
+////
+////
+//        ArrayList<String> temp = new ArrayList<>();
+//        prefs.setMeds(temp);
+//        prefs.setFrequency(temp);
+
+
 
         // List view test
         pills = new ArrayList<>();
@@ -124,33 +146,43 @@ public class ScheduleFragment extends Fragment {
                                 public void onClick(DialogInterface dialog, int id) {
                                     //remove and update
                                     String deletedPillName = pills.get(position).getName();
-                                    deleteLine(position, getActivity());
-//                                    getActivity().invalidateOptionsMenu();
-                                    adapter.notifyDataSetChanged();
-                                    for (Pill p : pills) {
-                                        if(p.getName().equals(deletedPillName)) {
-                                            int ind = medication.indexOf(p.getName());
+//                                    deleteLine(position, getActivity());
+//                                    adapter.notifyDataSetChanged();
+                                    for (int i = 0; i < medication.size(); i++) {
+                                        String p = medication.get(i);
+                                        if(p.equals(deletedPillName)) {
+                                            int ind = medication.indexOf(p);
                                             String temp = frequency.get(ind);
                                             String res = "Daily";
                                             if(temp.equals("Twice daily")) {
                                                 res = "Daily";
+                                                frequency.set(ind, res);
+                                                prefs.setFrequency(frequency);
+                                                writeToDatabase();
                                             } else if (temp.equals("Three times daily")) {
                                                 res = "Twice daily";
+                                                frequency.set(ind, res);
+                                                prefs.setFrequency(frequency);
+                                                writeToDatabase();
                                             } else if (temp.equals("Four times per day")) {
                                                 res = "Three times daily";
+                                                frequency.set(ind, res);
+                                                prefs.setFrequency(frequency);
+                                                writeToDatabase();
+                                            } else {
+                                                //delete pills
+                                                frequency.remove((medication.indexOf(deletedPillName)));
+                                                medication.remove(deletedPillName);
+                                                prefs.setMeds(medication);
+                                                prefs.setFrequency(frequency);
+                                                mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child(deletedPillName).removeValue();
                                             }
-                                            frequency.set(ind, res);
-                                            prefs.setFrequency(frequency);
-                                            writeToDatabase();
-                                            return;
                                         }
                                     }
-                                    medication.remove(deletedPillName);
-                                    prefs.setMeds(medication);
-                                    mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child(deletedPillName).removeValue();
-
-                                }
-                            })
+                                    deleteLine(position, getActivity());
+                                    adapter.notifyDataSetChanged();
+                                    }
+                                })
                             .setNegativeButton("No", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     dialog.cancel();
@@ -174,9 +206,6 @@ public class ScheduleFragment extends Fragment {
     }
 
     private void readFromFile(Context context) {
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        prefs = new MedasolPrefs(getActivity().getApplicationContext());
         UID = prefs.getUID();
         String filename = UID + ".txt";
         pills.clear();
@@ -213,8 +242,7 @@ public class ScheduleFragment extends Fragment {
     }
 
     private void deleteLine(int position, Context context) {
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        prefs = new MedasolPrefs(getActivity().getApplicationContext());
+
         UID = prefs.getUID();
         String filename = UID + ".txt";
         pills.clear();

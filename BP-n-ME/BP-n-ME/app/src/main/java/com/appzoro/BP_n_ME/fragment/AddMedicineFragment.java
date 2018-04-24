@@ -1,6 +1,8 @@
 package com.appzoro.BP_n_ME.fragment;
 
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -42,6 +44,7 @@ import com.appzoro.BP_n_ME.activity.MainActivity;
 import com.appzoro.BP_n_ME.fragment.ScheduleFragment;
 import com.appzoro.BP_n_ME.prefs.MedasolPrefs;
 import com.appzoro.BP_n_ME.util.DurationTimePickDialog;
+import com.appzoro.BP_n_ME.util.MyReceiver;
 import com.appzoro.BP_n_ME.util.util;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -109,8 +112,34 @@ public class AddMedicineFragment extends Fragment {
             public void onClick(View v) {
                 String name = medicineType.getText().toString();
                 if (name.length() > 0) {
-                    // Add new pill information to storage
-                    writeToFile(medicineType.getText().toString(), hour, minute, amount, getActivity());
+                    writeToFile(name, hour, minute, amount, getActivity());
+                    setAlarm(hour,minute,getContext());
+                    boolean addNew = true;
+                    for (int i = 0; i < medication.size(); i++) {
+                        if (name.equals(medication.get(i))) {
+                            String temp = frequency.get(i);
+                            String res;
+                            if (temp.equals("Daily")) {
+                                res = "Twice daily";
+                            } else if (temp.equals("Twice daily")) {
+                                res = "Three times daily";
+                            } else {
+                                res = "Four times per day";
+                            }
+                            frequency.set(i, res);
+                            addNew = false;
+                            break;
+                        }
+                    }
+                    if (addNew) {
+                        medication.add(name);
+                        frequency.add("Daily");
+                        prefs.setMeds(medication);
+                        prefs.setFrequency(frequency);
+                    } else {
+                        prefs.setFrequency(frequency);
+                    }
+                    writeToDatabase();
                 }
                 getFragmentManager().popBackStack();
                 // Hide keyboard
@@ -119,8 +148,17 @@ public class AddMedicineFragment extends Fragment {
         });
 
         prefs = new MedasolPrefs(getActivity().getApplicationContext());
-        medication = new ArrayList<String>(Arrays.asList(prefs.getMeds().replace("[", "").replace("]", "").replace(" ", "").split(",")));
-        frequency =  new ArrayList<String>(Arrays.asList(prefs.getFreqList().trim().replace("[","").replace("]","").split(", ")));
+        if (prefs.getMeds().equals("[]")) {
+            medication = new ArrayList<>();
+        } else {
+            medication = new ArrayList<String>(Arrays.asList(prefs.getMeds().replace("[", "").replace("]", "").replace(" ", "").split(",")));
+
+        }
+        if (prefs.getFreqList().equals("[]")) {
+            frequency = new ArrayList<>();
+        } else {
+            frequency =  new ArrayList<String>(Arrays.asList(prefs.getFreqList().trim().replace("[","").replace("]","").split(", ")));
+        }
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -257,35 +295,7 @@ public class AddMedicineFragment extends Fragment {
 //                getFragmentManager().popBackStack();
 //                break;
 //            case R.id.action_save:
-//                String name = medicineType.getText().toString();
-//                if (name.length() > 0) {
-//                    writeToFile(name, hour, minute, amount, getActivity());
-//                    boolean addNew = true;
-//                    for (int i = 0; i < medication.size();i++) {
-//                        if (name.equals(medication.get(i))) {
-//                            String temp = frequency.get(i);
-//                            String res;
-//                            if (temp.equals("Daily")) {
-//                                res  = "Twice daily";
-//                            } else if (temp.equals("Twice daily")) {
-//                                res = "Three times daily";
-//                            } else {
-//                                res = "Four times per day";
-//                            }
-//                            frequency.set(i, res);
-//                            addNew = false;
-//                            break;
-//                        }
-//                    }
-//                    if(addNew) {
-//                        medication.add(name);
-//                        frequency.add("Daily");
-//                        prefs.setMeds(medication);
-//                        prefs.setFrequency(frequency);
-//                    } else {
-//                        prefs.setFrequency(frequency);
-//                    }
-////                    writeToDatabase();
+//
 //
 //                }
 //                    //                Bundle extras = new Bundle();
@@ -371,8 +381,20 @@ public class AddMedicineFragment extends Fragment {
             Log.e("Exception", "File write failed: " + e.toString());
         }
     }
-}
 
+    private void setAlarm(int hour, int minute, Context context) {
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.set(Calendar.HOUR_OF_DAY,hour);
+        calendar.set(Calendar.MINUTE,minute);
+        calendar.set(Calendar.SECOND,1);
+
+        Intent notifyIntent = new Intent(getContext(), MyReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context.getApplicationContext(), 100, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
+    }
 //
 ////    String filename = UID + ".txt";
 //    String filename = "b.txt";
@@ -395,14 +417,14 @@ public class AddMedicineFragment extends Fragment {
 //    }
 //}
 //
-//    private void writeToDatabase() {
-//        for (int i = 0; i < medication.size(); i++) {
-//            String userMeds = medication.get(i);
-//            Log.e("meds",medication.get(i) + frequency.get(i).trim());
-//            mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child(userMeds).child("name").setValue(medication.get(i).trim());
-//            mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child(userMeds).child("frequency").setValue(frequency.get(i).trim());
-//        }
-//    }
-//}
-//
-//>>>>>>> origin/master
+    private void writeToDatabase() {
+        for (int i = 0; i < medication.size(); i++) {
+            String userMeds = medication.get(i);
+            String name = medication.get(i);
+            String freq = frequency.get(i);
+            Log.e("meds",medication.get(i) + frequency.get(i).trim());
+            mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child(userMeds).child("name").setValue(medication.get(i).trim());
+            mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child(userMeds).child("frequency").setValue(frequency.get(i).trim());
+        }
+    }
+}
