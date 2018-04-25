@@ -1,6 +1,8 @@
 package com.appzoro.BP_n_ME.fragment;
 
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -28,6 +30,7 @@ import com.appzoro.BP_n_ME.R;
 import com.appzoro.BP_n_ME.model.PillComparator;
 import com.appzoro.BP_n_ME.prefs.MedasolPrefs;
 import com.appzoro.BP_n_ME.util.BleManager;
+import com.appzoro.BP_n_ME.util.MyReceiver;
 import com.appzoro.BP_n_ME.util.util;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -113,9 +116,15 @@ public class ScheduleFragment extends Fragment {
 
 //        mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child("name").removeValue();
 //        mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child("frequency").removeValue();
-//          mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child("1").removeValue();
-////
-////
+//        mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child("a").removeValue();
+//        mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child("bb").removeValue();
+//        mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child("pp").removeValue();
+//        mDatabase.child("app").child("users").child(user.getUid()).child("medicine").child("ee").removeValue();
+//
+//
+//
+//////
+//////
 //        ArrayList<String> temp = new ArrayList<>();
 //        prefs.setMeds(temp);
 //        prefs.setFrequency(temp);
@@ -179,6 +188,7 @@ public class ScheduleFragment extends Fragment {
                                             }
                                         }
                                     }
+                                    cancelAlarm();
                                     deleteLine(position, getActivity());
                                     adapter.notifyDataSetChanged();
                                     }
@@ -338,6 +348,14 @@ public class ScheduleFragment extends Fragment {
         }
 
 
+    }
+
+    private void cancelAlarm() {
+        Intent notifyIntent = new Intent(getContext(), MyReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext().getApplicationContext(), 100, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) getContext().getSystemService(Context.ALARM_SERVICE);
+
+        alarmManager.cancel(pendingIntent);
     }
 
 //

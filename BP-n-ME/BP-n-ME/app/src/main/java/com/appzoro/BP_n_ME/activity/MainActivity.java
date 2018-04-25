@@ -587,6 +587,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         Iterator<DataSnapshot> it = dataSnapshot.getChildren().iterator();
                         while (it.hasNext()) {
                             DataSnapshot medicine = it.next();
+                            String name = medicine.getKey();
+                            if (name.equals("frequency") | name.equals("name")) {
+                                continue;
+                            }
                             medArray.add(medicine.getKey());
                         }
                         prefs.setMeds(medArray);

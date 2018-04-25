@@ -188,17 +188,17 @@ public class SMAPFragment extends Fragment implements View.OnClickListener, Fing
 
 
 
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(System.currentTimeMillis());
-        calendar.set(Calendar.HOUR_OF_DAY,1);
-        calendar.set(Calendar.MINUTE,1);
-        calendar.set(Calendar.SECOND,15);
-
-
-        Intent notifyIntent = new Intent(getContext(), MyReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context.getApplicationContext(), 100, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 10000,pendingIntent);
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.setTimeInMillis(System.currentTimeMillis());
+//        calendar.set(Calendar.HOUR_OF_DAY,1);
+//        calendar.set(Calendar.MINUTE,1);
+//        calendar.set(Calendar.SECOND,15);
+//
+//
+//        Intent notifyIntent = new Intent(getContext(), MyReceiver.class);
+//        PendingIntent pendingIntent = PendingIntent.getBroadcast(context.getApplicationContext(), 100, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+//        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+//        alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 10000,pendingIntent);
 
 
         connectionStatus = (TextView) view.findViewById(R.id.connection);

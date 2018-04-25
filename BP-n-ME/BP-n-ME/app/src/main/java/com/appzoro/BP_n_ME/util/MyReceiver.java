@@ -36,7 +36,7 @@ public class MyReceiver extends BroadcastReceiver {
                 .setContentIntent(pendingIntent)
                 .setSmallIcon(R.drawable.notify)
                 .setContentTitle("Take Medicine Now")
-                .setContentText("Rua")
+                .setContentText("Time to take your medicine, refer to your schedule for which medicine to take now.")
                 .setAutoCancel(true)
                 .setSound(alarmSound);
 
